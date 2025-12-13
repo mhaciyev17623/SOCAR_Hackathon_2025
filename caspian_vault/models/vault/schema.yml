@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_readings
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "well_id is not null"
+      - dbt_utils.expression_is_true:
+          expression: "survey_type_id is not null"
+
+  - name: dv_hub_well
+    columns:
+      - name: hk_well
+        tests: [not_null, unique]
+      - name: well_id_bk
+        tests: [not_null]
+
+  - name: dv_hub_survey_type
+    columns:
+      - name: hk_survey_type
+        tests: [not_null, unique]
+      - name: survey_type_bk
+        tests: [not_null]
+
+  - name: dv_link_well_survey
+    columns:
+      - name: hk_well_survey
+        tests: [not_null, unique]
+      - name: hk_well
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dv_hub_well')
+              field: hk_well
+      - name: hk_survey_type
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dv_hub_survey_type')
+              field: hk_survey_type
+
+  - name: dv_sat_readings
+    columns:
+      - name: hk_well_survey
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dv_link_well_survey')
+              field: hk_well_survey
+      - name: load_ts
+        tests: [not_null]
+      - name: row_checksum
+        tests: [not_null]

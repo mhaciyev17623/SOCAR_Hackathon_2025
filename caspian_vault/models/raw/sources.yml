@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw_files
+    meta:
+      base_path: "/home/hackathon/processed_data"
+    tables:
+      - name: sgx_all
+        description: "All SGX converted parquet files"
+        meta:
+          glob: "legacy_survey_*.parquet"
+
+      - name: recovered_parquet_1
+        meta:
+          file: "archive_batch_seismic_readings.parquet"
+
+      - name: recovered_parquet_2
+        meta:
+          file: "archive_batch_seismic_readings_2.parquet"

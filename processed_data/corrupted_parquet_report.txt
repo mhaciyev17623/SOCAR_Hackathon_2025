@@ -1,0 +1,3 @@
+[FAIL] archive_batch_seismic_readings.parquet pyarrow read failed: Error creating dataset. Could not read schema from 'caspian_hackathon_assets/track_1_forensics/archive_batch_seismic_readings.parquet'. Is this a 'parquet' file?: Could not open Parquet input source 'caspian_hackathon_assets/track_1_forensics/archive_batch_seismic_readings.parquet': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.
+[REPAIRED] archive_batch_seismic_readings.parquet -> processed_data/archive_batch_seismic_readings.parquet (truncated to last PAR1 at offset 40040)
+[OK] archive_batch_seismic_readings_2.parquet readable -> wrote clean copy to processed_data/archive_batch_seismic_readings_2.parquet

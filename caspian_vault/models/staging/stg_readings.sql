@@ -4,35 +4,35 @@ with sgx as (
     select
         cast(well_id as bigint)            as well_id,
         cast(survey_type_id as bigint)     as survey_type_id,
-        cast(depth_ft as double)           as depth_ft,
-        cast(amplitude as double)          as amplitude,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
         cast(quality_flag as int)          as quality_flag,
         'sgx'                               as source_format,
         cast(source_file as varchar)        as source_file
-    from {{ ref('raw_sgx_all') }}
+    from {{ source('raw_files', 'raw_sgx_all') }}
 ),
 p1 as (
     -- If columns differ, adjust here after you inspect schema
     select
         cast(well_id as bigint)            as well_id,
         cast(survey_type_id as bigint)     as survey_type_id,
-        cast(depth_ft as double)           as depth_ft,
-        cast(amplitude as double)          as amplitude,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
         cast(quality_flag as int)          as quality_flag,
         'parquet_recovered'                as source_format,
         'archive_batch_seismic_readings.parquet' as source_file
-    from {{ ref('raw_recovered_1') }}
+    from {{ source('raw_files', 'raw_recovered_1') }}
 ),
 p2 as (
     select
         cast(well_id as bigint)            as well_id,
         cast(survey_type_id as bigint)     as survey_type_id,
-        cast(depth_ft as double)           as depth_ft,
-        cast(amplitude as double)          as amplitude,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
         cast(quality_flag as int)          as quality_flag,
         'parquet_recovered'                as source_format,
         'archive_batch_seismic_readings_2.parquet' as source_file
-    from {{ ref('raw_recovered_2') }}
+    from {{ source('raw_files', 'raw_recovered_2') }}
 ),
 
 unioned as (

@@ -1,0 +1,110 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    restart: always
+
+  redis:
+    image: redis:7
+    restart: always
+
+  airflow-webserver:
+    build: .
+    depends_on: [postgres, redis]
+    environment: &airflow_env
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CORE__FERNET_KEY: ""
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      # Mount your actual project + data:
+      - /home/hackathon/caspian_vault:/opt/project/caspian_vault
+      - /home/hackathon/processed_data:/opt/project/processed_data
+      - /home/hackathon/warehouse:/opt/project/warehouse
+    ports:
+      - "8080:8080"
+    command: webserver
+    restart: always
+
+  airflow-scheduler:
+    build: .
+    depends_on: [airflow-webserver]
+    environment: *airflow_env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - /home/hackathon/caspian_vault:/opt/project/caspian_vault
+      - /home/hackathon/processed_data:/opt/project/processed_data
+      - /home/hackathon/warehouse:/opt/project/warehouse
+    command: scheduler
+    restart: always
+
+  airflow-worker:
+    build: .
+    depends_on: [airflow-webserver]
+    environment: *airflow_env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - /home/hackathon/caspian_vault:/opt/project/caspian_vault
+      - /home/hackathon/processed_data:/opt/project/processed_data
+      - /home/hackathon/warehouse:/opt/project/warehouse
+    command: celery worker
+    restart: always
+
+  airflow-triggerer:
+    build: .
+    depends_on: [airflow-webserver]
+    environment: *airflow_env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - /home/hackathon/caspian_vault:/opt/project/caspian_vault
+      - /home/hackathon/processed_data:/opt/project/processed_data
+      - /home/hackathon/warehouse:/opt/project/warehouse
+    command: triggerer
+    restart: always
+
+  flower:
+    build: .
+    depends_on: [redis]
+    environment: *airflow_env
+    ports:
+      - "5555:5555"
+    command: celery flower
+    restart: always
+
+  airflow-init:
+    build: .
+    depends_on: [postgres, redis]
+    environment: *airflow_env
+    command: >
+      bash -c "
+      airflow db migrate &&
+      airflow users create
+        --username admin
+        --password admin
+        --firstname admin
+        --lastname admin
+        --role Admin
+        --email admin@example.com
+      "
+    restart: "no"
+
+volumes:
+  postgres-db-volume:

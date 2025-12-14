@@ -1,56 +1,99 @@
-import duckdb
+import os
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+from sqlalchemy import create_engine, text
 
-DB = "/home/hackathon/warehouse/caspian.duckdb"
+# Postgres connection (service name inside docker network is usually "postgres")
+PG_HOST = os.getenv("PG_HOST", "postgres")
+PG_PORT = int(os.getenv("PG_PORT", "5432"))
+PG_DB   = os.getenv("PG_DB", "airflow")
+PG_USER = os.getenv("PG_USER", "airflow")
+PG_PASS = os.getenv("PG_PASS", "airflow")  # change if your compose uses a different password
+
+ENGINE = create_engine(f"postgresql+psycopg2://{PG_USER}:{PG_PASS}@{PG_HOST}:{PG_PORT}/{PG_DB}")
 
 st.set_page_config(page_title="Caspian Seismic Analytics", layout="wide")
 st.title("CaspianPetro — Seismic Analytics Dashboard")
 
-con = duckdb.connect(DB, read_only=True)
+def qdf(sql: str) -> pd.DataFrame:
+    with ENGINE.connect() as conn:
+        return pd.read_sql(text(sql), conn)
+
+# ---- safe format helpers (avoid NoneType crashes when tables are empty) ----
+def safe_int(x, default=0):
+    try:
+        if x is None or pd.isna(x):
+            return default
+        return int(x)
+    except Exception:
+        return default
+
+def safe_float(x):
+    try:
+        if x is None or pd.isna(x):
+            return None
+        return float(x)
+    except Exception:
+        return None
+
+def fmt_pct(x):
+    v = safe_float(x)
+    return "N/A" if v is None else f"{v*100:.2f}%"
+
+def fmt_float(x, digits=4):
+    v = safe_float(x)
+    return "N/A" if v is None else f"{v:.{digits}f}"
+
 
 # ---- KPIs ----
-kpi = con.execute("""
+kpi = qdf("""
 select
-  (select count(*) from dim_well) as wells,
-  (select count(*) from fct_readings) as readings,
-  (select avg(case when quality_flag=1 then 1 else 0 end) from fct_readings) as quality_rate,
-  (select avg(amplitude) from fct_readings) as avg_amp
-""").df()
+  (select count(*) from public.dim_well) as wells,
+  (select count(*) from public.fct_readings) as readings,
+  (select avg(case when quality_flag=1 then 1 else 0 end) from public.fct_readings) as quality_rate,
+  (select avg(amplitude) from public.fct_readings) as avg_amp
+""")
 
 c1, c2, c3, c4 = st.columns(4)
-c1.metric("Wells", int(kpi["wells"][0]))
-c2.metric("Total readings", int(kpi["readings"][0]))
-c3.metric("Data quality rate", f"{float(kpi['quality_rate'][0])*100:.2f}%")
-c4.metric("Avg amplitude", f"{float(kpi['avg_amp'][0]):.4f}")
+c1.metric("Wells", safe_int(kpi["wells"][0]))
+c2.metric("Total readings", safe_int(kpi["readings"][0]))
+c3.metric("Data quality rate", fmt_pct(kpi["quality_rate"].iloc[0] if (len(kpi) and "quality_rate" in kpi.columns) else None))
+c4.metric("Avg amplitude", fmt_float(kpi["avg_amp"].iloc[0] if (len(kpi) and "avg_amp" in kpi.columns) else None, digits=4))
 
 st.divider()
 
 # ---- Map of wells ----
 st.subheader("Wells map")
-wells = con.execute("select well_id, lat, lon from dim_well").df()
-fig_map = px.scatter_mapbox(
-    wells, lat="lat", lon="lon", hover_name="well_id", zoom=4, height=420
-)
-fig_map.update_layout(mapbox_style="open-street-map", margin=dict(l=0,r=0,t=0,b=0))
-st.plotly_chart(fig_map, use_container_width=True)
+wells = qdf("select well_id, lat, lon from public.dim_well")
+
+if wells.empty:
+    st.info("No wells found yet (dim_well is empty). Run the pipeline to load data.")
+else:
+    fig_map = px.scatter_mapbox(
+        wells, lat="lat", lon="lon", hover_name="well_id", zoom=4, height=420
+    )
+    fig_map.update_layout(mapbox_style="open-street-map", margin=dict(l=0, r=0, t=0, b=0))
+    st.plotly_chart(fig_map, use_container_width=True)
 
 st.divider()
 
 # ---- Amplitude distribution ----
 st.subheader("Amplitude distribution")
-amp = con.execute("select amplitude, quality_flag from fct_readings").df()
-fig_hist = px.histogram(amp, x="amplitude", color="quality_flag", nbins=60)
-st.plotly_chart(fig_hist, use_container_width=True)
+amp = qdf("select amplitude, quality_flag from public.fct_readings")
 
-# ---- Anomaly heatmap (simple) ----
-# anomaly score = |amplitude - mean(well)| / std(well)
+if amp.empty:
+    st.info("No readings yet (fct_readings is empty). Nothing to plot.")
+else:
+    fig_hist = px.histogram(amp, x="amplitude", color="quality_flag", nbins=60)
+    st.plotly_chart(fig_hist, use_container_width=True)
+
+# ---- Anomaly heatmap ----
 st.subheader("Anomaly heatmap (depth bucket × well)")
-heat = con.execute("""
+heat = qdf("""
 with stats as (
   select hk_well, avg(amplitude) as mu, stddev_samp(amplitude) as sigma
-  from fct_readings
+  from public.fct_readings
   group by 1
 ),
 scored as (
@@ -61,7 +104,7 @@ scored as (
       when s.sigma is null or s.sigma = 0 then 0
       else abs(f.amplitude - s.mu) / s.sigma
     end as z
-  from fct_readings f
+  from public.fct_readings f
   join stats s using (hk_well)
 )
 select
@@ -69,42 +112,47 @@ select
   depth_bucket,
   avg(z) as avg_z
 from scored
-join dim_well w using (hk_well)
+join public.dim_well w using (hk_well)
 group by 1,2
-""").df()
+""")
 
-# pivot for heatmap
-pivot = heat.pivot(index="depth_bucket", columns="well_id", values="avg_z").fillna(0)
-fig_hm = px.imshow(pivot, aspect="auto")
-st.plotly_chart(fig_hm, use_container_width=True)
+if heat.empty:
+    st.info("No readings available for anomaly heatmap yet.")
+else:
+    pivot = heat.pivot(index="depth_bucket", columns="well_id", values="avg_z").fillna(0)
+    if pivot.empty:
+        st.info("Heatmap has no values to display yet.")
+    else:
+        fig_hm = px.imshow(pivot, aspect="auto")
+        st.plotly_chart(fig_hm, use_container_width=True)
 
 st.divider()
 
 # ---- Marts ----
 st.subheader("mart_well_performance")
-m1 = con.execute("""
+m1 = qdf("""
 select w.well_id, m.source_format, m.total_readings, m.avg_amplitude, m.data_quality_rate
-from mart_well_performance m
-join dim_well w using (hk_well)
+from public.mart_well_performance m
+join public.dim_well w using (hk_well)
 order by total_readings desc
-""").df()
+""")
 st.dataframe(m1, use_container_width=True)
 
 st.subheader("mart_sensor_analysis (survey_type as sensor type)")
-m2 = con.execute("""
+m2 = qdf("""
 select s.survey_type_id as sensor_type_id, m.total_readings, m.data_quality_rate, m.avg_amplitude
-from mart_sensor_analysis m
-join dim_survey_type s on s.hk_survey_type = m.hk_sensor_type
+from public.mart_sensor_analysis m
+join public.dim_survey_type s on s.hk_survey_type = m.hk_sensor_type
 order by total_readings desc
-""").df()
+""")
 st.dataframe(m2, use_container_width=True)
 
 st.subheader("mart_survey_summary")
-m3 = con.execute("""
+m3 = qdf("""
 select s.survey_type_id, m.source_format, m.wells_surveyed, m.total_readings, m.avg_amplitude,
        m.first_ingest_ts, m.last_ingest_ts
-from mart_survey_summary m
-join dim_survey_type s using (hk_survey_type)
+from public.mart_survey_summary m
+join public.dim_survey_type s using (hk_survey_type)
 order by total_readings desc
-""").df()
+""")
 st.dataframe(m3, use_container_width=True)

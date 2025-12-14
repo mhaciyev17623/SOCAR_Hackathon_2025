@@ -14,8 +14,8 @@ geo as (
   select
     *,
     -- deterministic pseudo geo: map well_id -> lat/lon
-    38.0 + (abs(hash(cast(well_id as varchar))) % 6000) / 1000.0 as lat,   -- 38..44
-    47.0 + (abs(hash('x' || cast(well_id as varchar))) % 7000) / 1000.0 as lon -- 47..54
+    38.0 + (abs(abs(('x' || substr(md5(cast(well_id as text)), 1, 8))::bit(32)::int)) % 6000) / 1000.0 as lat,   -- 38..44
+47.0 + (abs((('x' || substr(md5('x' || cast(well_id as text)), 1, 8))::bit(32)::int)) % 7000) / 1000.0 as lon -- 47..54
   from base
 )
 select * from geo

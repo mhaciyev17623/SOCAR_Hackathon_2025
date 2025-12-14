@@ -11,6 +11,9 @@ profile: 'caspian_vault'
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
+log-path: /opt/airflow/logs/dbt
+target-path: /opt/airflow/dbt_target
+packages-install-path: /opt/airflow/dbt_packages
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]

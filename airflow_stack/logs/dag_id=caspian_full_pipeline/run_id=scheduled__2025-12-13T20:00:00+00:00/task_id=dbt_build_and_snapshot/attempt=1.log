@@ -1,0 +1,182 @@
+[2025-12-13T21:00:01.264+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-13T21:00:01.281+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot scheduled__2025-12-13T20:00:00+00:00 [queued]>
+[2025-12-13T21:00:01.286+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot scheduled__2025-12-13T20:00:00+00:00 [queued]>
+[2025-12-13T21:00:01.286+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-13T21:00:01.297+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_build_and_snapshot> on 2025-12-13 20:00:00+00:00
+[2025-12-13T21:00:01.303+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=246) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-13T21:00:01.304+0000] {standard_task_runner.py:64} INFO - Started process 247 to run task
+[2025-12-13T21:00:01.304+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'caspian_full_pipeline', 'dbt_build_and_snapshot', 'scheduled__2025-12-13T20:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/caspian_full_pipeline.py', '--cfg-path', '/tmp/tmprrgscd3q']
+[2025-12-13T21:00:01.304+0000] {standard_task_runner.py:91} INFO - Job 52: Subtask dbt_build_and_snapshot
+[2025-12-13T21:00:01.336+0000] {task_command.py:426} INFO - Running <TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot scheduled__2025-12-13T20:00:00+00:00 [running]> on host 3c0ddfc4fe5e
+[2025-12-13T21:00:01.401+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='caspian_full_pipeline' AIRFLOW_CTX_TASK_ID='dbt_build_and_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T20:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-13T20:00:00+00:00'
+[2025-12-13T21:00:01.401+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-13T21:00:01.412+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-13T21:00:01.412+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        set -euo pipefail\n\n        export DBT_PROFILES_DIR=/opt/project/caspian_vault/dbt_profiles\n        export DBT_LOG_PATH=/opt/***/logs/dbt\n        export DBT_TARGET_PATH=/opt/***/dbt_target\n\n        mkdir -p "$DBT_LOG_PATH" "$DBT_TARGET_PATH"\n\n        cd /opt/project/caspian_vault\n\n        /home/***/.local/bin/dbt deps --profile caspian_vault --target dev\n        /home/***/.local/bin/dbt build --profile caspian_vault --target dev\n        /home/***/.local/bin/dbt snapshot --profile caspian_vault --target dev\n        ']
+[2025-12-13T21:00:01.422+0000] {subprocess.py:86} INFO - Output:
+[2025-12-13T21:00:02.764+0000] {subprocess.py:93} INFO - [0m21:00:02  Running with dbt=1.10.15
+[2025-12-13T21:00:02.771+0000] {subprocess.py:93} INFO - [0m21:00:02  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T21:00:02.771+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T21:00:02.771+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T21:00:02.771+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-13T21:00:02.771+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-13T21:00:02.772+0000] {subprocess.py:93} INFO - [0m21:00:02  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T21:00:02.772+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T21:00:02.772+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T21:00:02.772+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-13T21:00:02.772+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-13T21:00:03.946+0000] {subprocess.py:93} INFO - [0m21:00:03  Installing dbt-labs/dbt_utils
+[2025-12-13T21:00:04.258+0000] {subprocess.py:93} INFO - [0m21:00:04  Installed from version 1.3.0
+[2025-12-13T21:00:04.258+0000] {subprocess.py:93} INFO - [0m21:00:04  Updated version available: 1.3.3
+[2025-12-13T21:00:04.259+0000] {subprocess.py:93} INFO - [0m21:00:04
+[2025-12-13T21:00:04.259+0000] {subprocess.py:93} INFO - [0m21:00:04  Updates available for packages: ['dbt-labs/dbt_utils']
+[2025-12-13T21:00:04.259+0000] {subprocess.py:93} INFO - Update your versions in packages.yml, then run dbt deps
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - [0m21:00:04  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - - ConfigLogPathDeprecation: 1 occurrence
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - - ConfigTargetPathDeprecation: 1 occurrence
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-12-13T21:00:04.260+0000] {subprocess.py:93} INFO - parsing.
+[2025-12-13T21:00:06.236+0000] {subprocess.py:93} INFO - [0m21:00:06  Running with dbt=1.10.15
+[2025-12-13T21:00:06.281+0000] {subprocess.py:93} INFO - [0m21:00:06  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T21:00:06.281+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T21:00:06.281+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T21:00:06.281+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-13T21:00:06.281+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-13T21:00:06.282+0000] {subprocess.py:93} INFO - [0m21:00:06  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T21:00:06.282+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T21:00:06.282+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T21:00:06.282+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-13T21:00:06.282+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-13T21:00:06.460+0000] {subprocess.py:93} INFO - [0m21:00:06  Registered adapter: postgres=1.9.0
+[2025-12-13T21:00:06.705+0000] {subprocess.py:93} INFO - [0m21:00:06  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-12-13T21:00:06.706+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-12-13T21:00:06.706+0000] {subprocess.py:93} INFO - - models.caspian_vault.example
+[2025-12-13T21:00:06.883+0000] {subprocess.py:93} INFO - [0m21:00:06  Found 13 models, 1 snapshot, 19 data tests, 3 sources, 578 macros
+[2025-12-13T21:00:06.887+0000] {subprocess.py:93} INFO - [0m21:00:06
+[2025-12-13T21:00:06.887+0000] {subprocess.py:93} INFO - [0m21:00:06  Concurrency: 4 threads (target='dev')
+[2025-12-13T21:00:06.887+0000] {subprocess.py:93} INFO - [0m21:00:06
+[2025-12-13T21:00:07.001+0000] {subprocess.py:93} INFO - [0m21:00:07  1 of 33 START sql table model public.stg_readings .............................. [RUN]
+[2025-12-13T21:00:07.126+0000] {subprocess.py:93} INFO - [0m21:00:07  1 of 33 OK created sql table model public.stg_readings ......................... [[32mSELECT 9980[0m in 0.12s]
+[2025-12-13T21:00:07.128+0000] {subprocess.py:93} INFO - [0m21:00:07  2 of 33 START test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [RUN]
+[2025-12-13T21:00:07.129+0000] {subprocess.py:93} INFO - [0m21:00:07  3 of 33 START test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null  [RUN]
+[2025-12-13T21:00:07.174+0000] {subprocess.py:93} INFO - [0m21:00:07  2 of 33 PASS dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.175+0000] {subprocess.py:93} INFO - [0m21:00:07  3 of 33 PASS dbt_utils_expression_is_true_stg_readings_well_id_is_not_null ..... [[32mPASS[0m in 0.05s]
+[2025-12-13T21:00:07.177+0000] {subprocess.py:93} INFO - [0m21:00:07  4 of 33 START sql table model public.dv_hub_survey_type ........................ [RUN]
+[2025-12-13T21:00:07.178+0000] {subprocess.py:93} INFO - [0m21:00:07  5 of 33 START sql table model public.dv_hub_well ............................... [RUN]
+[2025-12-13T21:00:07.178+0000] {subprocess.py:93} INFO - [0m21:00:07  6 of 33 START sql table model public.dv_link_well_survey ....................... [RUN]
+[2025-12-13T21:00:07.179+0000] {subprocess.py:93} INFO - [0m21:00:07  7 of 33 START sql table model public.dv_sat_readings ........................... [RUN]
+[2025-12-13T21:00:07.384+0000] {subprocess.py:93} INFO - [0m21:00:07  4 of 33 OK created sql table model public.dv_hub_survey_type ................... [[32mSELECT 3[0m in 0.20s]
+[2025-12-13T21:00:07.385+0000] {subprocess.py:93} INFO - [0m21:00:07  8 of 33 START test not_null_dv_hub_survey_type_hk_survey_type .................. [RUN]
+[2025-12-13T21:00:07.398+0000] {subprocess.py:93} INFO - [0m21:00:07  7 of 33 OK created sql table model public.dv_sat_readings ...................... [[32mSELECT 9980[0m in 0.21s]
+[2025-12-13T21:00:07.398+0000] {subprocess.py:93} INFO - [0m21:00:07  5 of 33 OK created sql table model public.dv_hub_well .......................... [[32mSELECT 20[0m in 0.22s]
+[2025-12-13T21:00:07.400+0000] {subprocess.py:93} INFO - [0m21:00:07  6 of 33 OK created sql table model public.dv_link_well_survey .................. [[32mSELECT 50[0m in 0.22s]
+[2025-12-13T21:00:07.404+0000] {subprocess.py:93} INFO - [0m21:00:07  9 of 33 START test not_null_dv_hub_survey_type_survey_type_bk .................. [RUN]
+[2025-12-13T21:00:07.405+0000] {subprocess.py:93} INFO - [0m21:00:07  10 of 33 START test unique_dv_hub_survey_type_hk_survey_type ................... [RUN]
+[2025-12-13T21:00:07.405+0000] {subprocess.py:93} INFO - [0m21:00:07  11 of 33 START test not_null_dv_sat_readings_hk_well_survey .................... [RUN]
+[2025-12-13T21:00:07.432+0000] {subprocess.py:93} INFO - [0m21:00:07  8 of 33 PASS not_null_dv_hub_survey_type_hk_survey_type ........................ [[32mPASS[0m in 0.05s]
+[2025-12-13T21:00:07.433+0000] {subprocess.py:93} INFO - [0m21:00:07  12 of 33 START test not_null_dv_sat_readings_load_ts ........................... [RUN]
+[2025-12-13T21:00:07.447+0000] {subprocess.py:93} INFO - [0m21:00:07  9 of 33 PASS not_null_dv_hub_survey_type_survey_type_bk ........................ [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.451+0000] {subprocess.py:93} INFO - [0m21:00:07  13 of 33 START test not_null_dv_sat_readings_row_checksum ...................... [RUN]
+[2025-12-13T21:00:07.452+0000] {subprocess.py:93} INFO - [0m21:00:07  10 of 33 PASS unique_dv_hub_survey_type_hk_survey_type ......................... [[32mPASS[0m in 0.05s]
+[2025-12-13T21:00:07.452+0000] {subprocess.py:93} INFO - [0m21:00:07  11 of 33 PASS not_null_dv_sat_readings_hk_well_survey .......................... [[32mPASS[0m in 0.05s]
+[2025-12-13T21:00:07.459+0000] {subprocess.py:93} INFO - [0m21:00:07  14 of 33 START test test_counts_match .......................................... [RUN]
+[2025-12-13T21:00:07.460+0000] {subprocess.py:93} INFO - [0m21:00:07  15 of 33 START test not_null_dv_hub_well_hk_well ............................... [RUN]
+[2025-12-13T21:00:07.467+0000] {subprocess.py:93} INFO - [0m21:00:07  12 of 33 PASS not_null_dv_sat_readings_load_ts ................................. [[32mPASS[0m in 0.03s]
+[2025-12-13T21:00:07.475+0000] {subprocess.py:93} INFO - [0m21:00:07  16 of 33 START test not_null_dv_hub_well_well_id_bk ............................ [RUN]
+[2025-12-13T21:00:07.493+0000] {subprocess.py:93} INFO - [0m21:00:07  13 of 33 PASS not_null_dv_sat_readings_row_checksum ............................ [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.498+0000] {subprocess.py:93} INFO - [0m21:00:07  17 of 33 START test unique_dv_hub_well_hk_well ................................. [RUN]
+[2025-12-13T21:00:07.500+0000] {subprocess.py:93} INFO - [0m21:00:07  15 of 33 PASS not_null_dv_hub_well_hk_well ..................................... [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.501+0000] {subprocess.py:93} INFO - [0m21:00:07  14 of 33 PASS test_counts_match ................................................ [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.507+0000] {subprocess.py:93} INFO - [0m21:00:07  18 of 33 START test not_null_dv_link_well_survey_hk_survey_type ................ [RUN]
+[2025-12-13T21:00:07.508+0000] {subprocess.py:93} INFO - [0m21:00:07  19 of 33 START test not_null_dv_link_well_survey_hk_well ....................... [RUN]
+[2025-12-13T21:00:07.510+0000] {subprocess.py:93} INFO - [0m21:00:07  16 of 33 PASS not_null_dv_hub_well_well_id_bk .................................. [[32mPASS[0m in 0.03s]
+[2025-12-13T21:00:07.519+0000] {subprocess.py:93} INFO - [0m21:00:07  20 of 33 START test not_null_dv_link_well_survey_hk_well_survey ................ [RUN]
+[2025-12-13T21:00:07.538+0000] {subprocess.py:93} INFO - [0m21:00:07  17 of 33 PASS unique_dv_hub_well_hk_well ....................................... [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.543+0000] {subprocess.py:93} INFO - [0m21:00:07  21 of 33 START test relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_  [RUN]
+[2025-12-13T21:00:07.555+0000] {subprocess.py:93} INFO - [0m21:00:07  18 of 33 PASS not_null_dv_link_well_survey_hk_survey_type ...................... [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.556+0000] {subprocess.py:93} INFO - [0m21:00:07  19 of 33 PASS not_null_dv_link_well_survey_hk_well ............................. [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.558+0000] {subprocess.py:93} INFO - [0m21:00:07  20 of 33 PASS not_null_dv_link_well_survey_hk_well_survey ...................... [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.561+0000] {subprocess.py:93} INFO - [0m21:00:07  22 of 33 START test relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_  [RUN]
+[2025-12-13T21:00:07.563+0000] {subprocess.py:93} INFO - [0m21:00:07  23 of 33 START test relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_  [RUN]
+[2025-12-13T21:00:07.564+0000] {subprocess.py:93} INFO - [0m21:00:07  24 of 33 START test unique_dv_link_well_survey_hk_well_survey .................. [RUN]
+[2025-12-13T21:00:07.591+0000] {subprocess.py:93} INFO - [0m21:00:07  21 of 33 PASS relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_  [[32mPASS[0m in 0.05s]
+[2025-12-13T21:00:07.593+0000] {subprocess.py:93} INFO - [0m21:00:07  25 of 33 START sql table model public.dim_survey_type .......................... [RUN]
+[2025-12-13T21:00:07.602+0000] {subprocess.py:93} INFO - [0m21:00:07  22 of 33 PASS relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_  [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.609+0000] {subprocess.py:93} INFO - [0m21:00:07  26 of 33 START sql table model public.dim_source_format ........................ [RUN]
+[2025-12-13T21:00:07.611+0000] {subprocess.py:93} INFO - [0m21:00:07  23 of 33 PASS relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_  [[32mPASS[0m in 0.05s]
+[2025-12-13T21:00:07.613+0000] {subprocess.py:93} INFO - [0m21:00:07  24 of 33 PASS unique_dv_link_well_survey_hk_well_survey ........................ [[32mPASS[0m in 0.04s]
+[2025-12-13T21:00:07.617+0000] {subprocess.py:93} INFO - [0m21:00:07  27 of 33 START sql table model public.dim_time ................................. [RUN]
+[2025-12-13T21:00:07.619+0000] {subprocess.py:93} INFO - [0m21:00:07  28 of 33 START sql table model public.dim_well ................................. [RUN]
+[2025-12-13T21:00:07.667+0000] {subprocess.py:93} INFO - [0m21:00:07  25 of 33 OK created sql table model public.dim_survey_type ..................... [[32mSELECT 3[0m in 0.07s]
+[2025-12-13T21:00:07.677+0000] {subprocess.py:93} INFO - [0m21:00:07  29 of 33 START sql table model public.fct_readings ............................. [RUN]
+[2025-12-13T21:00:07.704+0000] {subprocess.py:93} INFO - [0m21:00:07  27 of 33 OK created sql table model public.dim_time ............................ [[32mSELECT 1[0m in 0.08s]
+[2025-12-13T21:00:07.709+0000] {subprocess.py:93} INFO - [0m21:00:07  28 of 33 OK created sql table model public.dim_well ............................ [[32mSELECT 20[0m in 0.09s]
+[2025-12-13T21:00:07.710+0000] {subprocess.py:93} INFO - [0m21:00:07  26 of 33 OK created sql table model public.dim_source_format ................... [[32mSELECT 2[0m in 0.10s]
+[2025-12-13T21:00:07.761+0000] {subprocess.py:93} INFO - [0m21:00:07  29 of 33 OK created sql table model public.fct_readings ........................ [[32mSELECT 9980[0m in 0.08s]
+[2025-12-13T21:00:07.763+0000] {subprocess.py:93} INFO - [0m21:00:07  30 of 33 START sql table model public.mart_sensor_analysis ..................... [RUN]
+[2025-12-13T21:00:07.764+0000] {subprocess.py:93} INFO - [0m21:00:07  31 of 33 START sql table model public.mart_survey_summary ...................... [RUN]
+[2025-12-13T21:00:07.764+0000] {subprocess.py:93} INFO - [0m21:00:07  32 of 33 START sql table model public.mart_well_performance .................... [RUN]
+[2025-12-13T21:00:07.832+0000] {subprocess.py:93} INFO - [0m21:00:07  30 of 33 OK created sql table model public.mart_sensor_analysis ................ [[32mSELECT 3[0m in 0.06s]
+[2025-12-13T21:00:07.839+0000] {subprocess.py:93} INFO - [0m21:00:07  32 of 33 OK created sql table model public.mart_well_performance ............... [[32mSELECT 21[0m in 0.07s]
+[2025-12-13T21:00:07.840+0000] {subprocess.py:93} INFO - [0m21:00:07  31 of 33 OK created sql table model public.mart_survey_summary ................. [[32mSELECT 6[0m in 0.07s]
+[2025-12-13T21:00:07.842+0000] {subprocess.py:93} INFO - [0m21:00:07  33 of 33 START snapshot snapshots.snap_mart_well_performance ................... [RUN]
+[2025-12-13T21:00:07.979+0000] {subprocess.py:93} INFO - [0m21:00:07  33 of 33 OK snapshotted snapshots.snap_mart_well_performance ................... [[32mINSERT 0 21[0m in 0.14s]
+[2025-12-13T21:00:07.988+0000] {subprocess.py:93} INFO - [0m21:00:07
+[2025-12-13T21:00:07.989+0000] {subprocess.py:93} INFO - [0m21:00:07  Finished running 1 snapshot, 13 table models, 19 data tests in 0 hours 0 minutes and 1.10 seconds (1.10s).
+[2025-12-13T21:00:08.026+0000] {subprocess.py:93} INFO - [0m21:00:08
+[2025-12-13T21:00:08.026+0000] {subprocess.py:93} INFO - [0m21:00:08  [32mCompleted successfully[0m
+[2025-12-13T21:00:08.026+0000] {subprocess.py:93} INFO - [0m21:00:08
+[2025-12-13T21:00:08.026+0000] {subprocess.py:93} INFO - [0m21:00:08  Done. PASS=33 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=33
+[2025-12-13T21:00:08.027+0000] {subprocess.py:93} INFO - [0m21:00:08  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-12-13T21:00:08.027+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-12-13T21:00:08.027+0000] {subprocess.py:93} INFO - - ConfigLogPathDeprecation: 1 occurrence
+[2025-12-13T21:00:08.027+0000] {subprocess.py:93} INFO - - ConfigTargetPathDeprecation: 1 occurrence
+[2025-12-13T21:00:08.027+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-12-13T21:00:08.027+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-12-13T21:00:08.028+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-12-13T21:00:08.028+0000] {subprocess.py:93} INFO - parsing.
+[2025-12-13T21:00:10.099+0000] {subprocess.py:93} INFO - [0m21:00:10  Running with dbt=1.10.15
+[2025-12-13T21:00:10.144+0000] {subprocess.py:93} INFO - [0m21:00:10  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T21:00:10.144+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T21:00:10.144+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T21:00:10.144+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-13T21:00:10.144+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-13T21:00:10.145+0000] {subprocess.py:93} INFO - [0m21:00:10  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T21:00:10.145+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T21:00:10.145+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T21:00:10.145+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-13T21:00:10.145+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-13T21:00:10.322+0000] {subprocess.py:93} INFO - [0m21:00:10  Registered adapter: postgres=1.9.0
+[2025-12-13T21:00:10.565+0000] {subprocess.py:93} INFO - [0m21:00:10  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-12-13T21:00:10.565+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-12-13T21:00:10.565+0000] {subprocess.py:93} INFO - - models.caspian_vault.example
+[2025-12-13T21:00:10.733+0000] {subprocess.py:93} INFO - [0m21:00:10  Found 13 models, 1 snapshot, 19 data tests, 3 sources, 578 macros
+[2025-12-13T21:00:10.735+0000] {subprocess.py:93} INFO - [0m21:00:10
+[2025-12-13T21:00:10.735+0000] {subprocess.py:93} INFO - [0m21:00:10  Concurrency: 4 threads (target='dev')
+[2025-12-13T21:00:10.736+0000] {subprocess.py:93} INFO - [0m21:00:10
+[2025-12-13T21:00:10.844+0000] {subprocess.py:93} INFO - [0m21:00:10  1 of 1 START snapshot snapshots.snap_mart_well_performance ..................... [RUN]
+[2025-12-13T21:00:11.007+0000] {subprocess.py:93} INFO - [0m21:00:11  1 of 1 OK snapshotted snapshots.snap_mart_well_performance ..................... [[32mINSERT 0 21[0m in 0.16s]
+[2025-12-13T21:00:11.016+0000] {subprocess.py:93} INFO - [0m21:00:11
+[2025-12-13T21:00:11.016+0000] {subprocess.py:93} INFO - [0m21:00:11  Finished running 1 snapshot in 0 hours 0 minutes and 0.28 seconds (0.28s).
+[2025-12-13T21:00:11.098+0000] {subprocess.py:93} INFO - [0m21:00:11
+[2025-12-13T21:00:11.098+0000] {subprocess.py:93} INFO - [0m21:00:11  [32mCompleted successfully[0m
+[2025-12-13T21:00:11.099+0000] {subprocess.py:93} INFO - [0m21:00:11
+[2025-12-13T21:00:11.099+0000] {subprocess.py:93} INFO - [0m21:00:11  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[2025-12-13T21:00:11.099+0000] {subprocess.py:93} INFO - [0m21:00:11  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - - ConfigLogPathDeprecation: 1 occurrence
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - - ConfigTargetPathDeprecation: 1 occurrence
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-12-13T21:00:11.100+0000] {subprocess.py:93} INFO - parsing.
+[2025-12-13T21:00:11.715+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-13T21:00:11.715+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-13T21:00:11.737+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=caspian_full_pipeline, task_id=dbt_build_and_snapshot, run_id=scheduled__2025-12-13T20:00:00+00:00, execution_date=20251213T200000, start_date=20251213T210001, end_date=20251213T210011
+[2025-12-13T21:00:11.760+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-13T21:00:11.771+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-13T21:00:11.773+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

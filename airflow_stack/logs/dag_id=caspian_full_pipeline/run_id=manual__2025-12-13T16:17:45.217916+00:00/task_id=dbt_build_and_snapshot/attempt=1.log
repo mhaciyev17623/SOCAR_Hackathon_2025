@@ -1,0 +1,60 @@
+[2025-12-13T16:17:46.765+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-13T16:17:46.783+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot manual__2025-12-13T16:17:45.217916+00:00 [queued]>
+[2025-12-13T16:17:46.788+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot manual__2025-12-13T16:17:45.217916+00:00 [queued]>
+[2025-12-13T16:17:46.788+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-13T16:17:46.798+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_build_and_snapshot> on 2025-12-13 16:17:45.217916+00:00
+[2025-12-13T16:17:46.804+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=48) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-13T16:17:46.805+0000] {standard_task_runner.py:64} INFO - Started process 49 to run task
+[2025-12-13T16:17:46.805+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'caspian_full_pipeline', 'dbt_build_and_snapshot', 'manual__2025-12-13T16:17:45.217916+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/caspian_full_pipeline.py', '--cfg-path', '/tmp/tmpp4e0mixl']
+[2025-12-13T16:17:46.806+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask dbt_build_and_snapshot
+[2025-12-13T16:17:46.838+0000] {task_command.py:426} INFO - Running <TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot manual__2025-12-13T16:17:45.217916+00:00 [running]> on host e90b8bc65735
+[2025-12-13T16:17:46.897+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='caspian_full_pipeline' AIRFLOW_CTX_TASK_ID='dbt_build_and_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T16:17:45.217916+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-13T16:17:45.217916+00:00'
+[2025-12-13T16:17:46.897+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-13T16:17:46.918+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-13T16:17:46.919+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/caspian_vault &&\n        dbt deps &&\n        dbt build &&\n        dbt snapshot\n        ']
+[2025-12-13T16:17:46.928+0000] {subprocess.py:86} INFO - Output:
+[2025-12-13T16:17:48.652+0000] {subprocess.py:93} INFO - [0m16:17:48  Running with dbt=1.9.0
+[2025-12-13T16:17:48.657+0000] {subprocess.py:93} INFO - [0m16:17:48  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - [0m16:17:48  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-13T16:17:48.658+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-13T16:17:48.788+0000] {subprocess.py:93} INFO - [0m16:17:48  Encountered an error:
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO - Runtime Error
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO -   The packages.yml file in this project is malformed. Please double check
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO -   the contents of this file and fix any errors before retrying.
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO - 
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO -   You can find more information on the syntax for this file here:
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO -   https://docs.getdbt.com/docs/package-management
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO - 
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO -   Validator Error:
+[2025-12-13T16:17:48.789+0000] {subprocess.py:93} INFO -   {'name': 'dbt_utils', 'package': 'dbt-labs/dbt_utils', 'version': '1.3.0', 'unrendered': {'name': 'dbt_utils', 'package': 'dbt-labs/dbt_utils', 'version': '1.3.0'}} is not valid under any of the given schemas
+[2025-12-13T16:17:48.790+0000] {subprocess.py:93} INFO - 
+[2025-12-13T16:17:49.397+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-12-13T16:17:49.398+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-13T16:17:49.407+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-12-13T16:17:49.410+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=caspian_full_pipeline, task_id=dbt_build_and_snapshot, run_id=manual__2025-12-13T16:17:45.217916+00:00, execution_date=20251213T161745, start_date=20251213T161746, end_date=20251213T161749
+[2025-12-13T16:17:49.420+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task dbt_build_and_snapshot (Bash command failed. The command returned a non-zero exit code 2.; 49)
+[2025-12-13T16:17:49.465+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-13T16:17:49.480+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-13T16:17:49.481+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

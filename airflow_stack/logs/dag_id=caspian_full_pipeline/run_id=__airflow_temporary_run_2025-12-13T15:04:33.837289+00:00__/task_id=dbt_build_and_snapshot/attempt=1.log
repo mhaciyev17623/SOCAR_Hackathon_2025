@@ -1,0 +1,74 @@
+[2025-12-13T15:04:34.255+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-13T15:04:34.271+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot __airflow_temporary_run_2025-12-13T15:04:33.837289+00:00__ [queued]>
+[2025-12-13T15:04:34.276+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot __airflow_temporary_run_2025-12-13T15:04:33.837289+00:00__ [queued]>
+[2025-12-13T15:04:34.276+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-13T15:04:34.286+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_build_and_snapshot> on 2025-12-13 00:00:00+00:00
+[2025-12-13T15:04:34.292+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=76) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-13T15:04:34.293+0000] {standard_task_runner.py:64} INFO - Started process 77 to run task
+[2025-12-13T15:04:34.292+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'caspian_full_pipeline', 'dbt_build_and_snapshot', '__***_temporary_run_2025-12-13T15:04:33.837289+00:00__', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/caspian_full_pipeline.py', '--cfg-path', '/tmp/tmpddw6pig1']
+[2025-12-13T15:04:34.293+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask dbt_build_and_snapshot
+[2025-12-13T15:04:34.329+0000] {task_command.py:426} INFO - Running <TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot __airflow_temporary_run_2025-12-13T15:04:33.837289+00:00__ [running]> on host 8a90aca397bc
+[2025-12-13T15:04:34.389+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='caspian_full_pipeline' AIRFLOW_CTX_TASK_ID='dbt_build_and_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='__***_temporary_run_2025-12-13T15:04:33.837289+00:00__'
+[2025-12-13T15:04:34.389+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-13T15:04:34.399+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-13T15:04:34.399+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/caspian_vault &&\n        dbt deps &&\n        dbt build &&\n        dbt snapshot\n        ']
+[2025-12-13T15:04:34.409+0000] {subprocess.py:86} INFO - Output:
+[2025-12-13T15:04:36.095+0000] {subprocess.py:93} INFO - [0m15:04:36  Encountered an error:
+[2025-12-13T15:04:36.095+0000] {subprocess.py:93} INFO - [Errno 13] Permission denied: '/opt/project/caspian_vault/logs/dbt.log'
+[2025-12-13T15:04:36.096+0000] {subprocess.py:93} INFO - [0m15:04:36  Traceback (most recent call last):
+[2025-12-13T15:04:36.096+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 178, in wrapper
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -     setup_event_logger(flags=flags, callbacks=callbacks)
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt/events/logging.py", line 100, in setup_event_logger
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -     add_logger_to_manager(
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/events/event_manager_client.py", line 15, in add_logger_to_manager
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -     _EVENT_MANAGER.add_logger(logger)
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/events/event_manager.py", line 88, in add_logger
+[2025-12-13T15:04:36.097+0000] {subprocess.py:93} INFO -     _JsonLogger(config) if config.line_format == LineFormat.Json else _TextLogger(config)
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -                                                                       ^^^^^^^^^^^^^^^^^^^
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/events/logger.py", line 147, in __init__
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -     super().__init__(config)
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dbt_common/events/logger.py", line 107, in __init__
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -     file_handler = RotatingFileHandler(
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -                    ^^^^^^^^^^^^^^^^^^^^
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/logging/handlers.py", line 155, in __init__
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -     BaseRotatingHandler.__init__(self, filename, mode, encoding=encoding,
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/logging/handlers.py", line 58, in __init__
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -     logging.FileHandler.__init__(self, filename, mode=mode,
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/logging/__init__.py", line 1231, in __init__
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -     StreamHandler.__init__(self, self._open())
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -                                  ^^^^^^^^^^^^
+[2025-12-13T15:04:36.098+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/logging/__init__.py", line 1263, in _open
+[2025-12-13T15:04:36.099+0000] {subprocess.py:93} INFO -     return open_func(self.baseFilename, self.mode,
+[2025-12-13T15:04:36.099+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-13T15:04:36.099+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: '/opt/project/caspian_vault/logs/dbt.log'
+[2025-12-13T15:04:36.099+0000] {subprocess.py:93} INFO - 
+[2025-12-13T15:04:36.284+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-12-13T15:04:36.285+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-13T15:04:36.294+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-12-13T15:04:36.297+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=caspian_full_pipeline, task_id=dbt_build_and_snapshot, run_id=__***_temporary_run_2025-12-13T15:04:33.837289+00:00__, execution_date=20251213T000000, start_date=20251213T150434, end_date=20251213T150436
+[2025-12-13T15:04:36.308+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 11 for task dbt_build_and_snapshot ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(caspian_full_pipeline, dbt_build_and_snapshot, __airflow_temporary_run_2025-12-13T15:04:33.837289+00:00__, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'dbt_build_and_snapshot', 'dag_id': 'caspian_full_pipeline', 'run_id': '__airflow_temporary_run_2025-12-13T15:04:33.837289+00:00__', 'map_index': -1, 'start_date': datetime.datetime(2025, 12, 13, 15, 4, 34, 272071, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2025, 12, 13, 15, 4, 36, 297053, tzinfo=Timezone('UTC')), 'duration': 2}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 77)
+[2025-12-13T15:04:36.351+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-13T15:04:36.359+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

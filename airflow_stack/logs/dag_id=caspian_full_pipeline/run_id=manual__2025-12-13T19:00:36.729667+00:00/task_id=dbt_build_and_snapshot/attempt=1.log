@@ -1,0 +1,67 @@
+[2025-12-13T19:00:37.145+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-13T19:00:37.163+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot manual__2025-12-13T19:00:36.729667+00:00 [queued]>
+[2025-12-13T19:00:37.167+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot manual__2025-12-13T19:00:36.729667+00:00 [queued]>
+[2025-12-13T19:00:37.168+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-13T19:00:37.178+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_build_and_snapshot> on 2025-12-13 19:00:36.729667+00:00
+[2025-12-13T19:00:37.184+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=62) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-13T19:00:37.185+0000] {standard_task_runner.py:64} INFO - Started process 63 to run task
+[2025-12-13T19:00:37.185+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'caspian_full_pipeline', 'dbt_build_and_snapshot', 'manual__2025-12-13T19:00:36.729667+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/caspian_full_pipeline.py', '--cfg-path', '/tmp/tmp_p933jic']
+[2025-12-13T19:00:37.185+0000] {standard_task_runner.py:91} INFO - Job 26: Subtask dbt_build_and_snapshot
+[2025-12-13T19:00:37.216+0000] {task_command.py:426} INFO - Running <TaskInstance: caspian_full_pipeline.dbt_build_and_snapshot manual__2025-12-13T19:00:36.729667+00:00 [running]> on host 2bb3697e8170
+[2025-12-13T19:00:37.279+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='caspian_full_pipeline' AIRFLOW_CTX_TASK_ID='dbt_build_and_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T19:00:36.729667+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-13T19:00:36.729667+00:00'
+[2025-12-13T19:00:37.279+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-13T19:00:37.289+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-13T19:00:37.289+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        set -euo pipefail\n\n        export DBT_PROFILES_DIR=/home/***/.dbt\n        export DBT_LOG_PATH=/opt/***/logs/dbt\n        export DBT_TARGET_PATH=/opt/***/dbt_target\n\n        mkdir -p "$DBT_LOG_PATH" "$DBT_TARGET_PATH"\n\n        cd /opt/project/caspian_vault\n\n        /home/***/.local/bin/dbt deps --profile caspian_vault --target dev\n        /home/***/.local/bin/dbt build --profile caspian_vault --target dev\n        /home/***/.local/bin/dbt snapshot --profile caspian_vault --target dev\n        ']
+[2025-12-13T19:00:37.300+0000] {subprocess.py:86} INFO - Output:
+[2025-12-13T19:00:38.649+0000] {subprocess.py:93} INFO - [0m19:00:38  Running with dbt=1.10.15
+[2025-12-13T19:00:38.656+0000] {subprocess.py:93} INFO - [0m19:00:38  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T19:00:38.656+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T19:00:38.656+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T19:00:38.656+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-13T19:00:38.656+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-13T19:00:38.657+0000] {subprocess.py:93} INFO - [0m19:00:38  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-13T19:00:38.657+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-13T19:00:38.657+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-13T19:00:38.657+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-13T19:00:38.657+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-13T19:00:38.937+0000] {subprocess.py:93} INFO - [0m19:00:38  Installing dbt-labs/dbt_utils
+[2025-12-13T19:00:39.186+0000] {subprocess.py:93} INFO - [0m19:00:39  Installed from version 1.3.0
+[2025-12-13T19:00:39.186+0000] {subprocess.py:93} INFO - [0m19:00:39  Updated version available: 1.3.3
+[2025-12-13T19:00:39.187+0000] {subprocess.py:93} INFO - [0m19:00:39
+[2025-12-13T19:00:39.187+0000] {subprocess.py:93} INFO - [0m19:00:39  Updates available for packages: ['dbt-labs/dbt_utils']
+[2025-12-13T19:00:39.187+0000] {subprocess.py:93} INFO - Update your versions in packages.yml, then run dbt deps
+[2025-12-13T19:00:39.187+0000] {subprocess.py:93} INFO - [0m19:00:39  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - - ConfigLogPathDeprecation: 1 occurrence
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - - ConfigTargetPathDeprecation: 1 occurrence
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-12-13T19:00:39.188+0000] {subprocess.py:93} INFO - parsing.
+[2025-12-13T19:00:41.162+0000] {subprocess.py:93} INFO - Usage: dbt build [OPTIONS]
+[2025-12-13T19:00:41.162+0000] {subprocess.py:93} INFO - Try 'dbt build -h' for help.
+[2025-12-13T19:00:41.162+0000] {subprocess.py:93} INFO - 
+[2025-12-13T19:00:41.162+0000] {subprocess.py:93} INFO - Error: Invalid value for '--profiles-dir': Path '/home/***/.dbt' does not exist.
+[2025-12-13T19:00:41.311+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-12-13T19:00:41.311+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-13T19:00:41.322+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-12-13T19:00:41.325+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=caspian_full_pipeline, task_id=dbt_build_and_snapshot, run_id=manual__2025-12-13T19:00:36.729667+00:00, execution_date=20251213T190036, start_date=20251213T190037, end_date=20251213T190041
+[2025-12-13T19:00:41.335+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 26 for task dbt_build_and_snapshot (Bash command failed. The command returned a non-zero exit code 2.; 63)
+[2025-12-13T19:00:41.369+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-13T19:00:41.382+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-13T19:00:41.384+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

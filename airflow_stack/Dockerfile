@@ -8,7 +8,8 @@ USER airflow
 RUN pip install --no-cache-dir \
   "sqlalchemy<2.0" \
   "dbt-core==1.10.15" \
-  "dbt-postgres==1.9.0"
+  "dbt-postgres==1.9.0" \
+  "dbt-trino==1.9.3"
 
 # --- Dashboard deps (Streamlit + plotting + DuckDB + Postgres client libs) ---
 USER root

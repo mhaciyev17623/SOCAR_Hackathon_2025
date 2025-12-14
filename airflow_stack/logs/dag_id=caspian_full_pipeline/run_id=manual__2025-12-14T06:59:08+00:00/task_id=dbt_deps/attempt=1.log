@@ -1,0 +1,48 @@
+[2025-12-14T06:59:09.475+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-14T06:59:09.494+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_deps manual__2025-12-14T06:59:08+00:00 [queued]>
+[2025-12-14T06:59:09.498+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_deps manual__2025-12-14T06:59:08+00:00 [queued]>
+[2025-12-14T06:59:09.499+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-14T06:59:09.508+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_deps> on 2025-12-14 06:59:08+00:00
+[2025-12-14T06:59:09.515+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=71) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-14T06:59:09.516+0000] {standard_task_runner.py:64} INFO - Started process 72 to run task
+[2025-12-14T06:59:09.516+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'caspian_full_pipeline', 'dbt_deps', 'manual__2025-12-14T06:59:08+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/caspian_full_pipeline.py', '--cfg-path', '/tmp/tmpj6wibkb9']
+[2025-12-14T06:59:09.516+0000] {standard_task_runner.py:91} INFO - Job 157: Subtask dbt_deps
+[2025-12-14T06:59:09.549+0000] {task_command.py:426} INFO - Running <TaskInstance: caspian_full_pipeline.dbt_deps manual__2025-12-14T06:59:08+00:00 [running]> on host fd267655e679
+[2025-12-14T06:59:09.621+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='caspian_full_pipeline' AIRFLOW_CTX_TASK_ID='dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T06:59:08+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T06:59:08+00:00'
+[2025-12-14T06:59:09.622+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-14T06:59:09.643+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T06:59:09.644+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\nset -euo pipefail\nexport DBT_PROFILES_DIR=/opt/project/caspian_vault/dbt_profiles\nexport DBT_LOG_PATH=/opt/***/logs/dbt\nexport DBT_TARGET_PATH=/opt/***/dbt_target\nexport DBT_STATE_PATH=/opt/***/dbt_state\nexport DBT_PACKAGES_INSTALL_PATH=/opt/***/dbt_packages\n\nmkdir -p "$DBT_LOG_PATH" "$DBT_TARGET_PATH" "$DBT_PACKAGES_INSTALL_PATH"\ncd /opt/project/caspian_vault\n\n/home/***/.local/bin/dbt deps --profile caspian_vault --target dev']
+[2025-12-14T06:59:09.654+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T06:59:11.027+0000] {subprocess.py:93} INFO - [0m06:59:11  Running with dbt=1.10.15
+[2025-12-14T06:59:11.034+0000] {subprocess.py:93} INFO - [0m06:59:11  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-14T06:59:11.034+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-14T06:59:11.034+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-14T06:59:11.034+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-14T06:59:11.034+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-14T06:59:11.034+0000] {subprocess.py:93} INFO - [0m06:59:11  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-14T06:59:11.035+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-14T06:59:11.035+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-14T06:59:11.035+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-14T06:59:11.035+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-14T06:59:11.390+0000] {subprocess.py:93} INFO - [0m06:59:11  Installing dbt-labs/dbt_utils
+[2025-12-14T06:59:11.643+0000] {subprocess.py:93} INFO - [0m06:59:11  Installed from version 1.3.0
+[2025-12-14T06:59:11.643+0000] {subprocess.py:93} INFO - [0m06:59:11  Updated version available: 1.3.3
+[2025-12-14T06:59:11.644+0000] {subprocess.py:93} INFO - [0m06:59:11
+[2025-12-14T06:59:11.644+0000] {subprocess.py:93} INFO - [0m06:59:11  Updates available for packages: ['dbt-labs/dbt_utils']
+[2025-12-14T06:59:11.644+0000] {subprocess.py:93} INFO - Update your versions in packages.yml, then run dbt deps
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - [0m06:59:11  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - - ConfigLogPathDeprecation: 1 occurrence
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - - ConfigTargetPathDeprecation: 1 occurrence
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-12-14T06:59:11.645+0000] {subprocess.py:93} INFO - parsing.
+[2025-12-14T06:59:12.350+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-14T06:59:12.350+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-14T06:59:12.373+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=caspian_full_pipeline, task_id=dbt_deps, run_id=manual__2025-12-14T06:59:08+00:00, execution_date=20251214T065908, start_date=20251214T065909, end_date=20251214T065912
+[2025-12-14T06:59:12.417+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-14T06:59:12.437+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T06:59:12.439+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

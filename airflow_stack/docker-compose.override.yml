@@ -1,27 +1,60 @@
 services:
+  # Keep your dbt cache mount (you already did this)
   airflow-webserver:
     volumes:
       - ./dbt_cache:/opt/airflow/dbt_cache
-      - ./dbt_profiles:/opt/airflow/dbt_profiles:ro
     environment:
-      - DBT_PROFILES_DIR=/opt/airflow/dbt_profiles
       - DBT_TARGET_PATH=/opt/airflow/dbt_cache/target
       - DBT_LOG_PATH=/opt/airflow/dbt_cache/logs
 
   airflow-scheduler:
     volumes:
       - ./dbt_cache:/opt/airflow/dbt_cache
-      - ./dbt_profiles:/opt/airflow/dbt_profiles:ro
     environment:
-      - DBT_PROFILES_DIR=/opt/airflow/dbt_profiles
       - DBT_TARGET_PATH=/opt/airflow/dbt_cache/target
       - DBT_LOG_PATH=/opt/airflow/dbt_cache/logs
 
   airflow-worker:
     volumes:
       - ./dbt_cache:/opt/airflow/dbt_cache
-      - ./dbt_profiles:/opt/airflow/dbt_profiles:ro
     environment:
-      - DBT_PROFILES_DIR=/opt/airflow/dbt_profiles
       - DBT_TARGET_PATH=/opt/airflow/dbt_cache/target
       - DBT_LOG_PATH=/opt/airflow/dbt_cache/logs
+
+  # S3-compatible object storage
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio12345
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./minio_data:/data
+    restart: always
+
+  # Iceberg catalog (Git-like table versioning + branches/tags)
+  nessie:
+    image: ghcr.io/projectnessie/nessie:latest
+    container_name: nessie
+    environment:
+      QUARKUS_HTTP_PORT: "19120"
+    ports:
+      - "19120:19120"
+    restart: always
+
+  # SQL engine that will read/write Iceberg tables
+  trino:
+    image: trinodb/trino:latest
+    container_name: trino
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./iceberg/trino/catalog:/etc/trino/catalog
+    depends_on:
+      - minio
+      - nessie
+    restart: always

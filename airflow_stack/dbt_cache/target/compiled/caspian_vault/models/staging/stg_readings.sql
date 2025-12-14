@@ -9,7 +9,7 @@ with sgx as (
         cast(quality_flag as int)          as quality_flag,
         'sgx'                               as source_format,
         cast(source_file as varchar)        as source_file
-    from "airflow"."public"."raw_sgx_all"
+    from "iceberg"."public"."raw_sgx_all"
 ),
 p1 as (
     -- If columns differ, adjust here after you inspect schema
@@ -21,7 +21,7 @@ p1 as (
         cast(quality_flag as int)          as quality_flag,
         'parquet_recovered'                as source_format,
         'archive_batch_seismic_readings.parquet' as source_file
-    from "airflow"."public"."raw_recovered_1"
+    from "iceberg"."public"."raw_recovered_1"
 ),
 p2 as (
     select
@@ -32,7 +32,7 @@ p2 as (
         cast(quality_flag as int)          as quality_flag,
         'parquet_recovered'                as source_format,
         'archive_batch_seismic_readings_2.parquet' as source_file
-    from "airflow"."public"."raw_recovered_2"
+    from "iceberg"."public"."raw_recovered_2"
 ),
 
 unioned as (

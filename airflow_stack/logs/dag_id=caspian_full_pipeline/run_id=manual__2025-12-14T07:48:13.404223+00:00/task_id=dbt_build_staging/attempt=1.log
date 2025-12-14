@@ -1,0 +1,88 @@
+[2025-12-14T07:48:17.698+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-14T07:48:17.715+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_staging manual__2025-12-14T07:48:13.404223+00:00 [queued]>
+[2025-12-14T07:48:17.720+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: caspian_full_pipeline.dbt_build_staging manual__2025-12-14T07:48:13.404223+00:00 [queued]>
+[2025-12-14T07:48:17.720+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-14T07:48:17.730+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_build_staging> on 2025-12-14 07:48:13.404223+00:00
+[2025-12-14T07:48:17.735+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=150) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-14T07:48:17.736+0000] {standard_task_runner.py:64} INFO - Started process 151 to run task
+[2025-12-14T07:48:17.737+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'caspian_full_pipeline', 'dbt_build_staging', 'manual__2025-12-14T07:48:13.404223+00:00', '--job-id', '176', '--raw', '--subdir', 'DAGS_FOLDER/caspian_full_pipeline.py', '--cfg-path', '/tmp/tmpgkmliztq']
+[2025-12-14T07:48:17.737+0000] {standard_task_runner.py:91} INFO - Job 176: Subtask dbt_build_staging
+[2025-12-14T07:48:17.768+0000] {task_command.py:426} INFO - Running <TaskInstance: caspian_full_pipeline.dbt_build_staging manual__2025-12-14T07:48:13.404223+00:00 [running]> on host 6ab5ea40ad52
+[2025-12-14T07:48:17.832+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='caspian_full_pipeline' AIRFLOW_CTX_TASK_ID='dbt_build_staging' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T07:48:13.404223+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T07:48:13.404223+00:00'
+[2025-12-14T07:48:17.832+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-14T07:48:17.842+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T07:48:17.843+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\nset -euo pipefail\nexport DBT_PROFILES_DIR=/opt/project/caspian_vault/dbt_profiles\nexport DBT_LOG_PATH=/opt/***/logs/dbt\nexport DBT_TARGET_PATH=/opt/***/dbt_target\nexport DBT_STATE_PATH=/opt/***/dbt_state\nexport DBT_PACKAGES_INSTALL_PATH=/opt/***/dbt_packages\n\nmkdir -p "$DBT_LOG_PATH" "$DBT_TARGET_PATH" "$DBT_PACKAGES_INSTALL_PATH"\ncd /opt/project/caspian_vault\n\n/home/***/.local/bin/dbt build --profiles-dir /home/***/.dbt --target-path /opt/***/dbt_cache/target --log-path /opt/***/dbt_cache/logs --profile caspian_vault --target dev  --select "staging"']
+[2025-12-14T07:48:17.853+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T07:48:19.276+0000] {subprocess.py:93} INFO - [0m07:48:19  Running with dbt=1.10.15
+[2025-12-14T07:48:19.304+0000] {subprocess.py:93} INFO - INFO:trino.auth:keyring module not found. OAuth2 token will not be stored in keyring.
+[2025-12-14T07:48:19.306+0000] {subprocess.py:93} INFO - INFO:trino.auth:keyring module not found. OAuth2 token will not be stored in keyring.
+[2025-12-14T07:48:19.335+0000] {subprocess.py:93} INFO - [0m07:48:19  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-14T07:48:19.335+0000] {subprocess.py:93} INFO - The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-14T07:48:19.335+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-14T07:48:19.335+0000] {subprocess.py:93} INFO - logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+[2025-12-14T07:48:19.335+0000] {subprocess.py:93} INFO - env var instead.
+[2025-12-14T07:48:19.336+0000] {subprocess.py:93} INFO - [0m07:48:19  [[33mWARNING[0m]: Deprecated functionality
+[2025-12-14T07:48:19.336+0000] {subprocess.py:93} INFO - The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+[2025-12-14T07:48:19.336+0000] {subprocess.py:93} INFO - longer be supported in a future version of dbt-core. If you wish to write dbt
+[2025-12-14T07:48:19.336+0000] {subprocess.py:93} INFO - artifacts to a custom directory, please use the --target-path CLI flag or
+[2025-12-14T07:48:19.336+0000] {subprocess.py:93} INFO - DBT_TARGET_PATH env var instead.
+[2025-12-14T07:48:19.527+0000] {subprocess.py:93} INFO - [0m07:48:19  Registered adapter: trino=1.9.3
+[2025-12-14T07:48:19.743+0000] {subprocess.py:93} INFO - [0m07:48:19  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-12-14T07:48:19.744+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2025-12-14T07:48:19.744+0000] {subprocess.py:93} INFO - - models.caspian_vault.example
+[2025-12-14T07:48:19.889+0000] {subprocess.py:93} INFO - [0m07:48:19  Found 13 models, 1 snapshot, 19 data tests, 3 sources, 574 macros
+[2025-12-14T07:48:19.891+0000] {subprocess.py:93} INFO - [0m07:48:19
+[2025-12-14T07:48:19.891+0000] {subprocess.py:93} INFO - [0m07:48:19  Concurrency: 8 threads (target='dev')
+[2025-12-14T07:48:19.891+0000] {subprocess.py:93} INFO - [0m07:48:19
+[2025-12-14T07:48:19.932+0000] {subprocess.py:93} INFO - [0m07:48:19  [[33mWARNING[0m]: SSL certificate validation is disabled by default. It is legacy behavior which will be changed in future releases. It is strongly advised to enable `require_certificate_validation` flag or explicitly set `cert` configuration to `True` for security reasons. You may receive an error after that if your SSL setup is incorrect.
+[2025-12-14T07:48:19.932+0000] {subprocess.py:93} INFO - You may opt into the new behavior sooner by setting `flags.require_certificate_validation` to `True` in `dbt_project.yml`.
+[2025-12-14T07:48:19.932+0000] {subprocess.py:93} INFO - Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[2025-12-14T07:48:20.072+0000] {subprocess.py:93} INFO - [0m07:48:20  1 of 4 START sql table model analytics.stg_readings ............................ [RUN]
+[2025-12-14T07:48:20.153+0000] {subprocess.py:93} INFO - [0m07:48:20  1 of 4 ERROR creating sql table model analytics.stg_readings ................... [[31mERROR[0m in 0.08s]
+[2025-12-14T07:48:20.156+0000] {subprocess.py:93} INFO - [0m07:48:20  2 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[33mSKIP[0m]
+[2025-12-14T07:48:20.156+0000] {subprocess.py:93} INFO - [0m07:48:20  3 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null . [[33mSKIP[0m]
+[2025-12-14T07:48:20.159+0000] {subprocess.py:93} INFO - [0m07:48:20  4 of 4 SKIP test test_counts_match ............................................. [[33mSKIP[0m]
+[2025-12-14T07:48:20.162+0000] {subprocess.py:93} INFO - [0m07:48:20
+[2025-12-14T07:48:20.162+0000] {subprocess.py:93} INFO - [0m07:48:20  Finished running 1 table model, 3 data tests in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[2025-12-14T07:48:20.240+0000] {subprocess.py:93} INFO - [0m07:48:20
+[2025-12-14T07:48:20.240+0000] {subprocess.py:93} INFO - [0m07:48:20  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-12-14T07:48:20.240+0000] {subprocess.py:93} INFO - [0m07:48:20
+[2025-12-14T07:48:20.241+0000] {subprocess.py:93} INFO - [0m07:48:20  [31mFailure in model stg_readings (models/staging/stg_readings.sql)[0m
+[2025-12-14T07:48:20.241+0000] {subprocess.py:93} INFO - [0m07:48:20    Database Error in model stg_readings (models/staging/stg_readings.sql)
+[2025-12-14T07:48:20.241+0000] {subprocess.py:93} INFO -   TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_074820_00030_xq5w4)
+[2025-12-14T07:48:20.241+0000] {subprocess.py:93} INFO -   compiled code at /opt/***/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[2025-12-14T07:48:20.241+0000] {subprocess.py:93} INFO - [0m07:48:20
+[2025-12-14T07:48:20.242+0000] {subprocess.py:93} INFO - [0m07:48:20    compiled code at /opt/***/dbt_cache/target/compiled/caspian_vault/models/staging/stg_readings.sql
+[2025-12-14T07:48:20.242+0000] {subprocess.py:93} INFO - [0m07:48:20
+[2025-12-14T07:48:20.242+0000] {subprocess.py:93} INFO - [0m07:48:20  Done. PASS=0 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=4
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - [0m07:48:20  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - - ConfigLogPathDeprecation: 1 occurrence
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - - ConfigTargetPathDeprecation: 1 occurrence
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-12-14T07:48:20.243+0000] {subprocess.py:93} INFO - parsing.
+[2025-12-14T07:48:20.874+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-14T07:48:20.875+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-14T07:48:20.886+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T07:48:20.889+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=caspian_full_pipeline, task_id=dbt_build_staging, run_id=manual__2025-12-14T07:48:13.404223+00:00, execution_date=20251214T074813, start_date=20251214T074817, end_date=20251214T074820
+[2025-12-14T07:48:20.900+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 176 for task dbt_build_staging (Bash command failed. The command returned a non-zero exit code 1.; 151)
+[2025-12-14T07:48:20.917+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-14T07:48:20.935+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T07:48:20.938+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,12 @@
+caspian_vault:
+  target: dev
+  outputs:
+    dev:
+      type: trino
+      method: none
+      host: trino
+      port: 8080
+      user: airflow
+      catalog: iceberg      # <-- Trino catalog name (iceberg.properties)
+      schema: analytics      # <-- Trino schema (namespace)
+      threads: 8

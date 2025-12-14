@@ -2438,3 +2438,1225 @@ parsing.
 [0m06:09:26.264961 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.37421605, "process_in_blocks": "0", "process_kernel_time": 0.279619, "process_mem_max_rss": "114632", "process_out_blocks": "1952", "process_user_time": 1.714666}
 [0m06:09:26.265455 [debug] [MainThread]: Command `dbt build` failed at 06:09:26.265369 after 0.37 seconds
 [0m06:09:26.265779 [debug] [MainThread]: Flushing usage events
+[0m06:32:36.242904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5e0d8b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5ddc48c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5c4eb8f0>]}
+
+
+============================== 06:32:36.248113 | d9eaecfb-99ae-415b-8615-b04c6d0ded1b ==============================
+[0m06:32:36.248113 [info ] [MainThread]: Running with dbt=1.10.15
+[0m06:32:36.248596 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'introspect': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'use_colors': 'True', 'log_path': '/opt/airflow/dbt_cache/logs', 'printer_width': '80', 'version_check': 'True', 'invocation_command': 'dbt debug --profiles-dir /home/airflow/.dbt --profile caspian_vault --target dev', 'cache_selected_only': 'False', 'log_format': 'default', 'profiles_dir': '/home/airflow/.dbt', 'fail_fast': 'False', 'static_parser': 'True', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'write_json': 'True', 'empty': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None'}
+[0m06:32:36.286363 [info ] [MainThread]: dbt version: 1.10.15
+[0m06:32:36.286718 [info ] [MainThread]: python version: 3.12.4
+[0m06:32:36.287007 [info ] [MainThread]: python path: /home/airflow/.local/bin/python
+[0m06:32:36.287242 [info ] [MainThread]: os info: Linux-6.14.0-1014-azure-x86_64-with-glibc2.36
+[0m06:32:36.290955 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.trino'
+[0m06:32:36.291391 [info ] [MainThread]: Using profiles dir at /home/airflow/.dbt
+[0m06:32:36.291645 [info ] [MainThread]: Using profiles.yml file at /home/airflow/.dbt/profiles.yml
+[0m06:32:36.291871 [info ] [MainThread]: Using dbt_project.yml file at /opt/project/caspian_vault/dbt_project.yml
+[0m06:32:36.295922 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m06:32:36.296294 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'd9eaecfb-99ae-415b-8615-b04c6d0ded1b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5b0d1220>]}
+[0m06:32:36.296696 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m06:32:36.296986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'd9eaecfb-99ae-415b-8615-b04c6d0ded1b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5b0d1220>]}
+[0m06:32:36.375835 [info ] [MainThread]: Configuration:
+[0m06:32:36.376285 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m06:32:36.376558 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m06:32:36.376789 [info ] [MainThread]: Required dependencies:
+[0m06:32:36.377037 [debug] [MainThread]: Executing "git --help"
+[0m06:32:36.378919 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m06:32:36.379228 [debug] [MainThread]: STDERR: "b''"
+[0m06:32:36.379477 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m06:32:36.379710 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m06:32:36.379942 [info ] [MainThread]: [31m1 check failed:[0m
+[0m06:32:36.380162 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "caspian_vault", target "dev" invalid: Runtime Error
+    Could not find adapter type trino!
+
+
+[0m06:32:36.380604 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m06:32:36.381414 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.18023898, "process_in_blocks": "24", "process_kernel_time": 0.180371, "process_mem_max_rss": "109748", "process_out_blocks": "2416", "process_user_time": 1.397131}
+[0m06:32:36.381837 [debug] [MainThread]: Command `dbt debug` failed at 06:32:36.381760 after 0.18 seconds
+[0m06:32:36.382141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5bdfd340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5db9b4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790a5b0ed850>]}
+[0m06:32:36.382470 [debug] [MainThread]: Flushing usage events
+[0m06:32:36.906622 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:16:35.487484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15ec6e86e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15e9d7cc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15ea79f2f0>]}
+
+
+============================== 07:16:35.492682 | 17469917-775e-45e5-89f8-c5d58bd42ff6 ==============================
+[0m07:16:35.492682 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:16:35.493132 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/opt/airflow/dbt_cache/logs', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'version_check': 'True', 'partial_parse': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'target_path': 'None', 'debug': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt debug --profiles-dir /home/airflow/.dbt --profile caspian_vault --target dev', 'use_colors': 'True', 'warn_error': 'None', 'quiet': 'False', 'write_json': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'use_experimental_parser': 'False', 'static_parser': 'True', 'profiles_dir': '/home/airflow/.dbt', 'log_format': 'default', 'cache_selected_only': 'False'}
+[0m07:16:35.523988 [info ] [MainThread]: dbt version: 1.10.15
+[0m07:16:35.524361 [info ] [MainThread]: python version: 3.12.4
+[0m07:16:35.524631 [info ] [MainThread]: python path: /home/airflow/.local/bin/python
+[0m07:16:35.524870 [info ] [MainThread]: os info: Linux-6.14.0-1014-azure-x86_64-with-glibc2.36
+[0m07:16:35.528609 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.trino'
+[0m07:16:35.529029 [info ] [MainThread]: Using profiles dir at /home/airflow/.dbt
+[0m07:16:35.529293 [info ] [MainThread]: Using profiles.yml file at /home/airflow/.dbt/profiles.yml
+[0m07:16:35.529532 [info ] [MainThread]: Using dbt_project.yml file at /opt/project/caspian_vault/dbt_project.yml
+[0m07:16:35.533623 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:16:35.533981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '17469917-775e-45e5-89f8-c5d58bd42ff6', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15e9ba1100>]}
+[0m07:16:35.534389 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:16:35.534693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '17469917-775e-45e5-89f8-c5d58bd42ff6', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15e9af74d0>]}
+[0m07:16:35.614602 [info ] [MainThread]: Configuration:
+[0m07:16:35.615027 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m07:16:35.615293 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m07:16:35.615532 [info ] [MainThread]: Required dependencies:
+[0m07:16:35.615784 [debug] [MainThread]: Executing "git --help"
+[0m07:16:35.617553 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m07:16:35.617868 [debug] [MainThread]: STDERR: "b''"
+[0m07:16:35.618098 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m07:16:35.618353 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m07:16:35.618596 [info ] [MainThread]: [31m1 check failed:[0m
+[0m07:16:35.618823 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "caspian_vault", target "dev" invalid: Runtime Error
+    Could not find adapter type trino!
+
+
+[0m07:16:35.619270 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:16:35.620056 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.17472322, "process_in_blocks": "32", "process_kernel_time": 0.194836, "process_mem_max_rss": "109952", "process_out_blocks": "2408", "process_user_time": 1.388834}
+[0m07:16:35.620506 [debug] [MainThread]: Command `dbt debug` failed at 07:16:35.620427 after 0.18 seconds
+[0m07:16:35.620810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15eaa67bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15ed835dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e15e9b9b620>]}
+[0m07:16:35.621119 [debug] [MainThread]: Flushing usage events
+[0m07:16:36.210198 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:20:30.887988 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385e01b290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385e1289e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385c18b800>]}
+
+
+============================== 07:20:30.892852 | 02130dbd-1146-4a82-862c-e96972be6b28 ==============================
+[0m07:20:30.892852 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:20:30.893306 [debug] [MainThread]: running dbt with arguments {'log_path': '/opt/airflow/dbt_cache/logs', 'empty': 'None', 'profiles_dir': '/home/airflow/.dbt', 'target_path': 'None', 'partial_parse': 'True', 'log_format': 'default', 'printer_width': '80', 'version_check': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'warn_error': 'None', 'invocation_command': 'dbt debug --profiles-dir /home/airflow/.dbt --profile caspian_vault --target dev', 'quiet': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'write_json': 'True', 'introspect': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'no_print': 'None'}
+[0m07:20:30.900234 [info ] [MainThread]: dbt version: 1.10.15
+[0m07:20:30.900575 [info ] [MainThread]: python version: 3.12.4
+[0m07:20:30.900821 [info ] [MainThread]: python path: /home/airflow/.local/bin/python
+[0m07:20:30.901055 [info ] [MainThread]: os info: Linux-6.14.0-1014-azure-x86_64-with-glibc2.36
+[0m07:20:30.950203 [info ] [MainThread]: Using profiles dir at /home/airflow/.dbt
+[0m07:20:30.950594 [info ] [MainThread]: Using profiles.yml file at /home/airflow/.dbt/profiles.yml
+[0m07:20:30.950857 [info ] [MainThread]: Using dbt_project.yml file at /opt/project/caspian_vault/dbt_project.yml
+[0m07:20:30.951089 [info ] [MainThread]: adapter type: trino
+[0m07:20:30.951323 [info ] [MainThread]: adapter version: 1.9.3
+[0m07:20:30.955624 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:20:30.955985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '02130dbd-1146-4a82-862c-e96972be6b28', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385b1abe00>]}
+[0m07:20:30.956402 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:20:30.956691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '02130dbd-1146-4a82-862c-e96972be6b28', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385b182de0>]}
+[0m07:20:31.055564 [info ] [MainThread]: Configuration:
+[0m07:20:31.056004 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m07:20:31.056291 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m07:20:31.056542 [info ] [MainThread]: Required dependencies:
+[0m07:20:31.056801 [debug] [MainThread]: Executing "git --help"
+[0m07:20:31.058638 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m07:20:31.058949 [debug] [MainThread]: STDERR: "b''"
+[0m07:20:31.059184 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m07:20:31.059442 [info ] [MainThread]: Connection:
+[0m07:20:31.059685 [info ] [MainThread]:   host: trino
+[0m07:20:31.059905 [info ] [MainThread]:   port: 8080
+[0m07:20:31.060119 [info ] [MainThread]:   user: airflow
+[0m07:20:31.060341 [info ] [MainThread]:   database: iceberg
+[0m07:20:31.060553 [info ] [MainThread]:   schema: analytics
+[0m07:20:31.060761 [info ] [MainThread]:   cert: None
+[0m07:20:31.060966 [info ] [MainThread]:   prepared_statements_enabled: True
+[0m07:20:31.061326 [info ] [MainThread]: Registered adapter: trino=1.9.3
+[0m07:20:31.156505 [debug] [MainThread]: Acquiring new trino connection 'debug'
+[0m07:20:31.183766 [debug] [MainThread]: Using trino connection "debug"
+[0m07:20:31.184101 [debug] [MainThread]: On debug: select 1 as id
+[0m07:20:31.184360 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:20:31.184578 [warn ] [MainThread]: [[33mWARNING[0m]: SSL certificate validation is disabled by default. It is legacy behavior which will be changed in future releases. It is strongly advised to enable `require_certificate_validation` flag or explicitly set `cert` configuration to `True` for security reasons. You may receive an error after that if your SSL setup is incorrect.
+You may opt into the new behavior sooner by setting `flags.require_certificate_validation` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m07:20:31.184941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '02130dbd-1146-4a82-862c-e96972be6b28', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385b07f950>]}
+[0m07:20:31.238666 [debug] [MainThread]: SQL status: SUCCESS in 0.054 seconds
+[0m07:20:31.239607 [debug] [MainThread]: On debug: Close
+[0m07:20:31.239975 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m07:20:31.240273 [info ] [MainThread]: [32mAll checks passed![0m
+[0m07:20:31.240727 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:20:31.241575 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.40685952, "process_in_blocks": "48", "process_kernel_time": 0.292712, "process_mem_max_rss": "115056", "process_out_blocks": "1784", "process_user_time": 1.531495}
+[0m07:20:31.242001 [debug] [MainThread]: Command `dbt debug` succeeded at 07:20:31.241924 after 0.41 seconds
+[0m07:20:31.242270 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m07:20:31.242546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385b3482c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385b55f2f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73385b07f950>]}
+[0m07:20:31.242843 [debug] [MainThread]: Flushing usage events
+[0m07:20:31.752407 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:31:34.862463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d89ad58b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d89b988f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d8a763e30>]}
+
+
+============================== 07:31:34.867577 | 438eca40-f83d-4e81-a4d8-6b307811596b ==============================
+[0m07:31:34.867577 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:31:34.868045 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'invocation_command': 'dbt deps --profiles-dir /home/airflow/.dbt --log-path /opt/airflow/dbt_cache/logs --profile caspian_vault --target dev', 'profiles_dir': '/home/airflow/.dbt', 'warn_error': 'None', 'debug': 'False', 'partial_parse': 'True', 'target_path': 'None', 'log_path': '/opt/airflow/dbt_cache/logs', 'log_format': 'default', 'static_parser': 'True', 'quiet': 'False', 'use_colors': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'write_json': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'printer_width': '80'}
+[0m07:31:34.874234 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:31:34.874650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '438eca40-f83d-4e81-a4d8-6b307811596b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d898a0230>]}
+[0m07:31:34.875159 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:31:34.875490 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '438eca40-f83d-4e81-a4d8-6b307811596b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d89cb7bc0>]}
+[0m07:31:35.001686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '438eca40-f83d-4e81-a4d8-6b307811596b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d8a4c8800>]}
+[0m07:31:35.014167 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-tq7om3vw'
+[0m07:31:35.014537 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m07:31:35.178416 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m07:31:35.179676 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m07:31:35.204778 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m07:31:35.208488 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m07:31:35.477799 [info ] [MainThread]: Installed from version 1.3.0
+[0m07:31:35.478243 [info ] [MainThread]: Updated version available: 1.3.3
+[0m07:31:35.478610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '438eca40-f83d-4e81-a4d8-6b307811596b', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d896fb4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d896f9d30>]}
+[0m07:31:35.478961 [info ] [MainThread]: 
+[0m07:31:35.479268 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m07:31:35.479941 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:31:35.480812 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.6719494, "process_in_blocks": "0", "process_kernel_time": 0.23771, "process_mem_max_rss": "109144", "process_out_blocks": "2304", "process_user_time": 1.436252}
+[0m07:31:35.481279 [debug] [MainThread]: Command `dbt deps` succeeded at 07:31:35.481181 after 0.67 seconds
+[0m07:31:35.481591 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d8a631670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d899384d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767d8a4c8800>]}
+[0m07:31:35.481885 [debug] [MainThread]: Flushing usage events
+[0m07:31:35.985614 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:31:38.780938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787d1f816d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cf52f740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787d1e73c50>]}
+
+
+============================== 07:31:38.785908 | 3d3f6d37-d94a-4cad-9d86-4c0c115130d2 ==============================
+[0m07:31:38.785908 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:31:38.786382 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/airflow/.dbt', 'fail_fast': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'version_check': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'debug': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'log_path': '/opt/airflow/dbt_cache/logs', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'introspect': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'empty': 'False', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'target_path': '/opt/airflow/dbt_cache/target', 'invocation_command': 'dbt build --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile caspian_vault --target dev --select staging'}
+[0m07:31:38.845054 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:31:38.845513 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cefd1b80>]}
+[0m07:31:38.845960 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:31:38.846288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787ceffde50>]}
+[0m07:31:38.971537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cef79580>]}
+[0m07:31:39.037624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787d188c7d0>]}
+[0m07:31:39.038289 [info ] [MainThread]: Registered adapter: trino=1.9.3
+[0m07:31:39.140922 [debug] [MainThread]: checksum: 823572ff9a3901b0d1f781345271440592c4c0ae850bba08a70c8a0706cad0a7, vars: {}, profile: caspian_vault, target: dev, version: 1.10.15
+[0m07:31:39.236281 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m07:31:39.236725 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m07:31:39.237023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787ceaef050>]}
+[0m07:31:40.539480 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.expression_is_true`. Arguments to
+generic tests should be nested under the `arguments` property.`
+[0m07:31:40.539998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cdaa2ab0>]}
+[0m07:31:40.793903 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.caspian_vault.example
+[0m07:31:40.801153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cd874cb0>]}
+[0m07:31:40.880201 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:31:40.881708 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:31:40.903475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cd99c770>]}
+[0m07:31:40.903912 [info ] [MainThread]: Found 13 models, 1 snapshot, 19 data tests, 3 sources, 574 macros
+[0m07:31:40.905870 [info ] [MainThread]: 
+[0m07:31:40.906216 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m07:31:40.906509 [info ] [MainThread]: 
+[0m07:31:40.906941 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m07:31:40.907750 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg'
+[0m07:31:40.944598 [debug] [ThreadPool]: Using trino connection "list_iceberg"
+[0m07:31:40.944978 [debug] [ThreadPool]: On list_iceberg: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg"} */
+
+    select schema_name
+    from "iceberg".INFORMATION_SCHEMA.schemata
+[0m07:31:40.945267 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:31:40.945516 [warn ] [ThreadPool]: [[33mWARNING[0m]: SSL certificate validation is disabled by default. It is legacy behavior which will be changed in future releases. It is strongly advised to enable `require_certificate_validation` flag or explicitly set `cert` configuration to `True` for security reasons. You may receive an error after that if your SSL setup is incorrect.
+You may opt into the new behavior sooner by setting `flags.require_certificate_validation` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m07:31:40.945875 [debug] [ThreadPool]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cd975e50>]}
+[0m07:31:41.469814 [debug] [ThreadPool]: SQL status: SUCCESS in 0.524 seconds
+[0m07:31:41.471084 [debug] [ThreadPool]: On list_iceberg: Close
+[0m07:31:41.471801 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_iceberg, now create_iceberg_analytics)
+[0m07:31:41.472218 [debug] [ThreadPool]: Creating schema "database: "iceberg"
+schema: "analytics"
+"
+[0m07:31:41.475999 [debug] [ThreadPool]: Using trino connection "create_iceberg_analytics"
+[0m07:31:41.476334 [debug] [ThreadPool]: On create_iceberg_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "create_iceberg_analytics"} */
+create schema if not exists "iceberg"."analytics"
+[0m07:31:41.476604 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:31:41.652399 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.176 seconds
+[0m07:31:41.653391 [debug] [ThreadPool]: On create_iceberg_analytics: COMMIT
+[0m07:31:41.653716 [debug] [ThreadPool]: On create_iceberg_analytics: Close
+[0m07:31:41.658235 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_iceberg_analytics, now list_iceberg_snapshots)
+[0m07:31:41.658794 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg_analytics'
+[0m07:31:41.670835 [debug] [ThreadPool]: Using trino connection "list_iceberg_snapshots"
+[0m07:31:41.673764 [debug] [ThreadPool]: Using trino connection "list_iceberg_analytics"
+[0m07:31:41.674124 [debug] [ThreadPool]: On list_iceberg_snapshots: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_snapshots"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'snapshots') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'snapshots'
+[0m07:31:41.674504 [debug] [ThreadPool]: On list_iceberg_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_analytics"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'analytics') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'analytics'
+[0m07:31:41.674818 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:31:41.675106 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:31:41.937573 [debug] [ThreadPool]: SQL status: SUCCESS in 0.262 seconds
+[0m07:31:41.939003 [debug] [ThreadPool]: On list_iceberg_analytics: ROLLBACK
+[0m07:31:41.939503 [debug] [ThreadPool]: SQL status: SUCCESS in 0.265 seconds
+[0m07:31:41.939808 [debug] [ThreadPool]: On list_iceberg_analytics: Close
+[0m07:31:41.940831 [debug] [ThreadPool]: On list_iceberg_snapshots: ROLLBACK
+[0m07:31:41.941452 [debug] [ThreadPool]: On list_iceberg_snapshots: Close
+[0m07:31:41.942092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cd607080>]}
+[0m07:31:41.942537 [debug] [MainThread]: On master: COMMIT
+[0m07:31:41.946127 [debug] [Thread-1 (]: Began running node model.caspian_vault.stg_readings
+[0m07:31:41.946648 [info ] [Thread-1 (]: 1 of 4 START sql table model analytics.stg_readings ............................ [RUN]
+[0m07:31:41.947044 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_iceberg_snapshots, now model.caspian_vault.stg_readings)
+[0m07:31:41.947384 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.stg_readings
+[0m07:31:41.950630 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.stg_readings"
+[0m07:31:41.951154 [debug] [Thread-1 (]: Began executing node model.caspian_vault.stg_readings
+[0m07:31:41.988645 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.stg_readings"
+[0m07:31:41.993797 [debug] [Thread-1 (]: Using trino connection "model.caspian_vault.stg_readings"
+[0m07:31:41.994264 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+
+  
+    
+
+    create table "iceberg"."analytics"."stg_readings"
+      
+      
+    as (
+      
+
+with sgx as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'sgx'                               as source_format,
+        cast(source_file as varchar)        as source_file
+    from "iceberg"."public"."raw_sgx_all"
+),
+p1 as (
+    -- If columns differ, adjust here after you inspect schema
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_1"
+),
+p2 as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings_2.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_2"
+),
+
+unioned as (
+    select * from sgx
+    union all
+    select * from p1
+    union all
+    select * from p2
+)
+
+select
+    *,
+    current_timestamp as ingest_ts,
+    -- simple deterministic checksum (DuckDB supports md5)
+    md5(
+      cast(well_id as varchar) || '|' ||
+      cast(survey_type_id as varchar) || '|' ||
+      cast(depth_ft as varchar) || '|' ||
+      cast(amplitude as varchar) || '|' ||
+      cast(quality_flag as varchar) || '|' ||
+      source_file || '|' || source_format
+    ) as row_checksum
+from unioned
+    )
+[0m07:31:41.994635 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:31:42.058207 [debug] [Thread-1 (]: Trino adapter: Trino query id: 20251214_073141_00006_xq5w4
+[0m07:31:42.058701 [debug] [Thread-1 (]: Trino adapter: Trino error: TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073141_00006_xq5w4)
+[0m07:31:42.059139 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: ROLLBACK
+[0m07:31:42.059458 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: Close
+[0m07:31:42.063226 [debug] [Thread-1 (]: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073141_00006_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:31:42.064690 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3d3f6d37-d94a-4cad-9d86-4c0c115130d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cd604110>]}
+[0m07:31:42.065292 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model analytics.stg_readings ................... [[31mERROR[0m in 0.12s]
+[0m07:31:42.065792 [debug] [Thread-1 (]: Finished running node model.caspian_vault.stg_readings
+[0m07:31:42.066305 [debug] [Thread-11 ]: Marking all children of 'model.caspian_vault.stg_readings' to be skipped because of status 'error'.  Reason: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073141_00006_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql.
+[0m07:31:42.067380 [debug] [Thread-3 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:31:42.067730 [debug] [Thread-4 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:31:42.068131 [info ] [Thread-3 (]: 2 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[33mSKIP[0m]
+[0m07:31:42.068545 [info ] [Thread-4 (]: 3 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null . [[33mSKIP[0m]
+[0m07:31:42.068926 [debug] [Thread-3 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:31:42.069282 [debug] [Thread-4 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:31:42.069602 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969' to be skipped because of status 'skipped'. 
+[0m07:31:42.070027 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd' to be skipped because of status 'skipped'. 
+[0m07:31:42.070586 [debug] [Thread-6 (]: Began running node test.caspian_vault.test_counts_match
+[0m07:31:42.070931 [info ] [Thread-6 (]: 4 of 4 SKIP test test_counts_match ............................................. [[33mSKIP[0m]
+[0m07:31:42.071274 [debug] [Thread-6 (]: Finished running node test.caspian_vault.test_counts_match
+[0m07:31:42.071568 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.test_counts_match' to be skipped because of status 'skipped'. 
+[0m07:31:42.072787 [debug] [MainThread]: On master: COMMIT
+[0m07:31:42.073174 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:31:42.073463 [debug] [MainThread]: Connection 'model.caspian_vault.stg_readings' was properly closed.
+[0m07:31:42.073715 [debug] [MainThread]: Connection 'list_iceberg_analytics' was properly closed.
+[0m07:31:42.073994 [info ] [MainThread]: 
+[0m07:31:42.074299 [info ] [MainThread]: Finished running 1 table model, 3 data tests in 0 hours 0 minutes and 1.17 seconds (1.17s).
+[0m07:31:42.074897 [debug] [MainThread]: Command end result
+[0m07:31:42.098679 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:31:42.100220 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:31:42.104474 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_cache/target/run_results.json
+[0m07:31:42.104803 [info ] [MainThread]: 
+[0m07:31:42.105148 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:31:42.105446 [info ] [MainThread]: 
+[0m07:31:42.105786 [error] [MainThread]: [31mFailure in model stg_readings (models/staging/stg_readings.sql)[0m
+[0m07:31:42.106092 [error] [MainThread]:   Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073141_00006_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:31:42.106357 [info ] [MainThread]: 
+[0m07:31:42.106641 [info ] [MainThread]:   compiled code at /opt/airflow/dbt_cache/target/compiled/caspian_vault/models/staging/stg_readings.sql
+[0m07:31:42.106881 [info ] [MainThread]: 
+[0m07:31:42.107154 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=4
+[0m07:31:42.107682 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+- MissingArgumentsPropertyInGenericTestDeprecation: 5 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:31:42.108523 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 3.3814347, "process_in_blocks": "1288", "process_kernel_time": 0.320059, "process_mem_max_rss": "135064", "process_out_blocks": "4088", "process_user_time": 3.434637}
+[0m07:31:42.108973 [debug] [MainThread]: Command `dbt build` failed at 07:31:42.108895 after 3.38 seconds
+[0m07:31:42.109323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cfe41d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787d0063d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7787cd76d490>]}
+[0m07:31:42.109643 [debug] [MainThread]: Flushing usage events
+[0m07:31:42.552597 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:34:24.401522 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec8ce3f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec8089c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec8ce3c50>]}
+
+
+============================== 07:34:24.406434 | fe8755ff-13a1-4e2b-ad70-10482aa7446b ==============================
+[0m07:34:24.406434 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:34:24.406874 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'empty': 'False', 'static_parser': 'True', 'debug': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'target_path': '/opt/airflow/dbt_cache/target', 'cache_selected_only': 'False', 'profiles_dir': '/home/airflow/.dbt', 'invocation_command': 'dbt build --profiles-dir /home/airflow/.dbt --profile caspian_vault --target dev --select staging', 'no_print': 'None', 'log_cache_events': 'False', 'quiet': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'log_path': '/opt/airflow/dbt_cache/logs', 'log_format': 'default', 'introspect': 'True', 'version_check': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'printer_width': '80'}
+[0m07:34:24.465015 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:34:24.465461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7e2aff0>]}
+[0m07:34:24.465894 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:34:24.466187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7e2aff0>]}
+[0m07:34:24.590306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7ba2000>]}
+[0m07:34:24.655874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec963dfd0>]}
+[0m07:34:24.656525 [info ] [MainThread]: Registered adapter: trino=1.9.3
+[0m07:34:24.760946 [debug] [MainThread]: checksum: 823572ff9a3901b0d1f781345271440592c4c0ae850bba08a70c8a0706cad0a7, vars: {}, profile: caspian_vault, target: dev, version: 1.10.15
+[0m07:34:24.866374 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:34:24.866756 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:34:24.871543 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.caspian_vault.example
+[0m07:34:24.913171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7a50560>]}
+[0m07:34:24.994241 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:34:24.995686 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:34:25.016705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec76b2f90>]}
+[0m07:34:25.017131 [info ] [MainThread]: Found 13 models, 1 snapshot, 19 data tests, 3 sources, 574 macros
+[0m07:34:25.019036 [info ] [MainThread]: 
+[0m07:34:25.019371 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m07:34:25.019627 [info ] [MainThread]: 
+[0m07:34:25.020035 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m07:34:25.020798 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg'
+[0m07:34:25.057992 [debug] [ThreadPool]: Using trino connection "list_iceberg"
+[0m07:34:25.058355 [debug] [ThreadPool]: On list_iceberg: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg"} */
+
+    select schema_name
+    from "iceberg".INFORMATION_SCHEMA.schemata
+[0m07:34:25.058618 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:34:25.058842 [warn ] [ThreadPool]: [[33mWARNING[0m]: SSL certificate validation is disabled by default. It is legacy behavior which will be changed in future releases. It is strongly advised to enable `require_certificate_validation` flag or explicitly set `cert` configuration to `True` for security reasons. You may receive an error after that if your SSL setup is incorrect.
+You may opt into the new behavior sooner by setting `flags.require_certificate_validation` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m07:34:25.059186 [debug] [ThreadPool]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7a9aa20>]}
+[0m07:34:25.124225 [debug] [ThreadPool]: SQL status: SUCCESS in 0.066 seconds
+[0m07:34:25.125483 [debug] [ThreadPool]: On list_iceberg: Close
+[0m07:34:25.129962 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_iceberg, now list_iceberg_analytics)
+[0m07:34:25.130490 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg_snapshots'
+[0m07:34:25.141405 [debug] [ThreadPool]: Using trino connection "list_iceberg_analytics"
+[0m07:34:25.144405 [debug] [ThreadPool]: Using trino connection "list_iceberg_snapshots"
+[0m07:34:25.144753 [debug] [ThreadPool]: On list_iceberg_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_analytics"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'analytics') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'analytics'
+[0m07:34:25.145083 [debug] [ThreadPool]: On list_iceberg_snapshots: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_snapshots"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'snapshots') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'snapshots'
+[0m07:34:25.145395 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:34:25.145655 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:34:25.246400 [debug] [ThreadPool]: SQL status: SUCCESS in 0.101 seconds
+[0m07:34:25.247769 [debug] [ThreadPool]: On list_iceberg_snapshots: ROLLBACK
+[0m07:34:25.248073 [debug] [ThreadPool]: On list_iceberg_snapshots: Close
+[0m07:34:25.248446 [debug] [ThreadPool]: SQL status: SUCCESS in 0.103 seconds
+[0m07:34:25.249609 [debug] [ThreadPool]: On list_iceberg_analytics: ROLLBACK
+[0m07:34:25.249937 [debug] [ThreadPool]: On list_iceberg_analytics: Close
+[0m07:34:25.250524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7c70fb0>]}
+[0m07:34:25.250964 [debug] [MainThread]: On master: COMMIT
+[0m07:34:25.254353 [debug] [Thread-1 (]: Began running node model.caspian_vault.stg_readings
+[0m07:34:25.254846 [info ] [Thread-1 (]: 1 of 4 START sql table model analytics.stg_readings ............................ [RUN]
+[0m07:34:25.255208 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_iceberg_analytics, now model.caspian_vault.stg_readings)
+[0m07:34:25.255519 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.stg_readings
+[0m07:34:25.258642 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.stg_readings"
+[0m07:34:25.259142 [debug] [Thread-1 (]: Began executing node model.caspian_vault.stg_readings
+[0m07:34:25.295669 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.stg_readings"
+[0m07:34:25.300605 [debug] [Thread-1 (]: Using trino connection "model.caspian_vault.stg_readings"
+[0m07:34:25.300996 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+
+  
+    
+
+    create table "iceberg"."analytics"."stg_readings"
+      
+      
+    as (
+      
+
+with sgx as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'sgx'                               as source_format,
+        cast(source_file as varchar)        as source_file
+    from "iceberg"."public"."raw_sgx_all"
+),
+p1 as (
+    -- If columns differ, adjust here after you inspect schema
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_1"
+),
+p2 as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings_2.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_2"
+),
+
+unioned as (
+    select * from sgx
+    union all
+    select * from p1
+    union all
+    select * from p2
+)
+
+select
+    *,
+    current_timestamp as ingest_ts,
+    -- simple deterministic checksum (DuckDB supports md5)
+    md5(
+      cast(well_id as varchar) || '|' ||
+      cast(survey_type_id as varchar) || '|' ||
+      cast(depth_ft as varchar) || '|' ||
+      cast(amplitude as varchar) || '|' ||
+      cast(quality_flag as varchar) || '|' ||
+      source_file || '|' || source_format
+    ) as row_checksum
+from unioned
+    )
+[0m07:34:25.301357 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:34:25.329379 [debug] [Thread-1 (]: Trino adapter: Trino query id: 20251214_073425_00010_xq5w4
+[0m07:34:25.329850 [debug] [Thread-1 (]: Trino adapter: Trino error: TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073425_00010_xq5w4)
+[0m07:34:25.330270 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: ROLLBACK
+[0m07:34:25.330556 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: Close
+[0m07:34:25.334185 [debug] [Thread-1 (]: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073425_00010_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:34:25.335589 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fe8755ff-13a1-4e2b-ad70-10482aa7446b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec9208260>]}
+[0m07:34:25.336152 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model analytics.stg_readings ................... [[31mERROR[0m in 0.08s]
+[0m07:34:25.336650 [debug] [Thread-1 (]: Finished running node model.caspian_vault.stg_readings
+[0m07:34:25.337126 [debug] [Thread-11 ]: Marking all children of 'model.caspian_vault.stg_readings' to be skipped because of status 'error'.  Reason: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073425_00010_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql.
+[0m07:34:25.338101 [debug] [Thread-3 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:34:25.338480 [debug] [Thread-4 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:34:25.338900 [info ] [Thread-3 (]: 2 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[33mSKIP[0m]
+[0m07:34:25.339324 [info ] [Thread-4 (]: 3 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null . [[33mSKIP[0m]
+[0m07:34:25.339719 [debug] [Thread-3 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:34:25.340048 [debug] [Thread-4 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:34:25.340392 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969' to be skipped because of status 'skipped'. 
+[0m07:34:25.340820 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd' to be skipped because of status 'skipped'. 
+[0m07:34:25.341342 [debug] [Thread-6 (]: Began running node test.caspian_vault.test_counts_match
+[0m07:34:25.341652 [info ] [Thread-6 (]: 4 of 4 SKIP test test_counts_match ............................................. [[33mSKIP[0m]
+[0m07:34:25.341950 [debug] [Thread-6 (]: Finished running node test.caspian_vault.test_counts_match
+[0m07:34:25.342214 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.test_counts_match' to be skipped because of status 'skipped'. 
+[0m07:34:25.343392 [debug] [MainThread]: On master: COMMIT
+[0m07:34:25.343716 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:34:25.343947 [debug] [MainThread]: Connection 'model.caspian_vault.stg_readings' was properly closed.
+[0m07:34:25.344157 [debug] [MainThread]: Connection 'list_iceberg_snapshots' was properly closed.
+[0m07:34:25.344418 [info ] [MainThread]: 
+[0m07:34:25.344683 [info ] [MainThread]: Finished running 1 table model, 3 data tests in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m07:34:25.345238 [debug] [MainThread]: Command end result
+[0m07:34:25.416973 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:34:25.418424 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:34:25.422726 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_cache/target/run_results.json
+[0m07:34:25.423025 [info ] [MainThread]: 
+[0m07:34:25.423371 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:34:25.423661 [info ] [MainThread]: 
+[0m07:34:25.423968 [error] [MainThread]: [31mFailure in model stg_readings (models/staging/stg_readings.sql)[0m
+[0m07:34:25.424274 [error] [MainThread]:   Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=SCHEMA_NOT_FOUND, message="line 21:10: Schema 'public' does not exist", query_id=20251214_073425_00010_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:34:25.424517 [info ] [MainThread]: 
+[0m07:34:25.424788 [info ] [MainThread]:   compiled code at /opt/airflow/dbt_cache/target/compiled/caspian_vault/models/staging/stg_readings.sql
+[0m07:34:25.425013 [info ] [MainThread]: 
+[0m07:34:25.425280 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=4
+[0m07:34:25.425711 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:34:25.426527 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 1.0781821, "process_in_blocks": "0", "process_kernel_time": 0.324814, "process_mem_max_rss": "124812", "process_out_blocks": "2816", "process_user_time": 1.985867}
+[0m07:34:25.426949 [debug] [MainThread]: Command `dbt build` failed at 07:34:25.426853 after 1.08 seconds
+[0m07:34:25.427279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec76b3560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec8dca7e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a5ec7a99e80>]}
+[0m07:34:25.427583 [debug] [MainThread]: Flushing usage events
+[0m07:34:25.946333 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:37:03.712217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1291d8980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb127e69bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb129018d70>]}
+
+
+============================== 07:37:03.717082 | c1fb0e72-a23f-4eea-bca2-82ce45d6a08a ==============================
+[0m07:37:03.717082 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:37:03.717536 [debug] [MainThread]: running dbt with arguments {'log_path': '/opt/airflow/dbt_cache/logs', 'debug': 'False', 'quiet': 'False', 'fail_fast': 'False', 'empty': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/home/airflow/.dbt', 'version_check': 'True', 'static_parser': 'True', 'target_path': '/opt/airflow/dbt_cache/target', 'log_format': 'default', 'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'warn_error': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt build --profiles-dir /home/airflow/.dbt --profile caspian_vault --target dev --select staging', 'write_json': 'True', 'use_colors': 'True'}
+[0m07:37:03.775745 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:37:03.776191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb127a4f7a0>]}
+[0m07:37:03.776667 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:37:03.776962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb127b451c0>]}
+[0m07:37:03.900783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb127b45ee0>]}
+[0m07:37:03.966296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb129fe64b0>]}
+[0m07:37:03.966939 [info ] [MainThread]: Registered adapter: trino=1.9.3
+[0m07:37:04.070305 [debug] [MainThread]: checksum: 823572ff9a3901b0d1f781345271440592c4c0ae850bba08a70c8a0706cad0a7, vars: {}, profile: caspian_vault, target: dev, version: 1.10.15
+[0m07:37:04.175229 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:37:04.175659 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:37:04.180446 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.caspian_vault.example
+[0m07:37:04.222161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1278360c0>]}
+[0m07:37:04.303672 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:37:04.305101 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:37:04.325958 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb12748f5f0>]}
+[0m07:37:04.326377 [info ] [MainThread]: Found 13 models, 1 snapshot, 19 data tests, 3 sources, 574 macros
+[0m07:37:04.328272 [info ] [MainThread]: 
+[0m07:37:04.328604 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m07:37:04.328860 [info ] [MainThread]: 
+[0m07:37:04.329277 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m07:37:04.330030 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg'
+[0m07:37:04.367214 [debug] [ThreadPool]: Using trino connection "list_iceberg"
+[0m07:37:04.367583 [debug] [ThreadPool]: On list_iceberg: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg"} */
+
+    select schema_name
+    from "iceberg".INFORMATION_SCHEMA.schemata
+[0m07:37:04.367843 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:37:04.368065 [warn ] [ThreadPool]: [[33mWARNING[0m]: SSL certificate validation is disabled by default. It is legacy behavior which will be changed in future releases. It is strongly advised to enable `require_certificate_validation` flag or explicitly set `cert` configuration to `True` for security reasons. You may receive an error after that if your SSL setup is incorrect.
+You may opt into the new behavior sooner by setting `flags.require_certificate_validation` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m07:37:04.368430 [debug] [ThreadPool]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb12748e3f0>]}
+[0m07:37:04.405226 [debug] [ThreadPool]: SQL status: SUCCESS in 0.037 seconds
+[0m07:37:04.406508 [debug] [ThreadPool]: On list_iceberg: Close
+[0m07:37:04.410986 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_iceberg, now list_iceberg_snapshots)
+[0m07:37:04.411507 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg_analytics'
+[0m07:37:04.422334 [debug] [ThreadPool]: Using trino connection "list_iceberg_snapshots"
+[0m07:37:04.425223 [debug] [ThreadPool]: Using trino connection "list_iceberg_analytics"
+[0m07:37:04.425577 [debug] [ThreadPool]: On list_iceberg_snapshots: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_snapshots"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'snapshots') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'snapshots'
+[0m07:37:04.425906 [debug] [ThreadPool]: On list_iceberg_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_analytics"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'analytics') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'analytics'
+[0m07:37:04.426210 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:37:04.426489 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:37:04.504402 [debug] [ThreadPool]: SQL status: SUCCESS in 0.078 seconds
+[0m07:37:04.505701 [debug] [ThreadPool]: On list_iceberg_analytics: ROLLBACK
+[0m07:37:04.506052 [debug] [ThreadPool]: On list_iceberg_analytics: Close
+[0m07:37:04.511846 [debug] [ThreadPool]: SQL status: SUCCESS in 0.086 seconds
+[0m07:37:04.512983 [debug] [ThreadPool]: On list_iceberg_snapshots: ROLLBACK
+[0m07:37:04.513289 [debug] [ThreadPool]: On list_iceberg_snapshots: Close
+[0m07:37:04.513949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb12a547ef0>]}
+[0m07:37:04.514403 [debug] [MainThread]: On master: COMMIT
+[0m07:37:04.518018 [debug] [Thread-1 (]: Began running node model.caspian_vault.stg_readings
+[0m07:37:04.518586 [info ] [Thread-1 (]: 1 of 4 START sql table model analytics.stg_readings ............................ [RUN]
+[0m07:37:04.519034 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_iceberg_snapshots, now model.caspian_vault.stg_readings)
+[0m07:37:04.519353 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.stg_readings
+[0m07:37:04.522562 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.stg_readings"
+[0m07:37:04.523069 [debug] [Thread-1 (]: Began executing node model.caspian_vault.stg_readings
+[0m07:37:04.559566 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.stg_readings"
+[0m07:37:04.564502 [debug] [Thread-1 (]: Using trino connection "model.caspian_vault.stg_readings"
+[0m07:37:04.564892 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+
+  
+    
+
+    create table "iceberg"."analytics"."stg_readings"
+      
+      
+    as (
+      
+
+with sgx as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'sgx'                               as source_format,
+        cast(source_file as varchar)        as source_file
+    from "iceberg"."public"."raw_sgx_all"
+),
+p1 as (
+    -- If columns differ, adjust here after you inspect schema
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_1"
+),
+p2 as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings_2.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_2"
+),
+
+unioned as (
+    select * from sgx
+    union all
+    select * from p1
+    union all
+    select * from p2
+)
+
+select
+    *,
+    current_timestamp as ingest_ts,
+    -- simple deterministic checksum (DuckDB supports md5)
+    md5(
+      cast(well_id as varchar) || '|' ||
+      cast(survey_type_id as varchar) || '|' ||
+      cast(depth_ft as varchar) || '|' ||
+      cast(amplitude as varchar) || '|' ||
+      cast(quality_flag as varchar) || '|' ||
+      source_file || '|' || source_format
+    ) as row_checksum
+from unioned
+    )
+[0m07:37:04.565268 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:37:04.594393 [debug] [Thread-1 (]: Trino adapter: Trino query id: 20251214_073704_00017_xq5w4
+[0m07:37:04.594880 [debug] [Thread-1 (]: Trino adapter: Trino error: TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_073704_00017_xq5w4)
+[0m07:37:04.595325 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: ROLLBACK
+[0m07:37:04.595620 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: Close
+[0m07:37:04.599333 [debug] [Thread-1 (]: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_073704_00017_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:37:04.600733 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c1fb0e72-a23f-4eea-bca2-82ce45d6a08a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1267a7590>]}
+[0m07:37:04.601319 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model analytics.stg_readings ................... [[31mERROR[0m in 0.08s]
+[0m07:37:04.601807 [debug] [Thread-1 (]: Finished running node model.caspian_vault.stg_readings
+[0m07:37:04.602300 [debug] [Thread-11 ]: Marking all children of 'model.caspian_vault.stg_readings' to be skipped because of status 'error'.  Reason: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_073704_00017_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql.
+[0m07:37:04.603326 [debug] [Thread-3 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:37:04.603644 [debug] [Thread-4 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:37:04.604019 [info ] [Thread-3 (]: 2 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[33mSKIP[0m]
+[0m07:37:04.604410 [info ] [Thread-4 (]: 3 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null . [[33mSKIP[0m]
+[0m07:37:04.604771 [debug] [Thread-3 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:37:04.605097 [debug] [Thread-4 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:37:04.605421 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969' to be skipped because of status 'skipped'. 
+[0m07:37:04.605825 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd' to be skipped because of status 'skipped'. 
+[0m07:37:04.606363 [debug] [Thread-6 (]: Began running node test.caspian_vault.test_counts_match
+[0m07:37:04.606678 [info ] [Thread-6 (]: 4 of 4 SKIP test test_counts_match ............................................. [[33mSKIP[0m]
+[0m07:37:04.606975 [debug] [Thread-6 (]: Finished running node test.caspian_vault.test_counts_match
+[0m07:37:04.607264 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.test_counts_match' to be skipped because of status 'skipped'. 
+[0m07:37:04.608477 [debug] [MainThread]: On master: COMMIT
+[0m07:37:04.608823 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:37:04.609063 [debug] [MainThread]: Connection 'model.caspian_vault.stg_readings' was properly closed.
+[0m07:37:04.609300 [debug] [MainThread]: Connection 'list_iceberg_analytics' was properly closed.
+[0m07:37:04.609559 [info ] [MainThread]: 
+[0m07:37:04.609828 [info ] [MainThread]: Finished running 1 table model, 3 data tests in 0 hours 0 minutes and 0.28 seconds (0.28s).
+[0m07:37:04.610406 [debug] [MainThread]: Command end result
+[0m07:37:04.681089 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:37:04.682539 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:37:04.686805 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_cache/target/run_results.json
+[0m07:37:04.687104 [info ] [MainThread]: 
+[0m07:37:04.687461 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:37:04.687743 [info ] [MainThread]: 
+[0m07:37:04.688054 [error] [MainThread]: [31mFailure in model stg_readings (models/staging/stg_readings.sql)[0m
+[0m07:37:04.688366 [error] [MainThread]:   Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_073704_00017_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:37:04.688603 [info ] [MainThread]: 
+[0m07:37:04.688870 [info ] [MainThread]:   compiled code at /opt/airflow/dbt_cache/target/compiled/caspian_vault/models/staging/stg_readings.sql
+[0m07:37:04.689097 [info ] [MainThread]: 
+[0m07:37:04.689373 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=4
+[0m07:37:04.689804 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:37:04.690612 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 1.0310925, "process_in_blocks": "0", "process_kernel_time": 0.297577, "process_mem_max_rss": "124860", "process_out_blocks": "2808", "process_user_time": 1.993167}
+[0m07:37:04.691026 [debug] [MainThread]: Command `dbt build` failed at 07:37:04.690949 after 1.03 seconds
+[0m07:37:04.691338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb12a946ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb12a947b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb12a9448c0>]}
+[0m07:37:04.691639 [debug] [MainThread]: Flushing usage events
+[0m07:37:05.176197 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:48:16.144138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f989fb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f989fb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76fb7b4ef0>]}
+
+
+============================== 07:48:16.149208 | 8b19c13a-af1a-452b-9623-717b96019083 ==============================
+[0m07:48:16.149208 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:48:16.149680 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_format': 'default', 'debug': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'indirect_selection': 'eager', 'static_parser': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'printer_width': '80', 'invocation_command': 'dbt deps --profiles-dir /home/airflow/.dbt --log-path /opt/airflow/dbt_cache/logs --profile caspian_vault --target dev', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'introspect': 'True', 'no_print': 'None', 'profiles_dir': '/home/airflow/.dbt', 'log_path': '/opt/airflow/dbt_cache/logs', 'partial_parse': 'True'}
+[0m07:48:16.156040 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:48:16.156436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '8b19c13a-af1a-452b-9623-717b96019083', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f897bf80>]}
+[0m07:48:16.156939 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:48:16.157267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '8b19c13a-af1a-452b-9623-717b96019083', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f8cda510>]}
+[0m07:48:16.280374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8b19c13a-af1a-452b-9623-717b96019083', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f8819670>]}
+[0m07:48:16.302741 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-pksm0lc9'
+[0m07:48:16.303112 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m07:48:16.435916 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m07:48:16.437205 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m07:48:16.462466 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m07:48:16.466193 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m07:48:16.724749 [info ] [MainThread]: Installed from version 1.3.0
+[0m07:48:16.725193 [info ] [MainThread]: Updated version available: 1.3.3
+[0m07:48:16.725556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '8b19c13a-af1a-452b-9623-717b96019083', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f89ece90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f884c8f0>]}
+[0m07:48:16.725899 [info ] [MainThread]: 
+[0m07:48:16.726192 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m07:48:16.726869 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:48:16.727781 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.63739765, "process_in_blocks": "9880", "process_kernel_time": 0.235593, "process_mem_max_rss": "108620", "process_out_blocks": "2304", "process_user_time": 1.443634}
+[0m07:48:16.728228 [debug] [MainThread]: Command `dbt deps` succeeded at 07:48:16.728148 after 0.64 seconds
+[0m07:48:16.728555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f9062600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f9865220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a76f9864860>]}
+[0m07:48:16.728851 [debug] [MainThread]: Flushing usage events
+[0m07:48:17.209133 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:48:19.271016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2dca9610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2ea2bda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2dca9640>]}
+
+
+============================== 07:48:19.275942 | 7aeb6bd6-183d-476f-8384-f7a2249fff79 ==============================
+[0m07:48:19.275942 [info ] [MainThread]: Running with dbt=1.10.15
+[0m07:48:19.276406 [debug] [MainThread]: running dbt with arguments {'target_path': '/opt/airflow/dbt_cache/target', 'version_check': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'log_format': 'default', 'profiles_dir': '/home/airflow/.dbt', 'debug': 'False', 'cache_selected_only': 'False', 'quiet': 'False', 'write_json': 'True', 'use_colors': 'True', 'invocation_command': 'dbt build --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile caspian_vault --target dev --select staging', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'log_path': '/opt/airflow/dbt_cache/logs', 'printer_width': '80', 'log_cache_events': 'False', 'warn_error': 'None', 'introspect': 'True', 'no_print': 'None', 'empty': 'False'}
+[0m07:48:19.334927 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m07:48:19.335386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2dabec00>]}
+[0m07:48:19.335815 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m07:48:19.336141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2dabec00>]}
+[0m07:48:19.460352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2d8a8ce0>]}
+[0m07:48:19.526292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2e7602c0>]}
+[0m07:48:19.526965 [info ] [MainThread]: Registered adapter: trino=1.9.3
+[0m07:48:19.631125 [debug] [MainThread]: checksum: 823572ff9a3901b0d1f781345271440592c4c0ae850bba08a70c8a0706cad0a7, vars: {}, profile: caspian_vault, target: dev, version: 1.10.15
+[0m07:48:19.738288 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:48:19.738697 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:48:19.743522 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.caspian_vault.example
+[0m07:48:19.785130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2d7f8c20>]}
+[0m07:48:19.866190 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:48:19.867680 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:48:19.888689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2e8ecb00>]}
+[0m07:48:19.889116 [info ] [MainThread]: Found 13 models, 1 snapshot, 19 data tests, 3 sources, 574 macros
+[0m07:48:19.891013 [info ] [MainThread]: 
+[0m07:48:19.891369 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m07:48:19.891637 [info ] [MainThread]: 
+[0m07:48:19.892065 [debug] [MainThread]: Acquiring new trino connection 'master'
+[0m07:48:19.892883 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg'
+[0m07:48:19.930916 [debug] [ThreadPool]: Using trino connection "list_iceberg"
+[0m07:48:19.931302 [debug] [ThreadPool]: On list_iceberg: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg"} */
+
+    select schema_name
+    from "iceberg".INFORMATION_SCHEMA.schemata
+[0m07:48:19.931598 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:48:19.931853 [warn ] [ThreadPool]: [[33mWARNING[0m]: SSL certificate validation is disabled by default. It is legacy behavior which will be changed in future releases. It is strongly advised to enable `require_certificate_validation` flag or explicitly set `cert` configuration to `True` for security reasons. You may receive an error after that if your SSL setup is incorrect.
+You may opt into the new behavior sooner by setting `flags.require_certificate_validation` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+[0m07:48:19.932229 [debug] [ThreadPool]: Sending event: {'category': 'dbt', 'action': 'BehaviorChangeEvent', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2d3e6570>]}
+[0m07:48:19.970351 [debug] [ThreadPool]: SQL status: SUCCESS in 0.039 seconds
+[0m07:48:19.971619 [debug] [ThreadPool]: On list_iceberg: Close
+[0m07:48:19.976052 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_iceberg, now list_iceberg_snapshots)
+[0m07:48:19.976616 [debug] [ThreadPool]: Acquiring new trino connection 'list_iceberg_analytics'
+[0m07:48:19.987401 [debug] [ThreadPool]: Using trino connection "list_iceberg_snapshots"
+[0m07:48:19.990384 [debug] [ThreadPool]: Using trino connection "list_iceberg_analytics"
+[0m07:48:19.990741 [debug] [ThreadPool]: On list_iceberg_snapshots: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_snapshots"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'snapshots') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'snapshots'
+[0m07:48:19.991089 [debug] [ThreadPool]: On list_iceberg_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_iceberg_analytics"} */
+select
+      t.table_catalog as database,
+      t.table_name as name,
+      t.table_schema as schema,
+      case when mv.name is not null then 'materialized_view'
+           when t.table_type = 'BASE TABLE' then 'table'
+           when t.table_type = 'VIEW' then 'view'
+           else t.table_type
+      end as table_type
+    from "iceberg".INFORMATION_SCHEMA.tables t
+    left join (
+            select * from system.metadata.materialized_views
+            where catalog_name = 'iceberg'
+              and schema_name = 'analytics') mv
+          on mv.catalog_name = t.table_catalog and mv.schema_name = t.table_schema and mv.name = t.table_name
+    where t.table_schema = 'analytics'
+[0m07:48:19.991411 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:48:19.991690 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:48:20.061723 [debug] [ThreadPool]: SQL status: SUCCESS in 0.070 seconds
+[0m07:48:20.063552 [debug] [ThreadPool]: On list_iceberg_analytics: ROLLBACK
+[0m07:48:20.064570 [debug] [ThreadPool]: On list_iceberg_analytics: Close
+[0m07:48:20.065579 [debug] [ThreadPool]: SQL status: SUCCESS in 0.074 seconds
+[0m07:48:20.066612 [debug] [ThreadPool]: On list_iceberg_snapshots: ROLLBACK
+[0m07:48:20.066912 [debug] [ThreadPool]: On list_iceberg_snapshots: Close
+[0m07:48:20.067579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2c8136e0>]}
+[0m07:48:20.068052 [debug] [MainThread]: On master: COMMIT
+[0m07:48:20.071577 [debug] [Thread-1 (]: Began running node model.caspian_vault.stg_readings
+[0m07:48:20.072085 [info ] [Thread-1 (]: 1 of 4 START sql table model analytics.stg_readings ............................ [RUN]
+[0m07:48:20.072491 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_iceberg_snapshots, now model.caspian_vault.stg_readings)
+[0m07:48:20.072801 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.stg_readings
+[0m07:48:20.075986 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.stg_readings"
+[0m07:48:20.076525 [debug] [Thread-1 (]: Began executing node model.caspian_vault.stg_readings
+[0m07:48:20.112913 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.stg_readings"
+[0m07:48:20.117986 [debug] [Thread-1 (]: Using trino connection "model.caspian_vault.stg_readings"
+[0m07:48:20.118462 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+
+  
+    
+
+    create table "iceberg"."analytics"."stg_readings"
+      
+      
+    as (
+      
+
+with sgx as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'sgx'                               as source_format,
+        cast(source_file as varchar)        as source_file
+    from "iceberg"."public"."raw_sgx_all"
+),
+p1 as (
+    -- If columns differ, adjust here after you inspect schema
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_1"
+),
+p2 as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings_2.parquet' as source_file
+    from "iceberg"."public"."raw_recovered_2"
+),
+
+unioned as (
+    select * from sgx
+    union all
+    select * from p1
+    union all
+    select * from p2
+)
+
+select
+    *,
+    current_timestamp as ingest_ts,
+    -- simple deterministic checksum (DuckDB supports md5)
+    md5(
+      cast(well_id as varchar) || '|' ||
+      cast(survey_type_id as varchar) || '|' ||
+      cast(depth_ft as varchar) || '|' ||
+      cast(amplitude as varchar) || '|' ||
+      cast(quality_flag as varchar) || '|' ||
+      source_file || '|' || source_format
+    ) as row_checksum
+from unioned
+    )
+[0m07:48:20.118833 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:48:20.146582 [debug] [Thread-1 (]: Trino adapter: Trino query id: 20251214_074820_00030_xq5w4
+[0m07:48:20.147060 [debug] [Thread-1 (]: Trino adapter: Trino error: TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_074820_00030_xq5w4)
+[0m07:48:20.147519 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: ROLLBACK
+[0m07:48:20.147823 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: Close
+[0m07:48:20.151518 [debug] [Thread-1 (]: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_074820_00030_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:48:20.152930 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7aeb6bd6-183d-476f-8384-f7a2249fff79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2d84ef90>]}
+[0m07:48:20.153529 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model analytics.stg_readings ................... [[31mERROR[0m in 0.08s]
+[0m07:48:20.154019 [debug] [Thread-1 (]: Finished running node model.caspian_vault.stg_readings
+[0m07:48:20.154528 [debug] [Thread-11 ]: Marking all children of 'model.caspian_vault.stg_readings' to be skipped because of status 'error'.  Reason: Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_074820_00030_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql.
+[0m07:48:20.155601 [debug] [Thread-3 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:48:20.155965 [debug] [Thread-4 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:48:20.156384 [info ] [Thread-3 (]: 2 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[33mSKIP[0m]
+[0m07:48:20.156782 [info ] [Thread-4 (]: 3 of 4 SKIP test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null . [[33mSKIP[0m]
+[0m07:48:20.157165 [debug] [Thread-3 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m07:48:20.157517 [debug] [Thread-4 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m07:48:20.157841 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969' to be skipped because of status 'skipped'. 
+[0m07:48:20.158296 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd' to be skipped because of status 'skipped'. 
+[0m07:48:20.158856 [debug] [Thread-6 (]: Began running node test.caspian_vault.test_counts_match
+[0m07:48:20.159200 [info ] [Thread-6 (]: 4 of 4 SKIP test test_counts_match ............................................. [[33mSKIP[0m]
+[0m07:48:20.159546 [debug] [Thread-6 (]: Finished running node test.caspian_vault.test_counts_match
+[0m07:48:20.159836 [debug] [Thread-11 ]: Marking all children of 'test.caspian_vault.test_counts_match' to be skipped because of status 'skipped'. 
+[0m07:48:20.161042 [debug] [MainThread]: On master: COMMIT
+[0m07:48:20.161419 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:48:20.161681 [debug] [MainThread]: Connection 'model.caspian_vault.stg_readings' was properly closed.
+[0m07:48:20.161920 [debug] [MainThread]: Connection 'list_iceberg_analytics' was properly closed.
+[0m07:48:20.162192 [info ] [MainThread]: 
+[0m07:48:20.162495 [info ] [MainThread]: Finished running 1 table model, 3 data tests in 0 hours 0 minutes and 0.27 seconds (0.27s).
+[0m07:48:20.163077 [debug] [MainThread]: Command end result
+[0m07:48:20.234020 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m07:48:20.235473 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m07:48:20.239761 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_cache/target/run_results.json
+[0m07:48:20.240080 [info ] [MainThread]: 
+[0m07:48:20.240442 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:48:20.240731 [info ] [MainThread]: 
+[0m07:48:20.241070 [error] [MainThread]: [31mFailure in model stg_readings (models/staging/stg_readings.sql)[0m
+[0m07:48:20.241399 [error] [MainThread]:   Database Error in model stg_readings (models/staging/stg_readings.sql)
+  TrinoUserError(type=USER_ERROR, name=TABLE_NOT_FOUND, message="line 21:10: Table 'iceberg.public.raw_sgx_all' does not exist", query_id=20251214_074820_00030_xq5w4)
+  compiled code at /opt/airflow/dbt_cache/target/run/caspian_vault/models/staging/stg_readings.sql
+[0m07:48:20.241653 [info ] [MainThread]: 
+[0m07:48:20.241930 [info ] [MainThread]:   compiled code at /opt/airflow/dbt_cache/target/compiled/caspian_vault/models/staging/stg_readings.sql
+[0m07:48:20.242172 [info ] [MainThread]: 
+[0m07:48:20.242467 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=4
+[0m07:48:20.242919 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m07:48:20.243717 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 1.026366, "process_in_blocks": "264", "process_kernel_time": 0.313813, "process_mem_max_rss": "124640", "process_out_blocks": "2808", "process_user_time": 1.963831}
+[0m07:48:20.244139 [debug] [MainThread]: Command `dbt build` failed at 07:48:20.244064 after 1.03 seconds
+[0m07:48:20.244483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e2e869bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e30a0f7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3e302feea0>]}
+[0m07:48:20.244800 [debug] [MainThread]: Flushing usage events
+[0m07:48:20.684242 [debug] [MainThread]: An error was encountered while trying to flush usage events

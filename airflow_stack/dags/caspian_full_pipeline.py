@@ -33,7 +33,7 @@ with DAG(
         bash_command=(
             DBT_ENV.format(dbt_dir=DBT_DIR)
             + f"""
-{DBT_BIN} deps --profile {PROFILE} --target {TARGET}
+{DBT_BIN} deps --profiles-dir /home/airflow/.dbt --log-path /opt/airflow/dbt_cache/logs --profile {PROFILE} --target {TARGET}
 """
         ),
     )
@@ -43,7 +43,7 @@ with DAG(
         bash_command=(
             DBT_ENV.format(dbt_dir=DBT_DIR)
             + f"""
-{DBT_BIN} build --profile {PROFILE} --target {TARGET}  --select "staging"
+{DBT_BIN} build --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile {PROFILE} --target {TARGET}  --select "staging"
 """
         ),
     )
@@ -53,7 +53,7 @@ with DAG(
         bash_command=(
             DBT_ENV.format(dbt_dir=DBT_DIR)
             + f"""
-{DBT_BIN} build --profile {PROFILE} --target {TARGET}  --select "vault"
+{DBT_BIN} build --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile {PROFILE} --target {TARGET}  --select "vault"
 """
         ),
     )
@@ -63,7 +63,7 @@ with DAG(
         bash_command=(
             DBT_ENV.format(dbt_dir=DBT_DIR)
             + f"""
-{DBT_BIN} build --profile {PROFILE} --target {TARGET}  --select "marts"
+{DBT_BIN} build --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile {PROFILE} --target {TARGET}  --select "marts"
 """
         ),
     )
@@ -73,7 +73,7 @@ with DAG(
         bash_command=(
             DBT_ENV.format(dbt_dir=DBT_DIR)
             + f"""
-{DBT_BIN} test --profile {PROFILE} --target {TARGET} 
+{DBT_BIN} test --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile {PROFILE} --target {TARGET} 
 """
         ),
     )
@@ -83,11 +83,11 @@ with DAG(
         bash_command=(
             DBT_ENV.format(dbt_dir=DBT_DIR)
             + f"""
-{DBT_BIN} snapshot --profile {PROFILE} --target {TARGET} 
+{DBT_BIN} snapshot --profiles-dir /home/airflow/.dbt --target-path /opt/airflow/dbt_cache/target --log-path /opt/airflow/dbt_cache/logs --profile {PROFILE} --target {TARGET} 
 """
         ),
     )
 
     # FAIL-FAST chain
-    # dbt_deps >> dbt_build_staging >> dbt_build_vault >> dbt_build_marts >> dbt_test >> dbt_snapshot >> save_dbt_state
+    # dbt_deps >> dbt_build_staging >> dbt_build_vault >> dbt_build_marts >> dbt_test >> dbt_snapshot 
     dbt_deps >> dbt_build_staging >> dbt_build_vault >> dbt_build_marts >> dbt_test >> dbt_snapshot

@@ -1,0 +1,29 @@
+
+  
+    
+
+  create  table "airflow"."public"."dim_time__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- Time dimension derived from load timestamps (ingest_ts / load_ts)
+with t as (
+  select distinct cast(load_ts as timestamp) as ts
+  from "airflow"."public"."dv_sat_readings"
+)
+select
+  ts,
+  date(ts) as d,
+  extract(year from ts) as year,
+  extract(month from ts) as month,
+  extract(day from ts) as day,
+  to_char(ts, 'YYYY-MM') as year_month,
+  to_char(ts, 'YYYY-MM-DD') as ymd,
+  extract(hour from ts) as hour
+from t
+  );
+  

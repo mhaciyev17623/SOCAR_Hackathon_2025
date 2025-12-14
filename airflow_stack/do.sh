@@ -1,32 +1,98 @@
-docker compose exec postgres psql -U airflow -d airflow <<'SQL'
-drop table if exists public.raw_sgx_all cascade;
-drop table if exists public.raw_recovered_1 cascade;
-drop table if exists public.raw_recovered_2 cascade;
+docker compose exec -T airflow-webserver bash -lc '
+cat > /opt/airflow/dags/caspian_full_pipeline.py <<'"'"'PY'"'"'
+from airflow import DAG
+from airflow.operators.bash import BashOperator
+from datetime import datetime
 
-create table public.raw_sgx_all (
-    well_id bigint,
-    survey_type_id bigint,
-    depth_ft double precision,
-    amplitude double precision,
-    quality_flag int,
-    source_file text
-);
+DBT_DIR = "/opt/project/caspian_vault"
+DBT_BIN = "/home/airflow/.local/bin/dbt"
+PROFILE = "caspian_vault"
+TARGET = "dev"
 
-create table public.raw_recovered_1 (
-    well_id bigint,
-    survey_type_id bigint,
-    depth_ft double precision,
-    amplitude double precision,
-    quality_flag int,
-    source_file text
-);
+# Shared dbt env (keep logs/artifacts inside airflow volume)
+DBT_ENV = """
+set -euo pipefail
+export DBT_PROFILES_DIR=/opt/project/caspian_vault/dbt_profiles
+export DBT_LOG_PATH=/opt/airflow/logs/dbt
+export DBT_TARGET_PATH=/opt/airflow/dbt_target
+export DBT_PACKAGES_INSTALL_PATH=/opt/airflow/dbt_packages
 
-create table public.raw_recovered_2 (
-    well_id bigint,
-    survey_type_id bigint,
-    depth_ft double precision,
-    amplitude double precision,
-    quality_flag int,
-    source_file text
-);
-SQL
+mkdir -p "$DBT_LOG_PATH" "$DBT_TARGET_PATH" "$DBT_PACKAGES_INSTALL_PATH"
+cd {dbt_dir}
+"""
+
+with DAG(
+    dag_id="caspian_full_pipeline",
+    start_date=datetime(2024, 1, 1),
+    schedule="@hourly",
+    catchup=False,
+    tags=["docker", "celery", "dbt"],
+) as dag:
+
+    dbt_deps = BashOperator(
+        task_id="dbt_deps",
+        bash_command=(
+            DBT_ENV.format(dbt_dir=DBT_DIR)
+            + f"""
+{DBT_BIN} deps --profile {PROFILE} --target {TARGET}
+"""
+        ),
+    )
+
+    dbt_build_staging = BashOperator(
+        task_id="dbt_build_staging",
+        bash_command=(
+            DBT_ENV.format(dbt_dir=DBT_DIR)
+            + f"""
+{DBT_BIN} build --profile {PROFILE} --target {TARGET} --no-partial-parse --select "staging"
+"""
+        ),
+    )
+
+    dbt_build_vault = BashOperator(
+        task_id="dbt_build_vault",
+        bash_command=(
+            DBT_ENV.format(dbt_dir=DBT_DIR)
+            + f"""
+{DBT_BIN} build --profile {PROFILE} --target {TARGET} --no-partial-parse --select "vault"
+"""
+        ),
+    )
+
+    dbt_build_marts = BashOperator(
+        task_id="dbt_build_marts",
+        bash_command=(
+            DBT_ENV.format(dbt_dir=DBT_DIR)
+            + f"""
+{DBT_BIN} build --profile {PROFILE} --target {TARGET} --no-partial-parse --select "marts"
+"""
+        ),
+    )
+
+    dbt_test = BashOperator(
+        task_id="dbt_test",
+        bash_command=(
+            DBT_ENV.format(dbt_dir=DBT_DIR)
+            + f"""
+{DBT_BIN} test --profile {PROFILE} --target {TARGET} --no-partial-parse
+"""
+        ),
+    )
+
+    dbt_snapshot = BashOperator(
+        task_id="dbt_snapshot",
+        bash_command=(
+            DBT_ENV.format(dbt_dir=DBT_DIR)
+            + f"""
+{DBT_BIN} snapshot --profile {PROFILE} --target {TARGET} --no-partial-parse
+"""
+        ),
+    )
+
+    # FAIL-FAST chain
+    dbt_deps >> dbt_build_staging >> dbt_build_vault >> dbt_build_marts >> dbt_test >> dbt_snapshot
+PY
+
+python -m py_compile /opt/airflow/dags/caspian_full_pipeline.py
+echo "✅ DAG file written + syntax OK"
+'

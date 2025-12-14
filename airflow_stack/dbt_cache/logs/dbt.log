@@ -1,0 +1,2440 @@
+[0m06:05:12.151609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597db35f8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d92835c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d9a299d0>]}
+
+
+============================== 06:05:12.156727 | d06a48cf-0dfd-4668-a587-90c1baad8e82 ==============================
+[0m06:05:12.156727 [info ] [MainThread]: Running with dbt=1.10.15
+[0m06:05:12.157177 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'empty': 'None', 'log_path': '/opt/airflow/dbt_cache/logs', 'static_parser': 'True', 'debug': 'False', 'fail_fast': 'False', 'version_check': 'True', 'warn_error': 'None', 'introspect': 'True', 'quiet': 'False', 'partial_parse': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'profiles_dir': '/home/airflow/.dbt', 'no_print': 'None', 'invocation_command': 'dbt deps --profiles-dir /home/airflow/.dbt --profile caspian_vault --target dev', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'target_path': 'None'}
+[0m06:05:12.163460 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m06:05:12.163846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'd06a48cf-0dfd-4668-a587-90c1baad8e82', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d88704a0>]}
+[0m06:05:12.164264 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m06:05:12.164670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'd06a48cf-0dfd-4668-a587-90c1baad8e82', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d8acda00>]}
+[0m06:05:12.267634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd06a48cf-0dfd-4668-a587-90c1baad8e82', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d84cc5c0>]}
+[0m06:05:12.305437 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-5gbqy2do'
+[0m06:05:12.305839 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m06:05:12.601639 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m06:05:12.602347 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m06:05:12.665686 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m06:05:12.668822 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m06:05:12.924674 [info ] [MainThread]: Installed from version 1.3.0
+[0m06:05:12.925499 [info ] [MainThread]: Updated version available: 1.3.3
+[0m06:05:12.925998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'd06a48cf-0dfd-4668-a587-90c1baad8e82', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d82a1ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d84c2420>]}
+[0m06:05:12.926492 [info ] [MainThread]: 
+[0m06:05:12.926958 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m06:05:12.927818 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m06:05:12.928901 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.81948304, "process_in_blocks": "0", "process_kernel_time": 0.233798, "process_mem_max_rss": "110984", "process_out_blocks": "4688", "process_user_time": 1.426665}
+[0m06:05:12.929604 [debug] [MainThread]: Command `dbt deps` succeeded at 06:05:12.929515 after 0.82 seconds
+[0m06:05:12.930061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d91d3440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d82a1ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7597d84c2420>]}
+[0m06:05:12.930502 [debug] [MainThread]: Flushing usage events
+[0m06:05:13.434851 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:06:31.449598 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 06:06:31.457560 | 81f9788c-31d5-416c-b28e-1ef21edc3ed9 ==============================
+[0m06:06:31.457560 [info ] [MainThread]: Running with dbt=1.10.15
+[0m06:06:31.458035 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'partial_parse': 'True', 'printer_width': '80', 'warn_error': 'None', 'quiet': 'False', 'use_colors': 'True', 'log_cache_events': 'False', 'debug': 'False', 'static_parser': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/opt/airflow/dbt_profiles', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'invocation_command': 'dbt deps --profile caspian_vault --target dev', 'log_path': '/opt/airflow/dbt_cache/logs', 'log_format': 'default', 'empty': 'None', 'no_print': 'None', 'fail_fast': 'False'}
+[0m06:06:31.464315 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m06:06:31.464742 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m06:06:31.710030 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-ibcdn13m'
+[0m06:06:31.710456 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m06:06:31.852117 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m06:06:31.852840 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m06:06:31.882085 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m06:06:31.885396 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m06:06:32.114383 [info ] [MainThread]: Installed from version 1.3.0
+[0m06:06:32.114847 [info ] [MainThread]: Updated version available: 1.3.3
+[0m06:06:32.115179 [info ] [MainThread]: 
+[0m06:06:32.115473 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m06:06:32.116154 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m06:06:32.117097 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.70844406, "process_in_blocks": "0", "process_kernel_time": 0.217191, "process_mem_max_rss": "111320", "process_out_blocks": "4936", "process_user_time": 1.448604}
+[0m06:06:32.117539 [debug] [MainThread]: Command `dbt deps` succeeded at 06:06:32.117460 after 0.71 seconds
+[0m06:06:32.117819 [debug] [MainThread]: Flushing usage events
+[0m06:06:33.710335 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 06:06:33.716474 | 00b0d066-da8e-4b1a-ab6e-cd97eb19a05c ==============================
+[0m06:06:33.716474 [info ] [MainThread]: Running with dbt=1.10.15
+[0m06:06:33.716931 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'quiet': 'False', 'warn_error': 'None', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_cache/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt build --profile caspian_vault --target dev', 'indirect_selection': 'eager', 'use_colors': 'True', 'target_path': '/opt/airflow/dbt_cache/target', 'empty': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/opt/airflow/dbt_profiles', 'introspect': 'True', 'printer_width': '80', 'no_print': 'None', 'static_parser': 'True', 'cache_selected_only': 'False'}
+[0m06:06:33.762605 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m06:06:33.763204 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m06:06:33.943605 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m06:06:34.057616 [debug] [MainThread]: checksum: 823572ff9a3901b0d1f781345271440592c4c0ae850bba08a70c8a0706cad0a7, vars: {}, profile: caspian_vault, target: dev, version: 1.10.15
+[0m06:06:34.058315 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m06:06:35.467862 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.expression_is_true`. Arguments to
+generic tests should be nested under the `arguments` property.`
+[0m06:06:35.682300 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.caspian_vault.example
+[0m06:06:35.870915 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m06:06:35.872653 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m06:06:35.902485 [info ] [MainThread]: Found 13 models, 1 snapshot, 19 data tests, 3 sources, 578 macros
+[0m06:06:35.906186 [info ] [MainThread]: 
+[0m06:06:35.906574 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:06:35.906851 [info ] [MainThread]: 
+[0m06:06:35.907324 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m06:06:35.911373 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m06:06:35.911948 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m06:06:35.945455 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m06:06:35.945826 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m06:06:35.946150 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m06:06:35.946483 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m06:06:35.946769 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:06:35.947035 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:06:35.952346 [debug] [ThreadPool]: SQL status: SELECT 26 in 0.006 seconds
+[0m06:06:35.952651 [debug] [ThreadPool]: SQL status: SELECT 26 in 0.006 seconds
+[0m06:06:35.953739 [debug] [ThreadPool]: On list_airflow: Close
+[0m06:06:35.954747 [debug] [ThreadPool]: On list_airflow: Close
+[0m06:06:35.956815 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow, now list_airflow_public)
+[0m06:06:35.957218 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow, now list_airflow_snapshots)
+[0m06:06:35.962905 [debug] [ThreadPool]: Using postgres connection "list_airflow_public"
+[0m06:06:35.964311 [debug] [ThreadPool]: Using postgres connection "list_airflow_snapshots"
+[0m06:06:35.964693 [debug] [ThreadPool]: On list_airflow_public: BEGIN
+[0m06:06:35.964975 [debug] [ThreadPool]: On list_airflow_snapshots: BEGIN
+[0m06:06:35.965255 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:06:35.965518 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:06:35.969518 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:35.969810 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:35.970111 [debug] [ThreadPool]: Using postgres connection "list_airflow_public"
+[0m06:06:35.970410 [debug] [ThreadPool]: Using postgres connection "list_airflow_snapshots"
+[0m06:06:35.970701 [debug] [ThreadPool]: On list_airflow_public: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_airflow_public"} */
+select
+      'airflow' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'airflow' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'airflow' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m06:06:35.971000 [debug] [ThreadPool]: On list_airflow_snapshots: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "list_airflow_snapshots"} */
+select
+      'airflow' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'snapshots'
+    union all
+    select
+      'airflow' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'snapshots'
+    union all
+    select
+      'airflow' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'snapshots'
+  
+[0m06:06:35.973280 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.002 seconds
+[0m06:06:35.973532 [debug] [ThreadPool]: SQL status: SELECT 60 in 0.002 seconds
+[0m06:06:35.974581 [debug] [ThreadPool]: On list_airflow_snapshots: ROLLBACK
+[0m06:06:35.976093 [debug] [ThreadPool]: On list_airflow_public: ROLLBACK
+[0m06:06:35.976491 [debug] [ThreadPool]: On list_airflow_snapshots: Close
+[0m06:06:35.976730 [debug] [ThreadPool]: On list_airflow_public: Close
+[0m06:06:35.986861 [debug] [MainThread]: Using postgres connection "master"
+[0m06:06:35.987188 [debug] [MainThread]: On master: BEGIN
+[0m06:06:35.987470 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m06:06:35.991360 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:35.991677 [debug] [MainThread]: Using postgres connection "master"
+[0m06:06:35.992004 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m06:06:36.013758 [debug] [MainThread]: SQL status: SELECT 0 in 0.021 seconds
+[0m06:06:36.015029 [debug] [MainThread]: On master: ROLLBACK
+[0m06:06:36.015472 [debug] [MainThread]: Using postgres connection "master"
+[0m06:06:36.015760 [debug] [MainThread]: On master: BEGIN
+[0m06:06:36.016179 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m06:06:36.016486 [debug] [MainThread]: On master: COMMIT
+[0m06:06:36.016750 [debug] [MainThread]: Using postgres connection "master"
+[0m06:06:36.017002 [debug] [MainThread]: On master: COMMIT
+[0m06:06:36.017349 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m06:06:36.017636 [debug] [MainThread]: On master: Close
+[0m06:06:36.021033 [debug] [Thread-1 (]: Began running node model.caspian_vault.stg_readings
+[0m06:06:36.021520 [info ] [Thread-1 (]: 1 of 33 START sql table model public.stg_readings .............................. [RUN]
+[0m06:06:36.021892 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airflow_public, now model.caspian_vault.stg_readings)
+[0m06:06:36.022189 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.stg_readings
+[0m06:06:36.028235 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.stg_readings"
+[0m06:06:36.028855 [debug] [Thread-1 (]: Began executing node model.caspian_vault.stg_readings
+[0m06:06:36.057354 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.stg_readings"
+[0m06:06:36.058122 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.stg_readings"
+[0m06:06:36.058455 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: BEGIN
+[0m06:06:36.058729 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.063065 [debug] [Thread-1 (]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:36.063413 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.stg_readings"
+[0m06:06:36.063754 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+
+  
+    
+
+  create  table "airflow"."public"."stg_readings__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+with sgx as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'sgx'                               as source_format,
+        cast(source_file as varchar)        as source_file
+    from "airflow"."public"."raw_sgx_all"
+),
+p1 as (
+    -- If columns differ, adjust here after you inspect schema
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings.parquet' as source_file
+    from "airflow"."public"."raw_recovered_1"
+),
+p2 as (
+    select
+        cast(well_id as bigint)            as well_id,
+        cast(survey_type_id as bigint)     as survey_type_id,
+        cast(depth_ft as double precision)           as depth_ft,
+        cast(amplitude as double precision)          as amplitude,
+        cast(quality_flag as int)          as quality_flag,
+        'parquet_recovered'                as source_format,
+        'archive_batch_seismic_readings_2.parquet' as source_file
+    from "airflow"."public"."raw_recovered_2"
+),
+
+unioned as (
+    select * from sgx
+    union all
+    select * from p1
+    union all
+    select * from p2
+)
+
+select
+    *,
+    current_timestamp as ingest_ts,
+    -- simple deterministic checksum (DuckDB supports md5)
+    md5(
+      cast(well_id as varchar) || '|' ||
+      cast(survey_type_id as varchar) || '|' ||
+      cast(depth_ft as varchar) || '|' ||
+      cast(amplitude as varchar) || '|' ||
+      cast(quality_flag as varchar) || '|' ||
+      source_file || '|' || source_format
+    ) as row_checksum
+from unioned
+  );
+  
+[0m06:06:36.090687 [debug] [Thread-1 (]: SQL status: SELECT 9980 in 0.026 seconds
+[0m06:06:36.098689 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.stg_readings"
+[0m06:06:36.099044 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+alter table "airflow"."public"."stg_readings" rename to "stg_readings__dbt_backup"
+[0m06:06:36.099613 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.101740 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.stg_readings"
+[0m06:06:36.102059 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+alter table "airflow"."public"."stg_readings__dbt_tmp" rename to "stg_readings"
+[0m06:06:36.102514 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.115366 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: COMMIT
+[0m06:06:36.115721 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.stg_readings"
+[0m06:06:36.116010 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: COMMIT
+[0m06:06:36.122286 [debug] [Thread-1 (]: SQL status: COMMIT in 0.006 seconds
+[0m06:06:36.126953 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."stg_readings__dbt_backup"
+[0m06:06:36.131214 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.stg_readings"
+[0m06:06:36.131568 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.stg_readings"} */
+drop table if exists "airflow"."public"."stg_readings__dbt_backup" cascade
+[0m06:06:36.135411 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m06:06:36.137352 [debug] [Thread-1 (]: On model.caspian_vault.stg_readings: Close
+[0m06:06:36.138865 [info ] [Thread-1 (]: 1 of 33 OK created sql table model public.stg_readings ......................... [[32mSELECT 9980[0m in 0.12s]
+[0m06:06:36.139390 [debug] [Thread-1 (]: Finished running node model.caspian_vault.stg_readings
+[0m06:06:36.140213 [debug] [Thread-3 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m06:06:36.140599 [debug] [Thread-4 (]: Began running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m06:06:36.140961 [info ] [Thread-3 (]: 2 of 33 START test dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [RUN]
+[0m06:06:36.141347 [info ] [Thread-4 (]: 3 of 33 START test dbt_utils_expression_is_true_stg_readings_well_id_is_not_null  [RUN]
+[0m06:06:36.141855 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969'
+[0m06:06:36.142295 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd'
+[0m06:06:36.142632 [debug] [Thread-3 (]: Began compiling node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m06:06:36.142951 [debug] [Thread-4 (]: Began compiling node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m06:06:36.146395 [debug] [Thread-3 (]: Writing injected SQL for node "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969"
+[0m06:06:36.149327 [debug] [Thread-4 (]: Writing injected SQL for node "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd"
+[0m06:06:36.149959 [debug] [Thread-3 (]: Began executing node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m06:06:36.150281 [debug] [Thread-4 (]: Began executing node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m06:06:36.163060 [debug] [Thread-3 (]: Writing runtime sql for node "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969"
+[0m06:06:36.164774 [debug] [Thread-4 (]: Writing runtime sql for node "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd"
+[0m06:06:36.165447 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd"
+[0m06:06:36.165833 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969"
+[0m06:06:36.166131 [debug] [Thread-4 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd: BEGIN
+[0m06:06:36.166467 [debug] [Thread-3 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969: BEGIN
+[0m06:06:36.166778 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m06:06:36.167078 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m06:06:36.171545 [debug] [Thread-3 (]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:36.171880 [debug] [Thread-4 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.172226 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969"
+[0m06:06:36.172569 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd"
+[0m06:06:36.172901 [debug] [Thread-3 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+select
+    1
+from "airflow"."public"."stg_readings"
+
+where not(survey_type_id is not null)
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.173234 [debug] [Thread-4 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+select
+    1
+from "airflow"."public"."stg_readings"
+
+where not(well_id is not null)
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.175149 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.002 seconds
+[0m06:06:36.175474 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.002 seconds
+[0m06:06:36.177989 [debug] [Thread-3 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969: ROLLBACK
+[0m06:06:36.179088 [debug] [Thread-4 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd: ROLLBACK
+[0m06:06:36.179544 [debug] [Thread-3 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969: Close
+[0m06:06:36.179877 [debug] [Thread-4 (]: On test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd: Close
+[0m06:06:36.180454 [info ] [Thread-3 (]: 2 of 33 PASS dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null  [[32mPASS[0m in 0.04s]
+[0m06:06:36.181640 [debug] [Thread-3 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969
+[0m06:06:36.181050 [info ] [Thread-4 (]: 3 of 33 PASS dbt_utils_expression_is_true_stg_readings_well_id_is_not_null ..... [[32mPASS[0m in 0.04s]
+[0m06:06:36.182215 [debug] [Thread-4 (]: Finished running node test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd
+[0m06:06:36.183156 [debug] [Thread-1 (]: Began running node model.caspian_vault.dv_hub_survey_type
+[0m06:06:36.183500 [debug] [Thread-2 (]: Began running node model.caspian_vault.dv_hub_well
+[0m06:06:36.183849 [debug] [Thread-3 (]: Began running node model.caspian_vault.dv_link_well_survey
+[0m06:06:36.185488 [info ] [Thread-3 (]: 6 of 33 START sql table model public.dv_link_well_survey ....................... [RUN]
+[0m06:06:36.184277 [info ] [Thread-1 (]: 4 of 33 START sql table model public.dv_hub_survey_type ........................ [RUN]
+[0m06:06:36.185007 [info ] [Thread-2 (]: 5 of 33 START sql table model public.dv_hub_well ............................... [RUN]
+[0m06:06:36.185838 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.caspian_vault.dbt_utils_expression_is_true_stg_readings_survey_type_id_is_not_null.c0d2bfe969, now model.caspian_vault.dv_link_well_survey)
+[0m06:06:36.184530 [debug] [Thread-4 (]: Began running node model.caspian_vault.dv_sat_readings
+[0m06:06:36.186183 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.caspian_vault.stg_readings, now model.caspian_vault.dv_hub_survey_type)
+[0m06:06:36.186705 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_airflow_snapshots, now model.caspian_vault.dv_hub_well)
+[0m06:06:36.187038 [debug] [Thread-3 (]: Began compiling node model.caspian_vault.dv_link_well_survey
+[0m06:06:36.187465 [info ] [Thread-4 (]: 7 of 33 START sql table model public.dv_sat_readings ........................... [RUN]
+[0m06:06:36.187828 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.dv_hub_survey_type
+[0m06:06:36.188133 [debug] [Thread-2 (]: Began compiling node model.caspian_vault.dv_hub_well
+[0m06:06:36.190965 [debug] [Thread-3 (]: Writing injected SQL for node "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.191360 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.caspian_vault.dbt_utils_expression_is_true_stg_readings_well_id_is_not_null.963860fecd, now model.caspian_vault.dv_sat_readings)
+[0m06:06:36.193574 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.195735 [debug] [Thread-2 (]: Writing injected SQL for node "model.caspian_vault.dv_hub_well"
+[0m06:06:36.196180 [debug] [Thread-4 (]: Began compiling node model.caspian_vault.dv_sat_readings
+[0m06:06:36.196527 [debug] [Thread-3 (]: Began executing node model.caspian_vault.dv_link_well_survey
+[0m06:06:36.197078 [debug] [Thread-1 (]: Began executing node model.caspian_vault.dv_hub_survey_type
+[0m06:06:36.200537 [debug] [Thread-4 (]: Writing injected SQL for node "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.203317 [debug] [Thread-3 (]: Writing runtime sql for node "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.203631 [debug] [Thread-2 (]: Began executing node model.caspian_vault.dv_hub_well
+[0m06:06:36.206220 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.206812 [debug] [Thread-4 (]: Began executing node model.caspian_vault.dv_sat_readings
+[0m06:06:36.209344 [debug] [Thread-2 (]: Writing runtime sql for node "model.caspian_vault.dv_hub_well"
+[0m06:06:36.209733 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.212459 [debug] [Thread-4 (]: Writing runtime sql for node "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.212824 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.213268 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: BEGIN
+[0m06:06:36.213704 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dv_hub_well"
+[0m06:06:36.214036 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.214353 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: BEGIN
+[0m06:06:36.214665 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.214975 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: BEGIN
+[0m06:06:36.215310 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: BEGIN
+[0m06:06:36.215614 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.216040 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.216365 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.220584 [debug] [Thread-1 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.221146 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.221509 [debug] [Thread-4 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.221853 [debug] [Thread-3 (]: SQL status: BEGIN in 0.007 seconds
+[0m06:06:36.222218 [debug] [Thread-2 (]: SQL status: BEGIN in 0.006 seconds
+[0m06:06:36.222547 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_survey_type"} */
+
+  
+    
+
+  create  table "airflow"."public"."dv_hub_survey_type__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select distinct
+    md5(cast(survey_type_id as varchar)) as hk_survey_type,
+    survey_type_id             as survey_type_bk,
+    min(ingest_ts)             as load_ts,
+    min(source_file)     as record_source
+from "airflow"."public"."stg_readings"
+where survey_type_id is not null
+group by 1,2
+  );
+  
+[0m06:06:36.222897 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.223229 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.223589 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dv_hub_well"
+[0m06:06:36.224008 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_sat_readings"} */
+
+  
+    
+
+  create  table "airflow"."public"."dv_sat_readings__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+    md5(cast(well_id as varchar) || '|' || cast(survey_type_id as varchar)) as hk_well_survey,
+    ingest_ts                               as load_ts,
+    source_file                             as record_source,
+    source_format,
+    row_checksum,
+    depth_ft,
+    amplitude,
+    quality_flag,
+    -- hashdiff over descriptive attributes
+    md5(
+      cast(depth_ft as varchar) || '|' ||
+      cast(amplitude as varchar) || '|' ||
+      cast(quality_flag as varchar) || '|' ||
+      source_format
+    ) as hashdiff
+from "airflow"."public"."stg_readings"
+where well_id is not null and survey_type_id is not null
+  );
+  
+[0m06:06:36.224383 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_link_well_survey"} */
+
+  
+    
+
+  create  table "airflow"."public"."dv_link_well_survey__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select distinct
+    md5(cast(well_id as varchar) || '|' || cast(survey_type_id as varchar)) as hk_well_survey,
+    md5(cast(well_id as varchar))                   as hk_well,
+    md5(cast(survey_type_id as varchar))            as hk_survey_type,
+    min(ingest_ts)                        as load_ts,
+    min(source_file)                as record_source
+from "airflow"."public"."stg_readings"
+where well_id is not null and survey_type_id is not null
+group by 1,2,3
+  );
+  
+[0m06:06:36.224760 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_well"} */
+
+  
+    
+
+  create  table "airflow"."public"."dv_hub_well__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select distinct
+    md5(cast(well_id as varchar)) as hk_well,
+    well_id             as well_id_bk,
+    min(ingest_ts)      as load_ts,
+    min(source_file) as record_source
+from "airflow"."public"."stg_readings"
+where well_id is not null
+group by 1,2
+  );
+  
+[0m06:06:36.238191 [debug] [Thread-1 (]: SQL status: SELECT 3 in 0.014 seconds
+[0m06:06:36.241218 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.241560 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_survey_type"} */
+alter table "airflow"."public"."dv_hub_survey_type" rename to "dv_hub_survey_type__dbt_backup"
+[0m06:06:36.241862 [debug] [Thread-2 (]: SQL status: SELECT 20 in 0.017 seconds
+[0m06:06:36.244376 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dv_hub_well"
+[0m06:06:36.244685 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m06:06:36.245074 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_well"} */
+alter table "airflow"."public"."dv_hub_well" rename to "dv_hub_well__dbt_backup"
+[0m06:06:36.247207 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.247625 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_survey_type"} */
+alter table "airflow"."public"."dv_hub_survey_type__dbt_tmp" rename to "dv_hub_survey_type"
+[0m06:06:36.247957 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.250972 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dv_hub_well"
+[0m06:06:36.251301 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m06:06:36.251691 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_well"} */
+alter table "airflow"."public"."dv_hub_well__dbt_tmp" rename to "dv_hub_well"
+[0m06:06:36.252785 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: COMMIT
+[0m06:06:36.253182 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.253503 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.253824 [debug] [Thread-3 (]: SQL status: SELECT 50 in 0.029 seconds
+[0m06:06:36.254098 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: COMMIT
+[0m06:06:36.255040 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: COMMIT
+[0m06:06:36.257396 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.257838 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dv_hub_well"
+[0m06:06:36.258175 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_link_well_survey"} */
+alter table "airflow"."public"."dv_link_well_survey" rename to "dv_link_well_survey__dbt_backup"
+[0m06:06:36.258690 [debug] [Thread-4 (]: SQL status: SELECT 9980 in 0.034 seconds
+[0m06:06:36.258992 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: COMMIT
+[0m06:06:36.261464 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.261812 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m06:06:36.262158 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_sat_readings"} */
+alter table "airflow"."public"."dv_sat_readings" rename to "dv_sat_readings__dbt_backup"
+[0m06:06:36.264220 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.264552 [debug] [Thread-1 (]: SQL status: COMMIT in 0.007 seconds
+[0m06:06:36.264860 [debug] [Thread-2 (]: SQL status: COMMIT in 0.003 seconds
+[0m06:06:36.265221 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_link_well_survey"} */
+alter table "airflow"."public"."dv_link_well_survey__dbt_tmp" rename to "dv_link_well_survey"
+[0m06:06:36.266951 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."dv_hub_survey_type__dbt_backup"
+[0m06:06:36.267315 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m06:06:36.269031 [debug] [Thread-2 (]: Applying DROP to: "airflow"."public"."dv_hub_well__dbt_backup"
+[0m06:06:36.269593 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dv_hub_survey_type"
+[0m06:06:36.269906 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m06:06:36.272011 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.272494 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dv_hub_well"
+[0m06:06:36.272825 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_survey_type"} */
+drop table if exists "airflow"."public"."dv_hub_survey_type__dbt_backup" cascade
+[0m06:06:36.273824 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: COMMIT
+[0m06:06:36.274174 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_sat_readings"} */
+alter table "airflow"."public"."dv_sat_readings__dbt_tmp" rename to "dv_sat_readings"
+[0m06:06:36.274528 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_hub_well"} */
+drop table if exists "airflow"."public"."dv_hub_well__dbt_backup" cascade
+[0m06:06:36.274914 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.275496 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.275790 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: COMMIT
+[0m06:06:36.276785 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: COMMIT
+[0m06:06:36.277169 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.277510 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m06:06:36.277803 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: COMMIT
+[0m06:06:36.278857 [debug] [Thread-1 (]: On model.caspian_vault.dv_hub_survey_type: Close
+[0m06:06:36.279139 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m06:06:36.280202 [debug] [Thread-2 (]: On model.caspian_vault.dv_hub_well: Close
+[0m06:06:36.281153 [debug] [Thread-3 (]: SQL status: COMMIT in 0.004 seconds
+[0m06:06:36.280853 [info ] [Thread-1 (]: 4 of 33 OK created sql table model public.dv_hub_survey_type ................... [[32mSELECT 3[0m in 0.09s]
+[0m06:06:36.281681 [debug] [Thread-4 (]: SQL status: COMMIT in 0.002 seconds
+[0m06:06:36.282336 [info ] [Thread-2 (]: 5 of 33 OK created sql table model public.dv_hub_well .......................... [[32mSELECT 20[0m in 0.10s]
+[0m06:06:36.284221 [debug] [Thread-3 (]: Applying DROP to: "airflow"."public"."dv_link_well_survey__dbt_backup"
+[0m06:06:36.284744 [debug] [Thread-1 (]: Finished running node model.caspian_vault.dv_hub_survey_type
+[0m06:06:36.286529 [debug] [Thread-4 (]: Applying DROP to: "airflow"."public"."dv_sat_readings__dbt_backup"
+[0m06:06:36.287011 [debug] [Thread-2 (]: Finished running node model.caspian_vault.dv_hub_well
+[0m06:06:36.287508 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dv_link_well_survey"
+[0m06:06:36.288227 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dv_sat_readings"
+[0m06:06:36.288581 [debug] [Thread-1 (]: Began running node test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033
+[0m06:06:36.288944 [debug] [Thread-2 (]: Began running node test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007
+[0m06:06:36.289406 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_link_well_survey"} */
+drop table if exists "airflow"."public"."dv_link_well_survey__dbt_backup" cascade
+[0m06:06:36.289770 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dv_sat_readings"} */
+drop table if exists "airflow"."public"."dv_sat_readings__dbt_backup" cascade
+[0m06:06:36.290124 [info ] [Thread-1 (]: 8 of 33 START test not_null_dv_hub_survey_type_hk_survey_type .................. [RUN]
+[0m06:06:36.291051 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dv_hub_survey_type, now test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033)
+[0m06:06:36.290509 [info ] [Thread-2 (]: 9 of 33 START test not_null_dv_hub_survey_type_survey_type_bk .................. [RUN]
+[0m06:06:36.291383 [debug] [Thread-1 (]: Began compiling node test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033
+[0m06:06:36.291731 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dv_hub_well, now test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007)
+[0m06:06:36.297636 [debug] [Thread-1 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033"
+[0m06:06:36.297972 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.007 seconds
+[0m06:06:36.298338 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.007 seconds
+[0m06:06:36.298645 [debug] [Thread-2 (]: Began compiling node test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007
+[0m06:06:36.299826 [debug] [Thread-3 (]: On model.caspian_vault.dv_link_well_survey: Close
+[0m06:06:36.300851 [debug] [Thread-4 (]: On model.caspian_vault.dv_sat_readings: Close
+[0m06:06:36.301131 [debug] [Thread-1 (]: Began executing node test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033
+[0m06:06:36.303902 [debug] [Thread-2 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007"
+[0m06:06:36.304667 [info ] [Thread-3 (]: 6 of 33 OK created sql table model public.dv_link_well_survey .................. [[32mSELECT 50[0m in 0.12s]
+[0m06:06:36.307803 [debug] [Thread-3 (]: Finished running node model.caspian_vault.dv_link_well_survey
+[0m06:06:36.307182 [debug] [Thread-1 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033"
+[0m06:06:36.305375 [info ] [Thread-4 (]: 7 of 33 OK created sql table model public.dv_sat_readings ...................... [[32mSELECT 9980[0m in 0.11s]
+[0m06:06:36.308103 [debug] [Thread-2 (]: Began executing node test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007
+[0m06:06:36.308475 [debug] [Thread-3 (]: Began running node test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d
+[0m06:06:36.309200 [debug] [Thread-4 (]: Finished running node model.caspian_vault.dv_sat_readings
+[0m06:06:36.309592 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033"
+[0m06:06:36.311148 [debug] [Thread-2 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007"
+[0m06:06:36.311539 [info ] [Thread-3 (]: 10 of 33 START test unique_dv_hub_survey_type_hk_survey_type ................... [RUN]
+[0m06:06:36.311940 [debug] [Thread-4 (]: Began running node test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743
+[0m06:06:36.312352 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033: BEGIN
+[0m06:06:36.312946 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dv_link_well_survey, now test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d)
+[0m06:06:36.313290 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007"
+[0m06:06:36.313622 [info ] [Thread-4 (]: 11 of 33 START test not_null_dv_hub_well_hk_well ............................... [RUN]
+[0m06:06:36.314027 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.314363 [debug] [Thread-3 (]: Began compiling node test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d
+[0m06:06:36.314683 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007: BEGIN
+[0m06:06:36.315027 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dv_sat_readings, now test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743)
+[0m06:06:36.319672 [debug] [Thread-3 (]: Writing injected SQL for node "test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d"
+[0m06:06:36.320082 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.320418 [debug] [Thread-1 (]: SQL status: BEGIN in 0.006 seconds
+[0m06:06:36.320737 [debug] [Thread-4 (]: Began compiling node test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743
+[0m06:06:36.321192 [debug] [Thread-3 (]: Began executing node test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d
+[0m06:06:36.321644 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033"
+[0m06:06:36.324412 [debug] [Thread-4 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743"
+[0m06:06:36.326032 [debug] [Thread-3 (]: Writing runtime sql for node "test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d"
+[0m06:06:36.326431 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hk_survey_type
+from "airflow"."public"."dv_hub_survey_type"
+where hk_survey_type is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.326795 [debug] [Thread-2 (]: SQL status: BEGIN in 0.007 seconds
+[0m06:06:36.327286 [debug] [Thread-4 (]: Began executing node test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743
+[0m06:06:36.327740 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d"
+[0m06:06:36.328065 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007"
+[0m06:06:36.328415 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.329952 [debug] [Thread-4 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743"
+[0m06:06:36.330315 [debug] [Thread-3 (]: On test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d: BEGIN
+[0m06:06:36.330658 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select survey_type_bk
+from "airflow"."public"."dv_hub_survey_type"
+where survey_type_bk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.331973 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033: ROLLBACK
+[0m06:06:36.332438 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.333093 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743"
+[0m06:06:36.333617 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033: Close
+[0m06:06:36.333943 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.334273 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743: BEGIN
+[0m06:06:36.335968 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007: ROLLBACK
+[0m06:06:36.334854 [info ] [Thread-1 (]: 8 of 33 PASS not_null_dv_hub_survey_type_hk_survey_type ........................ [[32mPASS[0m in 0.04s]
+[0m06:06:36.336435 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.336976 [debug] [Thread-1 (]: Finished running node test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033
+[0m06:06:36.337329 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007: Close
+[0m06:06:36.337679 [debug] [Thread-3 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.338147 [debug] [Thread-1 (]: Began running node test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7
+[0m06:06:36.338711 [info ] [Thread-2 (]: 9 of 33 PASS not_null_dv_hub_survey_type_survey_type_bk ........................ [[32mPASS[0m in 0.05s]
+[0m06:06:36.339041 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d"
+[0m06:06:36.339406 [info ] [Thread-1 (]: 12 of 33 START test not_null_dv_hub_well_well_id_bk ............................ [RUN]
+[0m06:06:36.339918 [debug] [Thread-2 (]: Finished running node test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007
+[0m06:06:36.340266 [debug] [Thread-3 (]: On test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    hk_survey_type as unique_field,
+    count(*) as n_records
+
+from "airflow"."public"."dv_hub_survey_type"
+where hk_survey_type is not null
+group by hk_survey_type
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.340639 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_hub_survey_type_hk_survey_type.3ae66ee033, now test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7)
+[0m06:06:36.341015 [debug] [Thread-2 (]: Began running node test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc
+[0m06:06:36.341897 [info ] [Thread-2 (]: 13 of 33 START test unique_dv_hub_well_hk_well ................................. [RUN]
+[0m06:06:36.341519 [debug] [Thread-1 (]: Began compiling node test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7
+[0m06:06:36.342294 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.342618 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_hub_survey_type_survey_type_bk.c9fbaab007, now test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc)
+[0m06:06:36.342924 [debug] [Thread-4 (]: SQL status: BEGIN in 0.006 seconds
+[0m06:06:36.346885 [debug] [Thread-1 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7"
+[0m06:06:36.348087 [debug] [Thread-3 (]: On test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d: ROLLBACK
+[0m06:06:36.348441 [debug] [Thread-2 (]: Began compiling node test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc
+[0m06:06:36.348828 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743"
+[0m06:06:36.354563 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hk_well
+from "airflow"."public"."dv_hub_well"
+where hk_well is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.355029 [debug] [Thread-1 (]: Began executing node test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7
+[0m06:06:36.356603 [debug] [Thread-1 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7"
+[0m06:06:36.354060 [debug] [Thread-2 (]: Writing injected SQL for node "test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc"
+[0m06:06:36.357447 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m06:06:36.357734 [debug] [Thread-3 (]: On test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d: Close
+[0m06:06:36.358347 [debug] [Thread-2 (]: Began executing node test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc
+[0m06:06:36.359425 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743: ROLLBACK
+[0m06:06:36.359814 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7"
+[0m06:06:36.363358 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7: BEGIN
+[0m06:06:36.363950 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.362066 [debug] [Thread-2 (]: Writing runtime sql for node "test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc"
+[0m06:06:36.364626 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc"
+[0m06:06:36.362703 [info ] [Thread-3 (]: 10 of 33 PASS unique_dv_hub_survey_type_hk_survey_type ......................... [[32mPASS[0m in 0.05s]
+[0m06:06:36.366061 [debug] [Thread-3 (]: Finished running node test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d
+[0m06:06:36.365223 [debug] [Thread-2 (]: On test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc: BEGIN
+[0m06:06:36.363638 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743: Close
+[0m06:06:36.366536 [debug] [Thread-3 (]: Began running node test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652
+[0m06:06:36.367034 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.367691 [info ] [Thread-3 (]: 14 of 33 START test not_null_dv_link_well_survey_hk_survey_type ................ [RUN]
+[0m06:06:36.368888 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.caspian_vault.unique_dv_hub_survey_type_hk_survey_type.36ca59927d, now test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652)
+[0m06:06:36.369188 [debug] [Thread-3 (]: Began compiling node test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652
+[0m06:06:36.368131 [info ] [Thread-4 (]: 11 of 33 PASS not_null_dv_hub_well_hk_well ..................................... [[32mPASS[0m in 0.05s]
+[0m06:06:36.374968 [debug] [Thread-3 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652"
+[0m06:06:36.375488 [debug] [Thread-1 (]: SQL status: BEGIN in 0.012 seconds
+[0m06:06:36.375989 [debug] [Thread-4 (]: Finished running node test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743
+[0m06:06:36.376625 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7"
+[0m06:06:36.376918 [debug] [Thread-3 (]: Began executing node test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652
+[0m06:06:36.377419 [debug] [Thread-4 (]: Began running node test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b
+[0m06:06:36.380775 [info ] [Thread-4 (]: 15 of 33 START test not_null_dv_link_well_survey_hk_well ....................... [RUN]
+[0m06:06:36.378147 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select well_id_bk
+from "airflow"."public"."dv_hub_well"
+where well_id_bk is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.377859 [debug] [Thread-2 (]: SQL status: BEGIN in 0.011 seconds
+[0m06:06:36.381735 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc"
+[0m06:06:36.382027 [debug] [Thread-2 (]: On test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    hk_well as unique_field,
+    count(*) as n_records
+
+from "airflow"."public"."dv_hub_well"
+where hk_well is not null
+group by hk_well
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.380058 [debug] [Thread-3 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652"
+[0m06:06:36.381331 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_hub_well_hk_well.e7db409743, now test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b)
+[0m06:06:36.382338 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.382857 [debug] [Thread-4 (]: Began compiling node test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b
+[0m06:06:36.384071 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7: ROLLBACK
+[0m06:06:36.388368 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m06:06:36.387908 [debug] [Thread-4 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b"
+[0m06:06:36.388723 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7: Close
+[0m06:06:36.390861 [debug] [Thread-4 (]: Began executing node test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b
+[0m06:06:36.390033 [debug] [Thread-2 (]: On test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc: ROLLBACK
+[0m06:06:36.392776 [debug] [Thread-4 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b"
+[0m06:06:36.393754 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652"
+[0m06:06:36.394786 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652: BEGIN
+[0m06:06:36.395063 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.393214 [info ] [Thread-1 (]: 12 of 33 PASS not_null_dv_hub_well_well_id_bk .................................. [[32mPASS[0m in 0.05s]
+[0m06:06:36.395745 [debug] [Thread-1 (]: Finished running node test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7
+[0m06:06:36.396061 [debug] [Thread-1 (]: Began running node test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6
+[0m06:06:36.394402 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b"
+[0m06:06:36.398241 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b: BEGIN
+[0m06:06:36.397351 [debug] [Thread-2 (]: On test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc: Close
+[0m06:06:36.397821 [info ] [Thread-1 (]: 16 of 33 START test not_null_dv_link_well_survey_hk_well_survey ................ [RUN]
+[0m06:06:36.399924 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_hub_well_well_id_bk.e60b1222a7, now test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6)
+[0m06:06:36.400223 [debug] [Thread-1 (]: Began compiling node test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6
+[0m06:06:36.398534 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.399406 [info ] [Thread-2 (]: 13 of 33 PASS unique_dv_hub_well_hk_well ....................................... [[32mPASS[0m in 0.06s]
+[0m06:06:36.405490 [debug] [Thread-2 (]: Finished running node test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc
+[0m06:06:36.405951 [debug] [Thread-2 (]: Began running node test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4
+[0m06:06:36.403696 [debug] [Thread-1 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6"
+[0m06:06:36.407171 [debug] [Thread-1 (]: Began executing node test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6
+[0m06:06:36.406421 [info ] [Thread-2 (]: 17 of 33 START test relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_  [RUN]
+[0m06:06:36.410581 [debug] [Thread-3 (]: SQL status: BEGIN in 0.015 seconds
+[0m06:06:36.411658 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652"
+[0m06:06:36.411952 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hk_survey_type
+from "airflow"."public"."dv_link_well_survey"
+where hk_survey_type is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.409514 [debug] [Thread-1 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6"
+[0m06:06:36.412641 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6"
+[0m06:06:36.411170 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.caspian_vault.unique_dv_hub_well_hk_well.bd27a0d1dc, now test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4)
+[0m06:06:36.412950 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.413334 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6: BEGIN
+[0m06:06:36.413741 [debug] [Thread-2 (]: Began compiling node test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4
+[0m06:06:36.414953 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652: ROLLBACK
+[0m06:06:36.415854 [debug] [Thread-4 (]: SQL status: BEGIN in 0.017 seconds
+[0m06:06:36.415480 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.421519 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652: Close
+[0m06:06:36.423327 [debug] [Thread-2 (]: Writing injected SQL for node "test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4"
+[0m06:06:36.423769 [debug] [Thread-2 (]: Began executing node test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4
+[0m06:06:36.421894 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b"
+[0m06:06:36.426600 [debug] [Thread-2 (]: Writing runtime sql for node "test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4"
+[0m06:06:36.427083 [info ] [Thread-3 (]: 14 of 33 PASS not_null_dv_link_well_survey_hk_survey_type ...................... [[32mPASS[0m in 0.06s]
+[0m06:06:36.427607 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hk_well
+from "airflow"."public"."dv_link_well_survey"
+where hk_well is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.428090 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4"
+[0m06:06:36.429152 [debug] [Thread-2 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4: BEGIN
+[0m06:06:36.429458 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.428727 [debug] [Thread-3 (]: Finished running node test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652
+[0m06:06:36.429738 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.430603 [debug] [Thread-3 (]: Began running node test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685
+[0m06:06:36.432171 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b: ROLLBACK
+[0m06:06:36.430985 [debug] [Thread-1 (]: SQL status: BEGIN in 0.016 seconds
+[0m06:06:36.433045 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6"
+[0m06:06:36.433377 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hk_well_survey
+from "airflow"."public"."dv_link_well_survey"
+where hk_well_survey is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.433718 [debug] [Thread-4 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b: Close
+[0m06:06:36.432554 [info ] [Thread-3 (]: 18 of 33 START test relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_  [RUN]
+[0m06:06:36.434581 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_link_well_survey_hk_survey_type.f857109652, now test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685)
+[0m06:06:36.434872 [debug] [Thread-3 (]: Began compiling node test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685
+[0m06:06:36.438528 [debug] [Thread-3 (]: Writing injected SQL for node "test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685"
+[0m06:06:36.434185 [info ] [Thread-4 (]: 15 of 33 PASS not_null_dv_link_well_survey_hk_well ............................. [[32mPASS[0m in 0.05s]
+[0m06:06:36.439168 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m06:06:36.441137 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6: ROLLBACK
+[0m06:06:36.440004 [debug] [Thread-4 (]: Finished running node test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b
+[0m06:06:36.439584 [debug] [Thread-3 (]: Began executing node test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685
+[0m06:06:36.444321 [debug] [Thread-3 (]: Writing runtime sql for node "test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685"
+[0m06:06:36.444780 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685"
+[0m06:06:36.442589 [debug] [Thread-2 (]: SQL status: BEGIN in 0.013 seconds
+[0m06:06:36.445087 [debug] [Thread-3 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685: BEGIN
+[0m06:06:36.441922 [debug] [Thread-4 (]: Began running node test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb
+[0m06:06:36.446066 [info ] [Thread-4 (]: 19 of 33 START test unique_dv_link_well_survey_hk_well_survey .................. [RUN]
+[0m06:06:36.445426 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4"
+[0m06:06:36.446413 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_link_well_survey_hk_well.320d0c7b0b, now test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb)
+[0m06:06:36.442304 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6: Close
+[0m06:06:36.445746 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.446876 [debug] [Thread-2 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select hk_survey_type as from_field
+    from "airflow"."public"."dv_link_well_survey"
+    where hk_survey_type is not null
+),
+
+parent as (
+    select hk_survey_type as to_field
+    from "airflow"."public"."dv_hub_survey_type"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.447726 [info ] [Thread-1 (]: 16 of 33 PASS not_null_dv_link_well_survey_hk_well_survey ...................... [[32mPASS[0m in 0.05s]
+[0m06:06:36.448447 [debug] [Thread-1 (]: Finished running node test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6
+[0m06:06:36.448767 [debug] [Thread-1 (]: Began running node test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688
+[0m06:06:36.447228 [debug] [Thread-4 (]: Began compiling node test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb
+[0m06:06:36.451965 [debug] [Thread-4 (]: Writing injected SQL for node "test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb"
+[0m06:06:36.452326 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m06:06:36.449146 [info ] [Thread-1 (]: 20 of 33 START test not_null_dv_sat_readings_hk_well_survey .................... [RUN]
+[0m06:06:36.453757 [debug] [Thread-2 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4: ROLLBACK
+[0m06:06:36.454103 [debug] [Thread-3 (]: SQL status: BEGIN in 0.008 seconds
+[0m06:06:36.454437 [debug] [Thread-4 (]: Began executing node test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb
+[0m06:06:36.457179 [debug] [Thread-4 (]: Writing runtime sql for node "test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb"
+[0m06:06:36.455178 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685"
+[0m06:06:36.455483 [debug] [Thread-2 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4: Close
+[0m06:06:36.454783 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_link_well_survey_hk_well_survey.76e54a32d6, now test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688)
+[0m06:06:36.457646 [debug] [Thread-3 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select hk_well as from_field
+    from "airflow"."public"."dv_link_well_survey"
+    where hk_well is not null
+),
+
+parent as (
+    select hk_well as to_field
+    from "airflow"."public"."dv_hub_well"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.458000 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb"
+[0m06:06:36.458386 [debug] [Thread-1 (]: Began compiling node test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688
+[0m06:06:36.458836 [info ] [Thread-2 (]: 17 of 33 PASS relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_  [[32mPASS[0m in 0.05s]
+[0m06:06:36.459371 [debug] [Thread-4 (]: On test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb: BEGIN
+[0m06:06:36.463481 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.462593 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m06:06:36.463134 [debug] [Thread-2 (]: Finished running node test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4
+[0m06:06:36.462191 [debug] [Thread-1 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688"
+[0m06:06:36.464774 [debug] [Thread-3 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685: ROLLBACK
+[0m06:06:36.465167 [debug] [Thread-2 (]: Began running node test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09
+[0m06:06:36.467165 [debug] [Thread-1 (]: Began executing node test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688
+[0m06:06:36.466787 [info ] [Thread-2 (]: 21 of 33 START test not_null_dv_sat_readings_load_ts ........................... [RUN]
+[0m06:06:36.467583 [debug] [Thread-3 (]: On test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685: Close
+[0m06:06:36.469335 [debug] [Thread-1 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688"
+[0m06:06:36.469736 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.caspian_vault.relationships_dv_link_well_survey_hk_survey_type__hk_survey_type__ref_dv_hub_survey_type_.96fb7de7c4, now test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09)
+[0m06:06:36.470059 [debug] [Thread-4 (]: SQL status: BEGIN in 0.007 seconds
+[0m06:06:36.470628 [info ] [Thread-3 (]: 18 of 33 PASS relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_  [[32mPASS[0m in 0.04s]
+[0m06:06:36.471143 [debug] [Thread-2 (]: Began compiling node test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09
+[0m06:06:36.471537 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb"
+[0m06:06:36.471949 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688"
+[0m06:06:36.472508 [debug] [Thread-3 (]: Finished running node test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685
+[0m06:06:36.475402 [debug] [Thread-2 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09"
+[0m06:06:36.475772 [debug] [Thread-4 (]: On test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    hk_well_survey as unique_field,
+    count(*) as n_records
+
+from "airflow"."public"."dv_link_well_survey"
+where hk_well_survey is not null
+group by hk_well_survey
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.476145 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688: BEGIN
+[0m06:06:36.476529 [debug] [Thread-3 (]: Began running node test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b
+[0m06:06:36.477215 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.477525 [debug] [Thread-2 (]: Began executing node test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09
+[0m06:06:36.477820 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m06:06:36.478130 [info ] [Thread-3 (]: 22 of 33 START test not_null_dv_sat_readings_row_checksum ...................... [RUN]
+[0m06:06:36.479994 [debug] [Thread-2 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09"
+[0m06:06:36.482507 [debug] [Thread-4 (]: On test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb: ROLLBACK
+[0m06:06:36.482935 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.caspian_vault.relationships_dv_link_well_survey_hk_well__hk_well__ref_dv_hub_well_.18b280a685, now test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b)
+[0m06:06:36.483312 [debug] [Thread-1 (]: SQL status: BEGIN in 0.006 seconds
+[0m06:06:36.483846 [debug] [Thread-3 (]: Began compiling node test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b
+[0m06:06:36.484138 [debug] [Thread-4 (]: On test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb: Close
+[0m06:06:36.484528 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09"
+[0m06:06:36.484860 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688"
+[0m06:06:36.487653 [debug] [Thread-3 (]: Writing injected SQL for node "test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b"
+[0m06:06:36.488043 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09: BEGIN
+[0m06:06:36.488459 [info ] [Thread-4 (]: 19 of 33 PASS unique_dv_link_well_survey_hk_well_survey ........................ [[32mPASS[0m in 0.04s]
+[0m06:06:36.488867 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hk_well_survey
+from "airflow"."public"."dv_sat_readings"
+where hk_well_survey is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.489332 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.489657 [debug] [Thread-3 (]: Began executing node test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b
+[0m06:06:36.490128 [debug] [Thread-4 (]: Finished running node test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb
+[0m06:06:36.492071 [debug] [Thread-3 (]: Writing runtime sql for node "test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b"
+[0m06:06:36.492499 [debug] [Thread-4 (]: Began running node test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e
+[0m06:06:36.493354 [info ] [Thread-4 (]: 23 of 33 START test relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_  [RUN]
+[0m06:06:36.492919 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.002 seconds
+[0m06:06:36.493730 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b"
+[0m06:06:36.494126 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.caspian_vault.unique_dv_link_well_survey_hk_well_survey.24dd935adb, now test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e)
+[0m06:06:36.494492 [debug] [Thread-2 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.495693 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688: ROLLBACK
+[0m06:06:36.496028 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b: BEGIN
+[0m06:06:36.496378 [debug] [Thread-4 (]: Began compiling node test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e
+[0m06:06:36.496715 [debug] [Thread-2 (]: Using postgres connection "test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09"
+[0m06:06:36.497110 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.497473 [debug] [Thread-1 (]: On test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688: Close
+[0m06:06:36.501348 [debug] [Thread-4 (]: Writing injected SQL for node "test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e"
+[0m06:06:36.501745 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select load_ts
+from "airflow"."public"."dv_sat_readings"
+where load_ts is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.502520 [info ] [Thread-1 (]: 20 of 33 PASS not_null_dv_sat_readings_hk_well_survey .......................... [[32mPASS[0m in 0.05s]
+[0m06:06:36.503492 [debug] [Thread-1 (]: Finished running node test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688
+[0m06:06:36.503019 [debug] [Thread-4 (]: Began executing node test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e
+[0m06:06:36.503851 [debug] [Thread-1 (]: Began running node test.caspian_vault.test_counts_match
+[0m06:06:36.505854 [debug] [Thread-4 (]: Writing runtime sql for node "test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e"
+[0m06:06:36.506214 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.003 seconds
+[0m06:06:36.507086 [debug] [Thread-3 (]: SQL status: BEGIN in 0.010 seconds
+[0m06:06:36.508917 [debug] [Thread-3 (]: Using postgres connection "test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b"
+[0m06:06:36.509306 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select row_checksum
+from "airflow"."public"."dv_sat_readings"
+where row_checksum is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.506711 [info ] [Thread-1 (]: 24 of 33 START test test_counts_match .......................................... [RUN]
+[0m06:06:36.508554 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09: ROLLBACK
+[0m06:06:36.509700 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e"
+[0m06:06:36.510116 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_sat_readings_hk_well_survey.f200faa688, now test.caspian_vault.test_counts_match)
+[0m06:06:36.510515 [debug] [Thread-4 (]: On test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e: BEGIN
+[0m06:06:36.510847 [debug] [Thread-2 (]: On test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09: Close
+[0m06:06:36.511159 [debug] [Thread-1 (]: Began compiling node test.caspian_vault.test_counts_match
+[0m06:06:36.511499 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.511796 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.002 seconds
+[0m06:06:36.514514 [debug] [Thread-1 (]: Writing injected SQL for node "test.caspian_vault.test_counts_match"
+[0m06:06:36.517022 [debug] [Thread-1 (]: Began executing node test.caspian_vault.test_counts_match
+[0m06:06:36.516510 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b: ROLLBACK
+[0m06:06:36.518917 [debug] [Thread-1 (]: Writing runtime sql for node "test.caspian_vault.test_counts_match"
+[0m06:06:36.515017 [info ] [Thread-2 (]: 21 of 33 PASS not_null_dv_sat_readings_load_ts ................................. [[32mPASS[0m in 0.05s]
+[0m06:06:36.519480 [debug] [Thread-3 (]: On test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b: Close
+[0m06:06:36.519850 [debug] [Thread-4 (]: SQL status: BEGIN in 0.008 seconds
+[0m06:06:36.520351 [debug] [Thread-2 (]: Finished running node test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09
+[0m06:06:36.520751 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.test_counts_match"
+[0m06:06:36.521104 [debug] [Thread-4 (]: Using postgres connection "test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e"
+[0m06:06:36.521556 [info ] [Thread-3 (]: 22 of 33 PASS not_null_dv_sat_readings_row_checksum ............................ [[32mPASS[0m in 0.04s]
+[0m06:06:36.522000 [debug] [Thread-2 (]: Began running node model.caspian_vault.dim_survey_type
+[0m06:06:36.522406 [debug] [Thread-1 (]: On test.caspian_vault.test_counts_match: BEGIN
+[0m06:06:36.522750 [debug] [Thread-4 (]: On test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select hk_well_survey as from_field
+    from "airflow"."public"."dv_sat_readings"
+    where hk_well_survey is not null
+),
+
+parent as (
+    select hk_well_survey as to_field
+    from "airflow"."public"."dv_link_well_survey"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.523206 [debug] [Thread-3 (]: Finished running node test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b
+[0m06:06:36.523636 [info ] [Thread-2 (]: 25 of 33 START sql table model public.dim_survey_type .......................... [RUN]
+[0m06:06:36.523992 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.524423 [debug] [Thread-3 (]: Began running node model.caspian_vault.dim_well
+[0m06:06:36.524817 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_sat_readings_load_ts.0b12917b09, now model.caspian_vault.dim_survey_type)
+[0m06:06:36.525682 [debug] [Thread-2 (]: Began compiling node model.caspian_vault.dim_survey_type
+[0m06:06:36.528117 [debug] [Thread-2 (]: Writing injected SQL for node "model.caspian_vault.dim_survey_type"
+[0m06:06:36.528495 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m06:06:36.525383 [info ] [Thread-3 (]: 26 of 33 START sql table model public.dim_well ................................. [RUN]
+[0m06:06:36.530042 [debug] [Thread-4 (]: On test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e: ROLLBACK
+[0m06:06:36.530554 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.caspian_vault.not_null_dv_sat_readings_row_checksum.51b9f3aa4b, now model.caspian_vault.dim_well)
+[0m06:06:36.530911 [debug] [Thread-1 (]: SQL status: BEGIN in 0.007 seconds
+[0m06:06:36.531315 [debug] [Thread-2 (]: Began executing node model.caspian_vault.dim_survey_type
+[0m06:06:36.531646 [debug] [Thread-4 (]: On test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e: Close
+[0m06:06:36.531937 [debug] [Thread-3 (]: Began compiling node model.caspian_vault.dim_well
+[0m06:06:36.532311 [debug] [Thread-1 (]: Using postgres connection "test.caspian_vault.test_counts_match"
+[0m06:06:36.535288 [debug] [Thread-2 (]: Writing runtime sql for node "model.caspian_vault.dim_survey_type"
+[0m06:06:36.537596 [debug] [Thread-3 (]: Writing injected SQL for node "model.caspian_vault.dim_well"
+[0m06:06:36.538057 [info ] [Thread-4 (]: 23 of 33 PASS relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_  [[32mPASS[0m in 0.04s]
+[0m06:06:36.538520 [debug] [Thread-1 (]: On test.caspian_vault.test_counts_match: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "test.caspian_vault.test_counts_match"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- test passes if returns 0 rows
+-- Only enforce count match when source has data (prevents failure when raw sources are stubbed/empty)
+
+with src as (
+  select count(*) as n from "airflow"."public"."stg_readings"
+),
+sat as (
+  select count(*) as n from "airflow"."public"."dv_sat_readings"
+)
+select
+  src.n as src_rows,
+  sat.n as sat_rows
+from src, sat
+where src.n > 0
+  and src.n != sat.n
+  
+  
+      
+    ) dbt_internal_test
+[0m06:06:36.539088 [debug] [Thread-3 (]: Began executing node model.caspian_vault.dim_well
+[0m06:06:36.539550 [debug] [Thread-4 (]: Finished running node test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e
+[0m06:06:36.539882 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dim_survey_type"
+[0m06:06:36.544082 [debug] [Thread-3 (]: Writing runtime sql for node "model.caspian_vault.dim_well"
+[0m06:06:36.544435 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m06:06:36.546262 [debug] [Thread-1 (]: On test.caspian_vault.test_counts_match: ROLLBACK
+[0m06:06:36.544924 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: BEGIN
+[0m06:06:36.546684 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dim_well"
+[0m06:06:36.547014 [debug] [Thread-1 (]: On test.caspian_vault.test_counts_match: Close
+[0m06:06:36.547315 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.547643 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: BEGIN
+[0m06:06:36.548227 [info ] [Thread-1 (]: 24 of 33 PASS test_counts_match ................................................ [[32mPASS[0m in 0.04s]
+[0m06:06:36.548752 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.549268 [debug] [Thread-1 (]: Finished running node test.caspian_vault.test_counts_match
+[0m06:06:36.550008 [debug] [Thread-4 (]: Began running node model.caspian_vault.dim_source_format
+[0m06:06:36.550324 [debug] [Thread-1 (]: Began running node model.caspian_vault.dim_time
+[0m06:06:36.550756 [info ] [Thread-4 (]: 27 of 33 START sql table model public.dim_source_format ........................ [RUN]
+[0m06:06:36.551272 [info ] [Thread-1 (]: 28 of 33 START sql table model public.dim_time ................................. [RUN]
+[0m06:06:36.551694 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.caspian_vault.relationships_dv_sat_readings_hk_well_survey__hk_well_survey__ref_dv_link_well_survey_.d06db1050e, now model.caspian_vault.dim_source_format)
+[0m06:06:36.552128 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.caspian_vault.test_counts_match, now model.caspian_vault.dim_time)
+[0m06:06:36.552539 [debug] [Thread-2 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.552824 [debug] [Thread-4 (]: Began compiling node model.caspian_vault.dim_source_format
+[0m06:06:36.556262 [debug] [Thread-4 (]: Writing injected SQL for node "model.caspian_vault.dim_source_format"
+[0m06:06:36.553554 [debug] [Thread-3 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.553904 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dim_survey_type"
+[0m06:06:36.553227 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.dim_time
+[0m06:06:36.556686 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dim_well"
+[0m06:06:36.556991 [debug] [Thread-4 (]: Began executing node model.caspian_vault.dim_source_format
+[0m06:06:36.557355 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_survey_type"} */
+
+  
+    
+
+  create  table "airflow"."public"."dim_survey_type__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  hk_survey_type,
+  survey_type_bk as survey_type_id,
+  load_ts,
+  record_source
+from "airflow"."public"."dv_hub_survey_type"
+  );
+  
+[0m06:06:36.559438 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.dim_time"
+[0m06:06:36.559793 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_well"} */
+
+  
+    
+
+  create  table "airflow"."public"."dim_well__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- If you don't have real lat/lon in the raw data, we generate deterministic pseudo coords
+-- within a Caspian-ish bounding box so the map can still work for the demo.
+with base as (
+  select
+    hk_well,
+    well_id_bk as well_id,
+    load_ts,
+    record_source
+  from "airflow"."public"."dv_hub_well"
+),
+geo as (
+  select
+    *,
+    -- deterministic pseudo geo: map well_id -> lat/lon
+    38.0 + (abs(abs(('x' || substr(md5(cast(well_id as text)), 1, 8))::bit(32)::int)) % 6000) / 1000.0 as lat,   -- 38..44
+47.0 + (abs((('x' || substr(md5('x' || cast(well_id as text)), 1, 8))::bit(32)::int)) % 7000) / 1000.0 as lon -- 47..54
+  from base
+)
+select * from geo
+  );
+  
+[0m06:06:36.562544 [debug] [Thread-4 (]: Writing runtime sql for node "model.caspian_vault.dim_source_format"
+[0m06:06:36.563515 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dim_source_format"
+[0m06:06:36.563069 [debug] [Thread-1 (]: Began executing node model.caspian_vault.dim_time
+[0m06:06:36.563919 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: BEGIN
+[0m06:06:36.567351 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.566529 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.dim_time"
+[0m06:06:36.567968 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dim_time"
+[0m06:06:36.568273 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: BEGIN
+[0m06:06:36.568536 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.569655 [debug] [Thread-2 (]: SQL status: SELECT 3 in 0.007 seconds
+[0m06:06:36.570019 [debug] [Thread-3 (]: SQL status: SELECT 20 in 0.007 seconds
+[0m06:06:36.572490 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dim_survey_type"
+[0m06:06:36.574982 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dim_well"
+[0m06:06:36.575317 [debug] [Thread-4 (]: SQL status: BEGIN in 0.008 seconds
+[0m06:06:36.575991 [debug] [Thread-1 (]: SQL status: BEGIN in 0.007 seconds
+[0m06:06:36.575682 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_survey_type"} */
+alter table "airflow"."public"."dim_survey_type" rename to "dim_survey_type__dbt_backup"
+[0m06:06:36.576323 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_well"} */
+alter table "airflow"."public"."dim_well" rename to "dim_well__dbt_backup"
+[0m06:06:36.576651 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dim_source_format"
+[0m06:06:36.577451 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_source_format"} */
+
+  
+    
+
+  create  table "airflow"."public"."dim_source_format__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select distinct
+  source_format,
+  md5(source_format) as hk_source_format
+from "airflow"."public"."dv_sat_readings"
+  );
+  
+[0m06:06:36.576972 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dim_time"
+[0m06:06:36.577798 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.578091 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m06:06:36.578460 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_time"} */
+
+  
+    
+
+  create  table "airflow"."public"."dim_time__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- Time dimension derived from load timestamps (ingest_ts / load_ts)
+with t as (
+  select distinct cast(load_ts as timestamp) as ts
+  from "airflow"."public"."dv_sat_readings"
+)
+select
+  ts,
+  date(ts) as d,
+  extract(year from ts) as year,
+  extract(month from ts) as month,
+  extract(day from ts) as day,
+  to_char(ts, 'YYYY-MM') as year_month,
+  to_char(ts, 'YYYY-MM-DD') as ymd,
+  extract(hour from ts) as hour
+from t
+  );
+  
+[0m06:06:36.580532 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dim_well"
+[0m06:06:36.582623 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dim_survey_type"
+[0m06:06:36.583029 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_well"} */
+alter table "airflow"."public"."dim_well__dbt_tmp" rename to "dim_well"
+[0m06:06:36.583363 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_survey_type"} */
+alter table "airflow"."public"."dim_survey_type__dbt_tmp" rename to "dim_survey_type"
+[0m06:06:36.583871 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.584163 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.585341 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: COMMIT
+[0m06:06:36.587486 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: COMMIT
+[0m06:06:36.587836 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dim_well"
+[0m06:06:36.588160 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dim_survey_type"
+[0m06:06:36.588462 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m06:06:36.588792 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: COMMIT
+[0m06:06:36.589114 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: COMMIT
+[0m06:06:36.591418 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dim_time"
+[0m06:06:36.591755 [debug] [Thread-4 (]: SQL status: SELECT 2 in 0.013 seconds
+[0m06:06:36.592141 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_time"} */
+alter table "airflow"."public"."dim_time" rename to "dim_time__dbt_backup"
+[0m06:06:36.594461 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dim_source_format"
+[0m06:06:36.594819 [debug] [Thread-3 (]: SQL status: COMMIT in 0.003 seconds
+[0m06:06:36.595199 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_source_format"} */
+alter table "airflow"."public"."dim_source_format" rename to "dim_source_format__dbt_backup"
+[0m06:06:36.595504 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.597191 [debug] [Thread-3 (]: Applying DROP to: "airflow"."public"."dim_well__dbt_backup"
+[0m06:06:36.597584 [debug] [Thread-2 (]: SQL status: COMMIT in 0.005 seconds
+[0m06:06:36.599629 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dim_time"
+[0m06:06:36.599982 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m06:06:36.600441 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.dim_well"
+[0m06:06:36.602085 [debug] [Thread-2 (]: Applying DROP to: "airflow"."public"."dim_survey_type__dbt_backup"
+[0m06:06:36.602435 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_time"} */
+alter table "airflow"."public"."dim_time__dbt_tmp" rename to "dim_time"
+[0m06:06:36.604475 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dim_source_format"
+[0m06:06:36.604811 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_well"} */
+drop table if exists "airflow"."public"."dim_well__dbt_backup" cascade
+[0m06:06:36.605278 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.dim_survey_type"
+[0m06:06:36.606350 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_survey_type"} */
+drop table if exists "airflow"."public"."dim_survey_type__dbt_backup" cascade
+[0m06:06:36.605648 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_source_format"} */
+alter table "airflow"."public"."dim_source_format__dbt_tmp" rename to "dim_source_format"
+[0m06:06:36.605953 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.607638 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: COMMIT
+[0m06:06:36.607985 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m06:06:36.608306 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dim_time"
+[0m06:06:36.608637 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m06:06:36.609603 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: COMMIT
+[0m06:06:36.611616 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dim_source_format"
+[0m06:06:36.610241 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: COMMIT
+[0m06:06:36.611286 [debug] [Thread-3 (]: On model.caspian_vault.dim_well: Close
+[0m06:06:36.611904 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: COMMIT
+[0m06:06:36.609924 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m06:06:36.613824 [debug] [Thread-2 (]: On model.caspian_vault.dim_survey_type: Close
+[0m06:06:36.614184 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m06:06:36.612738 [info ] [Thread-3 (]: 26 of 33 OK created sql table model public.dim_well ............................ [[32mSELECT 20[0m in 0.08s]
+[0m06:06:36.616151 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."dim_time__dbt_backup"
+[0m06:06:36.616756 [info ] [Thread-2 (]: 25 of 33 OK created sql table model public.dim_survey_type ..................... [[32mSELECT 3[0m in 0.09s]
+[0m06:06:36.618536 [debug] [Thread-2 (]: Finished running node model.caspian_vault.dim_survey_type
+[0m06:06:36.617603 [debug] [Thread-3 (]: Finished running node model.caspian_vault.dim_well
+[0m06:06:36.618079 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.dim_time"
+[0m06:06:36.618853 [debug] [Thread-2 (]: Began running node model.caspian_vault.fct_readings
+[0m06:06:36.617160 [debug] [Thread-4 (]: SQL status: COMMIT in 0.005 seconds
+[0m06:06:36.619322 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_time"} */
+drop table if exists "airflow"."public"."dim_time__dbt_backup" cascade
+[0m06:06:36.619755 [info ] [Thread-2 (]: 29 of 33 START sql table model public.fct_readings ............................. [RUN]
+[0m06:06:36.622025 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dim_survey_type, now model.caspian_vault.fct_readings)
+[0m06:06:36.622360 [debug] [Thread-2 (]: Began compiling node model.caspian_vault.fct_readings
+[0m06:06:36.624756 [debug] [Thread-2 (]: Writing injected SQL for node "model.caspian_vault.fct_readings"
+[0m06:06:36.621598 [debug] [Thread-4 (]: Applying DROP to: "airflow"."public"."dim_source_format__dbt_backup"
+[0m06:06:36.625067 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m06:06:36.625688 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.dim_source_format"
+[0m06:06:36.626819 [debug] [Thread-1 (]: On model.caspian_vault.dim_time: Close
+[0m06:06:36.627127 [debug] [Thread-2 (]: Began executing node model.caspian_vault.fct_readings
+[0m06:06:36.627494 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.dim_source_format"} */
+drop table if exists "airflow"."public"."dim_source_format__dbt_backup" cascade
+[0m06:06:36.631762 [debug] [Thread-2 (]: Writing runtime sql for node "model.caspian_vault.fct_readings"
+[0m06:06:36.632337 [info ] [Thread-1 (]: 28 of 33 OK created sql table model public.dim_time ............................ [[32mSELECT 1[0m in 0.08s]
+[0m06:06:36.633034 [debug] [Thread-1 (]: Finished running node model.caspian_vault.dim_time
+[0m06:06:36.633523 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.fct_readings"
+[0m06:06:36.633843 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: BEGIN
+[0m06:06:36.634120 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.635159 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m06:06:36.636281 [debug] [Thread-4 (]: On model.caspian_vault.dim_source_format: Close
+[0m06:06:36.636939 [info ] [Thread-4 (]: 27 of 33 OK created sql table model public.dim_source_format ................... [[32mSELECT 2[0m in 0.09s]
+[0m06:06:36.637485 [debug] [Thread-4 (]: Finished running node model.caspian_vault.dim_source_format
+[0m06:06:36.638288 [debug] [Thread-2 (]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:36.638624 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.fct_readings"
+[0m06:06:36.638937 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.fct_readings"} */
+
+  
+    
+
+  create  table "airflow"."public"."fct_readings__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+with sat as (
+  select
+    hk_well_survey,
+    load_ts,
+    record_source,
+    source_format,
+    row_checksum,
+    depth_ft,
+    amplitude,
+    quality_flag,
+    hashdiff
+  from "airflow"."public"."dv_sat_readings"
+),
+lnk as (
+  select
+    hk_well_survey,
+    hk_well,
+    hk_survey_type
+  from "airflow"."public"."dv_link_well_survey"
+)
+select
+  sat.hk_well_survey,
+  lnk.hk_well,
+  lnk.hk_survey_type,
+  sat.load_ts,
+  sat.record_source,
+  sat.source_format,
+  sat.row_checksum,
+  sat.depth_ft,
+  sat.amplitude,
+  sat.quality_flag,
+  sat.hashdiff
+from sat
+join lnk using (hk_well_survey)
+  );
+  
+[0m06:06:36.657308 [debug] [Thread-2 (]: SQL status: SELECT 9980 in 0.018 seconds
+[0m06:06:36.660288 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.fct_readings"
+[0m06:06:36.660610 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.fct_readings"} */
+alter table "airflow"."public"."fct_readings" rename to "fct_readings__dbt_backup"
+[0m06:06:36.661101 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.663125 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.fct_readings"
+[0m06:06:36.663458 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.fct_readings"} */
+alter table "airflow"."public"."fct_readings__dbt_tmp" rename to "fct_readings"
+[0m06:06:36.663932 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.664916 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: COMMIT
+[0m06:06:36.665215 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.fct_readings"
+[0m06:06:36.665503 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: COMMIT
+[0m06:06:36.668116 [debug] [Thread-2 (]: SQL status: COMMIT in 0.002 seconds
+[0m06:06:36.669822 [debug] [Thread-2 (]: Applying DROP to: "airflow"."public"."fct_readings__dbt_backup"
+[0m06:06:36.670341 [debug] [Thread-2 (]: Using postgres connection "model.caspian_vault.fct_readings"
+[0m06:06:36.670633 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.fct_readings"} */
+drop table if exists "airflow"."public"."fct_readings__dbt_backup" cascade
+[0m06:06:36.673758 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m06:06:36.674767 [debug] [Thread-2 (]: On model.caspian_vault.fct_readings: Close
+[0m06:06:36.675419 [info ] [Thread-2 (]: 29 of 33 OK created sql table model public.fct_readings ........................ [[32mSELECT 9980[0m in 0.05s]
+[0m06:06:36.675884 [debug] [Thread-2 (]: Finished running node model.caspian_vault.fct_readings
+[0m06:06:36.676599 [debug] [Thread-3 (]: Began running node model.caspian_vault.mart_sensor_analysis
+[0m06:06:36.676954 [debug] [Thread-1 (]: Began running node model.caspian_vault.mart_survey_summary
+[0m06:06:36.677339 [debug] [Thread-4 (]: Began running node model.caspian_vault.mart_well_performance
+[0m06:06:36.677732 [info ] [Thread-3 (]: 30 of 33 START sql table model public.mart_sensor_analysis ..................... [RUN]
+[0m06:06:36.678220 [info ] [Thread-1 (]: 31 of 33 START sql table model public.mart_survey_summary ...................... [RUN]
+[0m06:06:36.678705 [info ] [Thread-4 (]: 32 of 33 START sql table model public.mart_well_performance .................... [RUN]
+[0m06:06:36.679119 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dim_well, now model.caspian_vault.mart_sensor_analysis)
+[0m06:06:36.679492 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dim_time, now model.caspian_vault.mart_survey_summary)
+[0m06:06:36.679836 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.caspian_vault.dim_source_format, now model.caspian_vault.mart_well_performance)
+[0m06:06:36.680170 [debug] [Thread-3 (]: Began compiling node model.caspian_vault.mart_sensor_analysis
+[0m06:06:36.680710 [debug] [Thread-1 (]: Began compiling node model.caspian_vault.mart_survey_summary
+[0m06:06:36.681032 [debug] [Thread-4 (]: Began compiling node model.caspian_vault.mart_well_performance
+[0m06:06:36.683329 [debug] [Thread-3 (]: Writing injected SQL for node "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.685366 [debug] [Thread-1 (]: Writing injected SQL for node "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.687365 [debug] [Thread-4 (]: Writing injected SQL for node "model.caspian_vault.mart_well_performance"
+[0m06:06:36.688030 [debug] [Thread-3 (]: Began executing node model.caspian_vault.mart_sensor_analysis
+[0m06:06:36.688340 [debug] [Thread-1 (]: Began executing node model.caspian_vault.mart_survey_summary
+[0m06:06:36.691107 [debug] [Thread-3 (]: Writing runtime sql for node "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.691439 [debug] [Thread-4 (]: Began executing node model.caspian_vault.mart_well_performance
+[0m06:06:36.693985 [debug] [Thread-1 (]: Writing runtime sql for node "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.697723 [debug] [Thread-4 (]: Writing runtime sql for node "model.caspian_vault.mart_well_performance"
+[0m06:06:36.698395 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.698730 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.699069 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: BEGIN
+[0m06:06:36.699445 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.mart_well_performance"
+[0m06:06:36.699736 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: BEGIN
+[0m06:06:36.700049 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:06:36.700371 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: BEGIN
+[0m06:06:36.700672 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:36.701087 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m06:06:36.705111 [debug] [Thread-1 (]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:36.705465 [debug] [Thread-3 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.705840 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.706154 [debug] [Thread-4 (]: SQL status: BEGIN in 0.005 seconds
+[0m06:06:36.706508 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.706840 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_survey_summary"} */
+
+  
+    
+
+  create  table "airflow"."public"."mart_survey_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  hk_survey_type,
+  source_format,
+  count(distinct hk_well) as wells_surveyed,
+  count(*) as total_readings,
+  avg(amplitude) as avg_amplitude,
+  min(load_ts) as first_ingest_ts,
+  max(load_ts) as last_ingest_ts
+from "airflow"."public"."fct_readings"
+group by 1,2
+  );
+  
+[0m06:06:36.707173 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.mart_well_performance"
+[0m06:06:36.707519 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_sensor_analysis"} */
+
+  
+    
+
+  create  table "airflow"."public"."mart_sensor_analysis__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- treating survey_type as sensor type (only available categorical dimension)
+select
+  hk_survey_type as hk_sensor_type,
+  count(*) as total_readings,
+  avg(case when quality_flag = 1 then 1 else 0 end) as data_quality_rate,
+  avg(amplitude) as avg_amplitude
+from "airflow"."public"."fct_readings"
+group by 1
+  );
+  
+[0m06:06:36.707922 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_well_performance"} */
+
+  
+    
+
+  create  table "airflow"."public"."mart_well_performance__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  hk_well,
+  source_format,
+  count(*) as total_readings,
+  avg(amplitude) as avg_amplitude,
+  avg(case when quality_flag = 1 then 1 else 0 end) as data_quality_rate
+from "airflow"."public"."fct_readings"
+group by 1,2
+  );
+  
+[0m06:06:36.715047 [debug] [Thread-3 (]: SQL status: SELECT 3 in 0.007 seconds
+[0m06:06:36.718086 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.718462 [debug] [Thread-4 (]: SQL status: SELECT 21 in 0.010 seconds
+[0m06:06:36.718776 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_sensor_analysis"} */
+alter table "airflow"."public"."mart_sensor_analysis" rename to "mart_sensor_analysis__dbt_backup"
+[0m06:06:36.719084 [debug] [Thread-1 (]: SQL status: SELECT 6 in 0.011 seconds
+[0m06:06:36.721696 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.mart_well_performance"
+[0m06:06:36.724182 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.724556 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m06:06:36.724864 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_well_performance"} */
+alter table "airflow"."public"."mart_well_performance" rename to "mart_well_performance__dbt_backup"
+[0m06:06:36.725216 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_survey_summary"} */
+alter table "airflow"."public"."mart_survey_summary" rename to "mart_survey_summary__dbt_backup"
+[0m06:06:36.727337 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.727801 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_sensor_analysis"} */
+alter table "airflow"."public"."mart_sensor_analysis__dbt_tmp" rename to "mart_sensor_analysis"
+[0m06:06:36.728137 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.728441 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m06:06:36.730584 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.mart_well_performance"
+[0m06:06:36.730921 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m06:06:36.732948 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.733298 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_well_performance"} */
+alter table "airflow"."public"."mart_well_performance__dbt_tmp" rename to "mart_well_performance"
+[0m06:06:36.734411 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: COMMIT
+[0m06:06:36.734748 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_survey_summary"} */
+alter table "airflow"."public"."mart_survey_summary__dbt_tmp" rename to "mart_survey_summary"
+[0m06:06:36.735130 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.735468 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.735806 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: COMMIT
+[0m06:06:36.736132 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m06:06:36.738147 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: COMMIT
+[0m06:06:36.738468 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.738739 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: COMMIT
+[0m06:06:36.737109 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: COMMIT
+[0m06:06:36.739080 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.mart_well_performance"
+[0m06:06:36.739360 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: COMMIT
+[0m06:06:36.739709 [debug] [Thread-3 (]: SQL status: COMMIT in 0.002 seconds
+[0m06:06:36.741495 [debug] [Thread-3 (]: Applying DROP to: "airflow"."public"."mart_sensor_analysis__dbt_backup"
+[0m06:06:36.741791 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m06:06:36.742238 [debug] [Thread-3 (]: Using postgres connection "model.caspian_vault.mart_sensor_analysis"
+[0m06:06:36.743984 [debug] [Thread-1 (]: Applying DROP to: "airflow"."public"."mart_survey_summary__dbt_backup"
+[0m06:06:36.744301 [debug] [Thread-4 (]: SQL status: COMMIT in 0.005 seconds
+[0m06:06:36.744606 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_sensor_analysis"} */
+drop table if exists "airflow"."public"."mart_sensor_analysis__dbt_backup" cascade
+[0m06:06:36.746452 [debug] [Thread-1 (]: Using postgres connection "model.caspian_vault.mart_survey_summary"
+[0m06:06:36.822966 [debug] [Thread-4 (]: Applying DROP to: "airflow"."public"."mart_well_performance__dbt_backup"
+[0m06:06:36.823555 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_survey_summary"} */
+drop table if exists "airflow"."public"."mart_survey_summary__dbt_backup" cascade
+[0m06:06:36.824122 [debug] [Thread-4 (]: Using postgres connection "model.caspian_vault.mart_well_performance"
+[0m06:06:36.824540 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "model.caspian_vault.mart_well_performance"} */
+drop table if exists "airflow"."public"."mart_well_performance__dbt_backup" cascade
+[0m06:06:36.825942 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m06:06:36.827100 [debug] [Thread-3 (]: On model.caspian_vault.mart_sensor_analysis: Close
+[0m06:06:36.827454 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m06:06:36.827761 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m06:06:36.828915 [debug] [Thread-1 (]: On model.caspian_vault.mart_survey_summary: Close
+[0m06:06:36.829541 [info ] [Thread-3 (]: 30 of 33 OK created sql table model public.mart_sensor_analysis ................ [[32mSELECT 3[0m in 0.15s]
+[0m06:06:36.830639 [debug] [Thread-4 (]: On model.caspian_vault.mart_well_performance: Close
+[0m06:06:36.831234 [info ] [Thread-1 (]: 31 of 33 OK created sql table model public.mart_survey_summary ................. [[32mSELECT 6[0m in 0.15s]
+[0m06:06:36.831726 [debug] [Thread-3 (]: Finished running node model.caspian_vault.mart_sensor_analysis
+[0m06:06:36.832267 [debug] [Thread-1 (]: Finished running node model.caspian_vault.mart_survey_summary
+[0m06:06:36.832821 [info ] [Thread-4 (]: 32 of 33 OK created sql table model public.mart_well_performance ............... [[32mSELECT 21[0m in 0.15s]
+[0m06:06:36.833580 [debug] [Thread-4 (]: Finished running node model.caspian_vault.mart_well_performance
+[0m06:06:36.834221 [debug] [Thread-2 (]: Began running node snapshot.caspian_vault.snap_mart_well_performance
+[0m06:06:36.834649 [info ] [Thread-2 (]: 33 of 33 START snapshot snapshots.snap_mart_well_performance ................... [RUN]
+[0m06:06:36.834995 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.caspian_vault.fct_readings, now snapshot.caspian_vault.snap_mart_well_performance)
+[0m06:06:36.835304 [debug] [Thread-2 (]: Began compiling node snapshot.caspian_vault.snap_mart_well_performance
+[0m06:06:36.837847 [debug] [Thread-2 (]: Began executing node snapshot.caspian_vault.snap_mart_well_performance
+[0m06:06:36.872660 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.873070 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: BEGIN
+[0m06:06:36.873373 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:06:36.877676 [debug] [Thread-2 (]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:36.878007 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.878315 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "airflow".INFORMATION_SCHEMA.columns
+      where table_name = 'snap_mart_well_performance'
+        
+        and table_schema = 'snapshots'
+        
+      order by ordinal_position
+
+  
+[0m06:06:36.883617 [debug] [Thread-2 (]: SQL status: SELECT 11 in 0.005 seconds
+[0m06:06:36.914225 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.914709 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+        
+  
+    
+
+  create temporary table "snap_mart_well_performance__dbt_tmp060636913503"
+  
+  
+    as
+  
+  (
+    
+    
+    with snapshot_query as (
+
+        
+
+
+select
+  cast(hk_well as varchar) || '|' || cast(source_format as varchar) as snap_key,
+  m.*,
+  cast(current_timestamp as timestamp) as load_ts
+from "airflow"."public"."mart_well_performance" m
+
+
+    ),
+
+    snapshotted_data as (
+
+        select *, 
+    
+        snap_key as dbt_unique_key
+    
+
+        from "airflow"."snapshots"."snap_mart_well_performance"
+        where
+            
+                dbt_valid_to is null
+            
+
+    ),
+
+    insertions_source_data as (
+
+        select *, 
+    
+        snap_key as dbt_unique_key
+    
+,
+            load_ts as dbt_updated_at,
+            load_ts as dbt_valid_from,
+            
+  
+  coalesce(nullif(load_ts, load_ts), null)
+  as dbt_valid_to
+,
+            md5(coalesce(cast(snap_key as varchar ), '')
+         || '|' || coalesce(cast(load_ts as varchar ), '')
+        ) as dbt_scd_id
+
+        from snapshot_query
+    ),
+
+    updates_source_data as (
+
+        select *, 
+    
+        snap_key as dbt_unique_key
+    
+,
+            load_ts as dbt_updated_at,
+            load_ts as dbt_valid_from,
+            load_ts as dbt_valid_to
+
+        from snapshot_query
+    ),
+
+    insertions as (
+
+        select
+            'insert' as dbt_change_type,
+            source_data.*
+
+        from insertions_source_data as source_data
+        left outer join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+            where 
+    
+        snapshotted_data.dbt_unique_key is null
+    
+
+            or (
+    
+        snapshotted_data.dbt_unique_key is not null
+    
+ and (
+               (snapshotted_data.dbt_valid_from < source_data.load_ts)
+            )
+
+        )
+
+    ),
+
+    updates as (
+
+        select
+            'update' as dbt_change_type,
+            source_data.*,
+            snapshotted_data.dbt_scd_id
+
+        from updates_source_data as source_data
+        join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+        where (
+            (snapshotted_data.dbt_valid_from < source_data.load_ts)
+        )
+    )
+
+    select * from insertions
+    union all
+    select * from updates
+
+  );
+  
+    
+[0m06:06:36.917345 [debug] [Thread-2 (]: SQL status: SELECT 42 in 0.002 seconds
+[0m06:06:36.919718 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.920049 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'snap_mart_well_performance__dbt_tmp060636913503'
+        
+      order by ordinal_position
+
+  
+[0m06:06:36.922472 [debug] [Thread-2 (]: SQL status: SELECT 13 in 0.002 seconds
+[0m06:06:36.924812 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.925143 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "airflow".INFORMATION_SCHEMA.columns
+      where table_name = 'snap_mart_well_performance'
+        
+        and table_schema = 'snapshots'
+        
+      order by ordinal_position
+
+  
+[0m06:06:36.926999 [debug] [Thread-2 (]: SQL status: SELECT 11 in 0.002 seconds
+[0m06:06:36.929222 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.929566 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'snap_mart_well_performance__dbt_tmp060636913503'
+        
+      order by ordinal_position
+
+  
+[0m06:06:36.931393 [debug] [Thread-2 (]: SQL status: SELECT 13 in 0.002 seconds
+[0m06:06:36.933641 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.933970 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "airflow".INFORMATION_SCHEMA.columns
+      where table_name = 'snap_mart_well_performance'
+        
+        and table_schema = 'snapshots'
+        
+      order by ordinal_position
+
+  
+[0m06:06:36.935748 [debug] [Thread-2 (]: SQL status: SELECT 11 in 0.001 seconds
+[0m06:06:36.941915 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.942286 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'snap_mart_well_performance__dbt_tmp060636913503'
+        
+      order by ordinal_position
+
+  
+[0m06:06:36.944199 [debug] [Thread-2 (]: SQL status: SELECT 13 in 0.002 seconds
+[0m06:06:36.957367 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.957867 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+select * from (
+        
+    
+    with snapshot_query as (
+
+        
+
+
+select
+  cast(hk_well as varchar) || '|' || cast(source_format as varchar) as snap_key,
+  m.*,
+  cast(current_timestamp as timestamp) as load_ts
+from "airflow"."public"."mart_well_performance" m
+
+
+    ),
+
+    snapshotted_data as (
+
+        select *, 
+    
+        snap_key as dbt_unique_key
+    
+
+        from "airflow"."snapshots"."snap_mart_well_performance"
+        where
+            
+                dbt_valid_to is null
+            
+
+    ),
+
+    insertions_source_data as (
+
+        select *, 
+    
+        snap_key as dbt_unique_key
+    
+,
+            load_ts as dbt_updated_at,
+            load_ts as dbt_valid_from,
+            
+  
+  coalesce(nullif(load_ts, load_ts), null)
+  as dbt_valid_to
+,
+            md5(coalesce(cast(snap_key as varchar ), '')
+         || '|' || coalesce(cast(load_ts as varchar ), '')
+        ) as dbt_scd_id
+
+        from snapshot_query
+    ),
+
+    updates_source_data as (
+
+        select *, 
+    
+        snap_key as dbt_unique_key
+    
+,
+            load_ts as dbt_updated_at,
+            load_ts as dbt_valid_from,
+            load_ts as dbt_valid_to
+
+        from snapshot_query
+    ),
+
+    insertions as (
+
+        select
+            'insert' as dbt_change_type,
+            source_data.*
+
+        from insertions_source_data as source_data
+        left outer join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+            where 
+    
+        snapshotted_data.dbt_unique_key is null
+    
+
+            or (
+    
+        snapshotted_data.dbt_unique_key is not null
+    
+ and (
+               (snapshotted_data.dbt_valid_from < source_data.load_ts)
+            )
+
+        )
+
+    ),
+
+    updates as (
+
+        select
+            'update' as dbt_change_type,
+            source_data.*,
+            snapshotted_data.dbt_scd_id
+
+        from updates_source_data as source_data
+        join snapshotted_data
+            on 
+    
+        snapshotted_data.dbt_unique_key = source_data.dbt_unique_key
+    
+
+        where (
+            (snapshotted_data.dbt_valid_from < source_data.load_ts)
+        )
+    )
+
+    select * from insertions
+    union all
+    select * from updates
+
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+[0m06:06:36.958723 [debug] [Thread-2 (]: SQL status: SELECT 0 in 0.000 seconds
+[0m06:06:36.962552 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.962890 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+select * from (
+        select now()::timestamp without time zone as dbt_snapshot_time
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+[0m06:06:36.963425 [debug] [Thread-2 (]: SQL status: SELECT 0 in 0.000 seconds
+[0m06:06:36.963852 [debug] [Thread-2 (]: Writing runtime sql for node "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.964390 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.964724 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "caspian_vault", "target_name": "dev", "node_id": "snapshot.caspian_vault.snap_mart_well_performance"} */
+
+      update "airflow"."snapshots"."snap_mart_well_performance"
+    set dbt_valid_to = DBT_INTERNAL_SOURCE.dbt_valid_to
+    from "snap_mart_well_performance__dbt_tmp060636913503" as DBT_INTERNAL_SOURCE
+    where DBT_INTERNAL_SOURCE.dbt_scd_id::text = "airflow"."snapshots"."snap_mart_well_performance".dbt_scd_id::text
+      and DBT_INTERNAL_SOURCE.dbt_change_type::text in ('update'::text, 'delete'::text)
+      
+        and "airflow"."snapshots"."snap_mart_well_performance".dbt_valid_to is null;
+      
+
+
+    insert into "airflow"."snapshots"."snap_mart_well_performance" ("snap_key", "hk_well", "source_format", "total_readings", "avg_amplitude", "data_quality_rate", "load_ts", "dbt_updated_at", "dbt_valid_from", "dbt_valid_to", "dbt_scd_id")
+    select DBT_INTERNAL_SOURCE."snap_key",DBT_INTERNAL_SOURCE."hk_well",DBT_INTERNAL_SOURCE."source_format",DBT_INTERNAL_SOURCE."total_readings",DBT_INTERNAL_SOURCE."avg_amplitude",DBT_INTERNAL_SOURCE."data_quality_rate",DBT_INTERNAL_SOURCE."load_ts",DBT_INTERNAL_SOURCE."dbt_updated_at",DBT_INTERNAL_SOURCE."dbt_valid_from",DBT_INTERNAL_SOURCE."dbt_valid_to",DBT_INTERNAL_SOURCE."dbt_scd_id"
+    from "snap_mart_well_performance__dbt_tmp060636913503" as DBT_INTERNAL_SOURCE
+    where DBT_INTERNAL_SOURCE.dbt_change_type::text = 'insert'::text;
+
+  
+[0m06:06:36.965752 [debug] [Thread-2 (]: SQL status: INSERT 0 21 in 0.001 seconds
+[0m06:06:36.966794 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: COMMIT
+[0m06:06:36.967101 [debug] [Thread-2 (]: Using postgres connection "snapshot.caspian_vault.snap_mart_well_performance"
+[0m06:06:36.967387 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: COMMIT
+[0m06:06:36.970419 [debug] [Thread-2 (]: SQL status: COMMIT in 0.003 seconds
+[0m06:06:36.972442 [debug] [Thread-2 (]: On snapshot.caspian_vault.snap_mart_well_performance: Close
+[0m06:06:36.973309 [info ] [Thread-2 (]: 33 of 33 OK snapshotted snapshots.snap_mart_well_performance ................... [[32mINSERT 0 21[0m in 0.14s]
+[0m06:06:36.973786 [debug] [Thread-2 (]: Finished running node snapshot.caspian_vault.snap_mart_well_performance
+[0m06:06:36.975091 [debug] [MainThread]: Using postgres connection "master"
+[0m06:06:36.975433 [debug] [MainThread]: On master: BEGIN
+[0m06:06:36.975705 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m06:06:36.979765 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m06:06:36.980097 [debug] [MainThread]: On master: COMMIT
+[0m06:06:36.980398 [debug] [MainThread]: Using postgres connection "master"
+[0m06:06:36.980665 [debug] [MainThread]: On master: COMMIT
+[0m06:06:36.981005 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m06:06:36.981324 [debug] [MainThread]: On master: Close
+[0m06:06:36.981725 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:06:36.982000 [debug] [MainThread]: Connection 'snapshot.caspian_vault.snap_mart_well_performance' was properly closed.
+[0m06:06:36.982263 [debug] [MainThread]: Connection 'model.caspian_vault.mart_survey_summary' was properly closed.
+[0m06:06:36.982504 [debug] [MainThread]: Connection 'model.caspian_vault.mart_sensor_analysis' was properly closed.
+[0m06:06:36.982735 [debug] [MainThread]: Connection 'model.caspian_vault.mart_well_performance' was properly closed.
+[0m06:06:36.983111 [info ] [MainThread]: 
+[0m06:06:36.983453 [info ] [MainThread]: Finished running 1 snapshot, 13 table models, 19 data tests in 0 hours 0 minutes and 1.08 seconds (1.08s).
+[0m06:06:36.987149 [debug] [MainThread]: Command end result
+[0m06:06:37.015034 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_cache/target/manifest.json
+[0m06:06:37.016687 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_cache/target/semantic_manifest.json
+[0m06:06:37.023016 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_cache/target/run_results.json
+[0m06:06:37.023367 [info ] [MainThread]: 
+[0m06:06:37.023722 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:06:37.024025 [info ] [MainThread]: 
+[0m06:06:37.024346 [info ] [MainThread]: Done. PASS=33 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=33
+[0m06:06:37.024960 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+- MissingArgumentsPropertyInGenericTestDeprecation: 5 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m06:06:37.025851 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 3.3565218, "process_in_blocks": "0", "process_kernel_time": 0.342325, "process_mem_max_rss": "140224", "process_out_blocks": "4872", "process_user_time": 4.223018}
+[0m06:06:37.026347 [debug] [MainThread]: Command `dbt build` succeeded at 06:06:37.026243 after 3.36 seconds
+[0m06:06:37.026672 [debug] [MainThread]: Flushing usage events
+[0m06:09:25.931375 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 06:09:25.937446 | 9f20a9eb-6bcc-43e4-b383-618c0b1ffc3e ==============================
+[0m06:09:25.937446 [info ] [MainThread]: Running with dbt=1.10.15
+[0m06:09:25.937906 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'target_path': '/opt/airflow/dbt_cache/target', 'use_experimental_parser': 'False', 'static_parser': 'True', 'empty': 'False', 'invocation_command': 'dbt build --profile caspian_vault --target dev --threads 8', 'fail_fast': 'False', 'profiles_dir': '/opt/airflow/dbt_profiles', 'use_colors': 'True', 'quiet': 'False', 'printer_width': '80', 'log_path': '/opt/airflow/dbt_cache/logs', 'partial_parse': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'write_json': 'True', 'no_print': 'None', 'introspect': 'True', 'version_check': 'True', 'debug': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False'}
+[0m06:09:25.982912 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `log-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+logs to a custom directory, please use the --log-path CLI flag or DBT_LOG_PATH
+env var instead.
+[0m06:09:25.983539 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m06:09:26.159978 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m06:09:26.263392 [error] [MainThread]: Encountered an error:
+Compilation Error
+  dbt found 1 package(s) specified in packages.yml, but only 0 package(s) installed in /opt/airflow/dbt_packages. Run "dbt deps" to install package dependencies.
+[0m06:09:26.264054 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ConfigLogPathDeprecation: 1 occurrence
+- ConfigTargetPathDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m06:09:26.264961 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.37421605, "process_in_blocks": "0", "process_kernel_time": 0.279619, "process_mem_max_rss": "114632", "process_out_blocks": "1952", "process_user_time": 1.714666}
+[0m06:09:26.265455 [debug] [MainThread]: Command `dbt build` failed at 06:09:26.265369 after 0.37 seconds
+[0m06:09:26.265779 [debug] [MainThread]: Flushing usage events

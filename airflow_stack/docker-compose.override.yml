@@ -1,0 +1,27 @@
+services:
+  airflow-webserver:
+    volumes:
+      - ./dbt_cache:/opt/airflow/dbt_cache
+      - ./dbt_profiles:/opt/airflow/dbt_profiles:ro
+    environment:
+      - DBT_PROFILES_DIR=/opt/airflow/dbt_profiles
+      - DBT_TARGET_PATH=/opt/airflow/dbt_cache/target
+      - DBT_LOG_PATH=/opt/airflow/dbt_cache/logs
+
+  airflow-scheduler:
+    volumes:
+      - ./dbt_cache:/opt/airflow/dbt_cache
+      - ./dbt_profiles:/opt/airflow/dbt_profiles:ro
+    environment:
+      - DBT_PROFILES_DIR=/opt/airflow/dbt_profiles
+      - DBT_TARGET_PATH=/opt/airflow/dbt_cache/target
+      - DBT_LOG_PATH=/opt/airflow/dbt_cache/logs
+
+  airflow-worker:
+    volumes:
+      - ./dbt_cache:/opt/airflow/dbt_cache
+      - ./dbt_profiles:/opt/airflow/dbt_profiles:ro
+    environment:
+      - DBT_PROFILES_DIR=/opt/airflow/dbt_profiles
+      - DBT_TARGET_PATH=/opt/airflow/dbt_cache/target
+      - DBT_LOG_PATH=/opt/airflow/dbt_cache/logs

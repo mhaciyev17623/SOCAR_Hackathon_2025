@@ -1,0 +1,10 @@
+
+
+
+
+select
+    1
+from "airflow"."public"."stg_readings"
+
+where not(survey_type_id is not null)
+
